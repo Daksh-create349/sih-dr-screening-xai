@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #fbfbf9;
+    color: #1c1917;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Motion System: Clinical & Purposeful Transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heatmapReveal {
+  0% {
+    opacity: 0;
+    filter: brightness(0.9) contrast(0.95);
+  }
+  40% {
+    opacity: 0.45;
+  }
+  80% {
+    opacity: 1;
+    filter: brightness(1.05) contrast(1.02);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1) contrast(1);
+  }
+}
+
+@keyframes highlightSweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes circleProgress {
+  from {
+    stroke-dashoffset: 283;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-stagger-1 {
+  animation: slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+  opacity: 0;
+}
+
+.animate-stagger-2 {
+  animation: slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
+  opacity: 0;
+}
+
+.animate-stagger-3 {
+  animation: slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.18s forwards;
+  opacity: 0;
+}
+
+.animate-stagger-4 {
+  animation: slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.24s forwards;
+  opacity: 0;
+}
+
+.animate-heatmap-reveal {
+  animation: heatmapReveal 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Accessibility: Strict prefers-reduced-motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .animate-heatmap-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  .animate-stagger-1,
+  .animate-stagger-2,
+  .animate-stagger-3,
+  .animate-stagger-4,
+  .animate-slide-up,
+  .animate-fade-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Print Media Styles for Clinical Summary Report (Task 38) */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    font-size: 11pt;
+  }
+
+  header,
+  footer,
+  .no-print,
+  button {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .shadow-xs,
+  .shadow-sm,
+  .shadow-2xs {
+    box-shadow: none !important;
+  }
+
+  .border-stone-200,
+  .border-stone-200\/90 {
+    border-color: #d1d5db !important;
+  }
+}
+

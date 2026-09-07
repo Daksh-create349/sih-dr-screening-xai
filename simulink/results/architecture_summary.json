@@ -1,0 +1,67 @@
+{
+  "milestone": "Milestone 13 - Step 1: Simulink Environment Verification & Architecture",
+  "matlab_environment": {
+    "installed": false,
+    "version": null,
+    "executable_path": null,
+    "simulink_available": false,
+    "simulink_status": "UNAVAILABLE",
+    "required_toolboxes": {
+      "simulink": false,
+      "simulink_compiler": false,
+      "simulink_coder": false
+    },
+    "can_open_model": false,
+    "can_compile_model": false
+  },
+  "status": "BLOCKED",
+  "status_reason": "BLOCKED \u2014 MATLAB/Simulink environment unavailable on macOS host.",
+  "target_annual_patient_volume": 100000,
+  "system_architecture": {
+    "pipeline_representation": "Real Software Pipeline (IQA -> Classifier -> Grad-CAM -> Evidence)",
+    "subsystems": [
+      "Acquisition",
+      "Image Quality Assessment (IQA)",
+      "Borderline Enhancement (CLAHE)",
+      "DR Classifier (EfficientNetB3)",
+      "Referable Decision (0.33 threshold)",
+      "Explainability (Grad-CAM)",
+      "Reporting",
+      "Clinical Review Queue"
+    ],
+    "routing_logic": {
+      "GOOD": "Acquisition -> IQA -> Classifier -> Referable -> Explainability -> Report/Review",
+      "BORDERLINE": "Acquisition -> IQA -> Enhancement -> IQA Re-check -> Classifier -> Downstream",
+      "UNGRADEABLE": "Acquisition -> IQA -> Recapture Queue -> STOP (Classifier bypassed)"
+    },
+    "signals": [
+      "image_arrival",
+      "image_ready",
+      "iqa_good",
+      "iqa_borderline",
+      "iqa_ungradeable",
+      "enhancement_complete",
+      "classification_complete",
+      "gradcam_complete",
+      "report_complete",
+      "review_required",
+      "recapture_required"
+    ]
+  },
+  "parameter_classification": {
+    "measured": [],
+    "assumed": [
+      "acquisition_rate",
+      "image_size_bytes",
+      "iqa_processing_time",
+      "enhancement_processing_time",
+      "classifier_processing_time",
+      "gradcam_processing_time",
+      "report_processing_time",
+      "reviewer_rate"
+    ],
+    "target": [
+      "annual_patient_volume = 100000"
+    ]
+  }
+}

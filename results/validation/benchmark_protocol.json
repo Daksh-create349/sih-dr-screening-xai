@@ -1,0 +1,49 @@
+{
+  "protocol_version": "1.0.0",
+  "model_checkpoint": "model/MODEL_V2_80pct_backup.keras",
+  "model_architecture": "APTOS_DR_EfficientNetB3_V2",
+  "input_resolution": [
+    384,
+    384,
+    3
+  ],
+  "classes": {
+    "0": "No DR",
+    "1": "Mild DR",
+    "2": "Moderate DR",
+    "3": "Severe DR",
+    "4": "Proliferative DR"
+  },
+  "referable_dr": {
+    "positive_grades": [
+      2,
+      3,
+      4
+    ],
+    "negative_grades": [
+      0,
+      1
+    ],
+    "frozen_operating_threshold": 0.33,
+    "threshold_definition": "sum P(Grade 2..4) >= 0.33",
+    "test_set_tuning_permitted": false,
+    "recalibration_rule": "Validation split only; search range [0.10, 0.90], step 0.01 optimizing Youden's J index (Sens + Spec - 1)."
+  },
+  "baselines": {
+    "baseline_1_classifier_only": {
+      "name": "Single-Technique Classifier Baseline",
+      "pipeline": "Raw Image -> Crop + INTER_AREA 384x384 -> EfficientNetB3 -> Prediction",
+      "iqa_gating_included": false
+    },
+    "baseline_2_integrated_pipeline": {
+      "name": "Integrated Clinical Screening Pipeline",
+      "pipeline": "Raw Image -> IQA -> GOOD: Direct classifier | BORDERLINE: CLAHE -> Re-check -> Classifier | UNGRADEABLE: Reject & Recapture -> DR Prediction -> Referable Decision -> Evidence",
+      "iqa_gating_included": true
+    }
+  },
+  "dataset_separation_rules": {
+    "integration_set": "9 real local images strictly for regression testing.",
+    "clinical_benchmark_set": "Labelled APTOS splits (Train ~2930, Val ~366, Test ~366).",
+    "metric_mixing_prohibited": true
+  }
+}

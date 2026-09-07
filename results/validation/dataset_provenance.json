@@ -1,0 +1,18 @@
+{
+  "source": "Kaggle / Local Workspace Audit",
+  "source_url": "https://www.kaggle.com/c/aptos2019-blindness-detection/data",
+  "local_path": "/Users/dakshsrivastava/Desktop/DR /data",
+  "original_file_size_bytes": 9500000000,
+  "original_file_size_mb": 9059.91,
+  "downloaded_size_bytes": 0,
+  "download_used_mb": 0.0,
+  "hard_download_limit_mb": 500.0,
+  "download_limit_respected": true,
+  "extraction_status": "NOT_APPLICABLE",
+  "image_count": 0,
+  "label_count": 0,
+  "class_distribution": {},
+  "checksum": "None",
+  "dataset_completeness_status": "BLOCKED",
+  "status_reason": "Full labelled APTOS benchmark dataset unavailable locally; canonical archives exceed the strict 500 MB limit."
+}

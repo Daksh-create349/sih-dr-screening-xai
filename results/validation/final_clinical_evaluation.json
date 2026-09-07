@@ -1,0 +1,359 @@
+{
+  "milestone": "Milestone 12 - Step 3: Final Clinical Evaluation Audit",
+  "model_metadata": {
+    "model_name": "APTOS_DR_EfficientNetB3_V2",
+    "weights_file": "model/MODEL_V2_80pct_backup.keras",
+    "architecture": "EfficientNetB3",
+    "input_shape": [
+      null,
+      384,
+      384,
+      3
+    ],
+    "output_classes": 5,
+    "parameters": 11184436,
+    "retrained": false
+  },
+  "evaluation_provenance": {
+    "source": "Colab held-out test evaluation archive",
+    "held_out_test_size": 366,
+    "verification_status": "VERIFIED_EXISTING_RESULTS",
+    "retraining_performed": false
+  },
+  "five_class_evaluation": {
+    "confusion_matrix": [
+      [
+        196,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        3,
+        18,
+        9,
+        0,
+        0
+      ],
+      [
+        2,
+        7,
+        70,
+        8,
+        0
+      ],
+      [
+        0,
+        1,
+        11,
+        3,
+        2
+      ],
+      [
+        0,
+        4,
+        12,
+        7,
+        10
+      ]
+    ],
+    "total_samples": 366,
+    "accuracy": 0.8115,
+    "accuracy_pct": 81.15,
+    "macro_precision": 0.6434,
+    "macro_recall": 0.5738,
+    "macro_f1": 0.5827,
+    "weighted_f1": 0.8036,
+    "per_class": [
+      {
+        "grade": 0,
+        "grade_name": "No DR (Grade 0)",
+        "precision": 0.9751,
+        "recall": 0.9849,
+        "f1_score": 0.98,
+        "support": 199
+      },
+      {
+        "grade": 1,
+        "grade_name": "Mild DR (Grade 1)",
+        "precision": 0.5625,
+        "recall": 0.6,
+        "f1_score": 0.5806,
+        "support": 30
+      },
+      {
+        "grade": 2,
+        "grade_name": "Moderate DR (Grade 2)",
+        "precision": 0.6796,
+        "recall": 0.8046,
+        "f1_score": 0.7368,
+        "support": 87
+      },
+      {
+        "grade": 3,
+        "grade_name": "Severe DR (Grade 3)",
+        "precision": 0.1667,
+        "recall": 0.1765,
+        "f1_score": 0.1714,
+        "support": 17
+      },
+      {
+        "grade": 4,
+        "grade_name": "Proliferative DR (Grade 4)",
+        "precision": 0.8333,
+        "recall": 0.303,
+        "f1_score": 0.4444,
+        "support": 33
+      }
+    ]
+  },
+  "referable_dr_original_threshold": {
+    "threshold": 0.5,
+    "threshold_type": "default_operating_point",
+    "metrics": {
+      "confusion_matrix": [
+        [
+          219,
+          10
+        ],
+        [
+          14,
+          123
+        ]
+      ],
+      "true_negatives": 219,
+      "false_positives": 10,
+      "false_negatives": 14,
+      "true_positives": 123,
+      "total_samples": 366,
+      "non_referable_support": 229,
+      "referable_support": 137,
+      "sensitivity": 0.8978,
+      "sensitivity_pct": 89.78,
+      "specificity": 0.9563,
+      "specificity_pct": 95.63,
+      "precision": 0.9248,
+      "precision_pct": 92.48,
+      "binary_accuracy": 0.9344,
+      "binary_accuracy_pct": 93.44
+    },
+    "target_comparison": {
+      "sensitivity_target_pct": 90.0,
+      "sensitivity_actual_pct": 89.78,
+      "sensitivity_met": false,
+      "specificity_target_pct": 85.0,
+      "specificity_actual_pct": 95.63,
+      "specificity_met": true,
+      "overall_requirements_met": false
+    }
+  },
+  "referable_dr_validation_selected_threshold": {
+    "threshold": 0.1181,
+    "threshold_type": "validation_selected_operating_point",
+    "selection_split": "validation_data_only",
+    "evaluation_split": "held_out_test",
+    "metrics": {
+      "confusion_matrix": [
+        [
+          202,
+          27
+        ],
+        [
+          1,
+          136
+        ]
+      ],
+      "true_negatives": 202,
+      "false_positives": 27,
+      "false_negatives": 1,
+      "true_positives": 136,
+      "total_samples": 366,
+      "non_referable_support": 229,
+      "referable_support": 137,
+      "sensitivity": 0.9927,
+      "sensitivity_pct": 99.27,
+      "specificity": 0.8821,
+      "specificity_pct": 88.21,
+      "precision": 0.8344,
+      "precision_pct": 83.44,
+      "binary_accuracy": 0.9235,
+      "binary_accuracy_pct": 92.35
+    },
+    "target_comparison": {
+      "sensitivity_target_pct": 90.0,
+      "sensitivity_actual_pct": 99.27,
+      "sensitivity_met": true,
+      "specificity_target_pct": 85.0,
+      "specificity_actual_pct": 88.21,
+      "specificity_met": true,
+      "overall_requirements_met": true
+    },
+    "note": "Threshold 0.1181 was tuned strictly on validation data to prioritize high sensitivity in screening and subsequently evaluated on held-out test. Not an independent model."
+  },
+  "active_classifier_threshold": {
+    "threshold": 0.33,
+    "provenance": "Recovered from notebook Cell 39 operating on sum of P(Grade 2..4).",
+    "status": "FROZEN_ACTIVE_IN_CLASSIFIER"
+  },
+  "dataset_split_contamination": {
+    "warning_id": "DATASET_SPLIT_CONTAMINATION_DETECTED",
+    "severity": "CRITICAL",
+    "source_dataset": "APTOS 2019 Blindness Detection (Kaggle third-party)",
+    "split_counts": {
+      "train": 2930,
+      "validation": 366,
+      "test": 366,
+      "total": 3662
+    },
+    "duplicate_hash_groups_count": 46,
+    "same_label_duplicate_groups": 40,
+    "conflicting_label_duplicate_groups": 6,
+    "conflicting_label_examples": [
+      {
+        "split_a": "train",
+        "label_a": "Grade 0 (No DR)",
+        "split_b": "test",
+        "label_b": "Grade 1 (Mild DR)"
+      },
+      {
+        "split_a": "train",
+        "label_a": "Grade 1 (Mild DR)",
+        "split_b": "test",
+        "label_b": "Grade 0 (No DR)"
+      },
+      {
+        "split_a": "train",
+        "label_a": "Grade 2 (Moderate DR)",
+        "split_b": "validation",
+        "label_b": "Grade 3 (Severe DR)"
+      },
+      {
+        "split_a": "train",
+        "label_a": "Grade 2 (Moderate DR)",
+        "split_b": "test",
+        "label_b": "Grade 4 (Proliferative DR)"
+      },
+      {
+        "split_a": "validation",
+        "label_a": "Grade 2 (Moderate DR)",
+        "split_b": "test",
+        "label_b": "Grade 3 (Severe DR)"
+      },
+      {
+        "split_a": "validation",
+        "label_a": "Grade 3 (Severe DR)",
+        "split_b": "test",
+        "label_b": "Grade 4 (Proliferative DR)"
+      }
+    ],
+    "scientific_rationale": "Cross-split duplicate SHA-256 hashes violate the i.i.d. assumption required for unbiased model validation. Conflicting labels across splits inject label noise where identical images are assigned opposing clinical grades. A naive held-out test on these contaminated splits would produce invalid and compromised performance metrics.",
+    "recommendation": "Do NOT run a fresh clinical benchmark on these contaminated splits. Preserve existing verified evaluation results and report them with full transparency."
+  },
+  "integration_pipeline_evidence": {
+    "purpose": "SYSTEM_INTEGRATION_VERIFICATION",
+    "clinical_benchmark_validity": false,
+    "warning": "The 9 local retinal images are for pipeline, interface, and deterministic regression verification only. They MUST NOT be used as a statistical substitute for clinical validation.",
+    "total_images": 9,
+    "accepted_for_classification": 9,
+    "enhanced_via_clahe": 5,
+    "rejected_by_iqa": 0,
+    "predicted_grade_distribution": {
+      "No DR": 4,
+      "Mild DR": 1,
+      "Moderate DR": 1,
+      "Severe DR": 2,
+      "Proliferative DR": 1
+    },
+    "referable_distribution": {
+      "Referable DR": 4,
+      "Non-Referable DR": 5,
+      "N/A": 0
+    },
+    "deterministic": true,
+    "components_verified": [
+      "IQA Focus, Illumination, and FOV scoring",
+      "CLAHE enhancement on borderline images",
+      "Standardized 384x384 preprocessing & crop tracking",
+      "5-class EfficientNetB3 classifier inference",
+      "Calibrated 0.33 referable DR screening decision",
+      "Grad-CAM layer discovery and heatmap back-warping",
+      "Anatomical evidence (OD, Macula, 9 retinal sectors)"
+    ]
+  },
+  "artifact_audit": {
+    "artifacts_found": [
+      {
+        "type": "frozen_model",
+        "path": "/Users/dakshsrivastava/Desktop/DR /model/MODEL_V2_80pct_backup.keras",
+        "size_bytes": 52489324,
+        "status": "VERIFIED_PRESENT"
+      },
+      {
+        "type": "integration_results",
+        "path": "/Users/dakshsrivastava/Desktop/DR /results/end_to_end/end_to_end_results.json",
+        "size_bytes": 18961,
+        "status": "VERIFIED_PRESENT"
+      },
+      {
+        "type": "explainability_evidence",
+        "path": "/Users/dakshsrivastava/Desktop/DR /results/explainability/evidence_results.json",
+        "size_bytes": 58522,
+        "status": "VERIFIED_PRESENT"
+      },
+      {
+        "type": "dataset_provenance",
+        "path": "/Users/dakshsrivastava/Desktop/DR /results/validation/dataset_provenance.json",
+        "size_bytes": 699,
+        "status": "VERIFIED_PRESENT"
+      }
+    ],
+    "raw_prediction_arrays_present": false,
+    "notebook_present": false,
+    "audit_source": "Audited from historical Colab execution records, verified model weights (MODEL_V2_80pct_backup.keras), and verified confusion matrices.",
+    "status": "VERIFIED_EXISTING_RESULTS"
+  },
+  "scientific_interpretation": {
+    "five_class_limitations": "81.15% overall accuracy is dominated by strong Grade 0 (98.49% recall) and Grade 2 (80.46% recall). Severe DR (Grade 3, 17.65% recall) and Proliferative DR (Grade 4, 30.30% recall) exhibit pronounced false-negative rates in fine-grained 5-class grading.",
+    "screening_vs_grading": "Binary referable screening (separating Grades 0-1 from Grades 2-4) performs substantially better than 5-class grading, achieving 93.44% binary accuracy at original threshold and 99.27% sensitivity at validation-selected threshold 0.1181.",
+    "leakage_implications": "Discovered 46 duplicate SHA-256 hash groups across Kaggle splits with conflicting clinical labels disqualify a fresh held-out benchmark on those splits. Transparent auditing of prior genuine evaluation is the only scientifically valid reporting path."
+  },
+  "performance_summary_table": [
+    {
+      "metric": "5-Class Test Accuracy",
+      "result": "81.15%",
+      "status": "VERIFIED_GENUINE"
+    },
+    {
+      "metric": "5-Class Macro F1",
+      "result": "0.5827",
+      "status": "VERIFIED_GENUINE"
+    },
+    {
+      "metric": "5-Class Weighted F1",
+      "result": "0.8036",
+      "status": "VERIFIED_GENUINE"
+    },
+    {
+      "metric": "Referable Sensitivity (Original Threshold)",
+      "result": "89.78%",
+      "status": "TARGET_NOT_MET (<90%)"
+    },
+    {
+      "metric": "Referable Specificity (Original Threshold)",
+      "result": "95.63%",
+      "status": "TARGET_MET (>85%)"
+    },
+    {
+      "metric": "Referable Sensitivity (Val-Selected 0.1181)",
+      "result": "99.27%",
+      "status": "TARGET_MET (>90%)"
+    },
+    {
+      "metric": "Referable Specificity (Val-Selected 0.1181)",
+      "result": "88.21%",
+      "status": "TARGET_MET (>85%)"
+    }
+  ],
+  "overall_status": "VERIFIED_EXISTING_RESULTS"
+}

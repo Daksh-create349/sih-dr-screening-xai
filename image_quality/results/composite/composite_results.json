@@ -1,0 +1,1645 @@
+{
+  "dataset_directory": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images",
+  "total_images_evaluated": 9,
+  "score_statistics": {
+    "min_composite_score": 59.97,
+    "min_composite_image": "cell13_r0_c2_grade2.png",
+    "max_composite_score": 86.42,
+    "max_composite_image": "confirmed_grade4_proliferative.jpg",
+    "median_composite_score": 70.0,
+    "mean_composite_score": 71.38,
+    "std_composite_score": 8.46
+  },
+  "classification_counts": {
+    "GOOD": 4,
+    "BORDERLINE": 5,
+    "UNGRADEABLE": 0
+  },
+  "weights_used": {
+    "focus": 0.4,
+    "illumination": 0.3,
+    "fov": 0.2,
+    "centering": 0.1
+  },
+  "ungradeable_thresholds_used": {
+    "focus_min": 15.0,
+    "illumination_min": 35.0,
+    "fov_min": 40.0,
+    "centering_min": 30.0,
+    "composite_min": 45.0,
+    "dark_clip_max": 50.0,
+    "glare_clip_max": 30.0
+  },
+  "borderline_thresholds_used": {
+    "focus_min": 50.0,
+    "illumination_min": 65.0,
+    "fov_min": 75.0,
+    "centering_min": 70.0,
+    "composite_min": 70.0
+  },
+  "threshold_status": "engineering_heuristic_baseline_not_clinically_validated",
+  "results": [
+    {
+      "final_class": "GOOD",
+      "composite_score": 86.42,
+      "component_scores": {
+        "focus_score": 88.87,
+        "illumination_score": 74.39,
+        "fov_score": 93.38,
+        "centering_score": 98.76
+      },
+      "triggered_quality_gates": [],
+      "diagnostic_reasons": [
+        "All quality dimensions meet or exceed acceptance criteria (Composite score: 86.42)."
+      ],
+      "recommended_action": "Proceed to DR classification.",
+      "sub_decisions": {
+        "focus_decision": "Sharp",
+        "illumination_decision": "Well Illuminated",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered"
+      },
+      "weights": {
+        "fov": 0.2,
+        "focus": 0.4,
+        "illumination": 0.3,
+        "centering": 0.1
+      },
+      "diagnostics": {
+        "focus_raw_metric": 1093.4328,
+        "illumination_mean_brightness": 142.42,
+        "retinal_coverage_pct": 73.34,
+        "radial_center_offset": 0.005,
+        "optic_disc_confidence": 0.78,
+        "optic_disc_detected": true
+      },
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/confirmed_grade4_proliferative.jpg",
+      "focus_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/confirmed_grade4_proliferative.jpg",
+        "raw_metric": 1093.4328,
+        "tenengrad_energy": 16373.0022,
+        "normalized_score": 88.87,
+        "decision": "Sharp",
+        "diagnostics": {
+          "channel_used": "green",
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "foreground_pixels": 108182,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.7337,
+          "laplacian_min": -344.0,
+          "laplacian_max": 228.0,
+          "tenengrad_mean": 16373.0
+        },
+        "thresholds": {
+          "blurry_threshold": 25.0,
+          "sharp_threshold": 50.0,
+          "log_midpoint": 100.0,
+          "log_slope": 2.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "illumination_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/confirmed_grade4_proliferative.jpg",
+        "exposure_score": 73.31,
+        "uniformity_score": 75.7,
+        "overall_illumination_score": 74.39,
+        "dark_pixel_pct": 0.36,
+        "bright_pixel_pct": 1.49,
+        "mean_brightness": 142.42,
+        "median_brightness": 143.0,
+        "regional_statistics": {
+          "quadrant_means": {
+            "top_left": 132.64,
+            "top_right": 147.6,
+            "bottom_left": 138.96,
+            "bottom_right": 150.24
+          },
+          "quadrant_imbalance": 0.1236,
+          "center_mean": 149.27,
+          "periphery_mean": 134.49,
+          "center_periphery_ratio": 1.11
+        },
+        "decision": "Well Illuminated",
+        "diagnostics": {
+          "exposure_state": "Acceptable Exposure",
+          "std_brightness": 30.06,
+          "p5_brightness": 93.0,
+          "p95_brightness": 193.0,
+          "foreground_pixels": 108182,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.7337,
+          "resolution_evaluated": [
+            384,
+            384
+          ]
+        },
+        "thresholds": {
+          "poor_threshold": 45.0,
+          "well_threshold": 65.0,
+          "optimal_mean_luminance": 115.0,
+          "dark_cutoff": 30.0,
+          "bright_cutoff": 220.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "fov_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/confirmed_grade4_proliferative.jpg",
+        "image_dimensions": [
+          384,
+          384
+        ],
+        "retinal_foreground_area": 108141,
+        "coverage_pct": 73.34,
+        "bounding_box": [
+          0,
+          0,
+          384,
+          384
+        ],
+        "aspect_ratio": 1.0,
+        "retinal_center": [
+          192.72,
+          191.37
+        ],
+        "image_center": [
+          192.0,
+          192.0
+        ],
+        "normalized_horizontal_offset": 0.0037,
+        "normalized_vertical_offset": 0.0033,
+        "radial_center_offset": 0.005,
+        "fov_score": 93.38,
+        "centering_score": 98.76,
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            262.3,
+            176.2
+          ],
+          "radius": 26,
+          "confidence": 0.78,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered",
+        "diagnostics": {
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "total_pixels": 147456,
+          "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+        },
+        "thresholds": {
+          "poor_fov_threshold": 50.0,
+          "adequate_fov_threshold": 75.0,
+          "well_centered_max_offset": 0.08,
+          "poor_centered_min_offset": 0.2,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "dr_grade": "Grade 4 (Proliferative DR)",
+      "filename": "confirmed_grade4_proliferative.jpg"
+    },
+    {
+      "final_class": "GOOD",
+      "composite_score": 81.9,
+      "component_scores": {
+        "focus_score": 79.83,
+        "illumination_score": 68.75,
+        "fov_score": 100.0,
+        "centering_score": 93.45
+      },
+      "triggered_quality_gates": [],
+      "diagnostic_reasons": [
+        "All quality dimensions meet or exceed acceptance criteria (Composite score: 81.90)."
+      ],
+      "recommended_action": "Proceed to DR classification.",
+      "sub_decisions": {
+        "focus_decision": "Sharp",
+        "illumination_decision": "Well Illuminated",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered"
+      },
+      "weights": {
+        "fov": 0.2,
+        "focus": 0.4,
+        "illumination": 0.3,
+        "centering": 0.1
+      },
+      "diagnostics": {
+        "focus_raw_metric": 487.2981,
+        "illumination_mean_brightness": 144.06,
+        "retinal_coverage_pct": 85.61,
+        "radial_center_offset": 0.0262,
+        "optic_disc_confidence": 0.71,
+        "optic_disc_detected": true
+      },
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_eval_6959267_grade3.png",
+      "focus_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_eval_6959267_grade3.png",
+        "raw_metric": 487.2981,
+        "tenengrad_energy": 17861.4079,
+        "normalized_score": 79.83,
+        "decision": "Sharp",
+        "diagnostics": {
+          "channel_used": "green",
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "foreground_pixels": 127392,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.8639,
+          "laplacian_min": -224.0,
+          "laplacian_max": 245.0,
+          "tenengrad_mean": 17861.41
+        },
+        "thresholds": {
+          "blurry_threshold": 25.0,
+          "sharp_threshold": 50.0,
+          "log_midpoint": 100.0,
+          "log_slope": 2.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "illumination_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_eval_6959267_grade3.png",
+        "exposure_score": 70.36,
+        "uniformity_score": 66.79,
+        "overall_illumination_score": 68.75,
+        "dark_pixel_pct": 0.36,
+        "bright_pixel_pct": 1.73,
+        "mean_brightness": 144.06,
+        "median_brightness": 148.0,
+        "regional_statistics": {
+          "quadrant_means": {
+            "top_left": 159.68,
+            "top_right": 137.61,
+            "bottom_left": 151.93,
+            "bottom_right": 128.6
+          },
+          "quadrant_imbalance": 0.2157,
+          "center_mean": 160.74,
+          "periphery_mean": 129.67,
+          "center_periphery_ratio": 1.24
+        },
+        "decision": "Well Illuminated",
+        "diagnostics": {
+          "exposure_state": "Acceptable Exposure",
+          "std_brightness": 36.49,
+          "p5_brightness": 75.0,
+          "p95_brightness": 191.0,
+          "foreground_pixels": 127392,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.8639,
+          "resolution_evaluated": [
+            384,
+            384
+          ]
+        },
+        "thresholds": {
+          "poor_threshold": 45.0,
+          "well_threshold": 65.0,
+          "optimal_mean_luminance": 115.0,
+          "dark_cutoff": 30.0,
+          "bright_cutoff": 220.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "fov_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_eval_6959267_grade3.png",
+        "image_dimensions": [
+          384,
+          384
+        ],
+        "retinal_foreground_area": 126239,
+        "coverage_pct": 85.61,
+        "bounding_box": [
+          5,
+          0,
+          376,
+          378
+        ],
+        "aspect_ratio": 0.995,
+        "retinal_center": [
+          196.77,
+          190.42
+        ],
+        "image_center": [
+          192.0,
+          192.0
+        ],
+        "normalized_horizontal_offset": 0.0249,
+        "normalized_vertical_offset": 0.0082,
+        "radial_center_offset": 0.0262,
+        "fov_score": 100.0,
+        "centering_score": 93.45,
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            119.5,
+            197.5
+          ],
+          "radius": 14,
+          "confidence": 0.71,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered",
+        "diagnostics": {
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "total_pixels": 147456,
+          "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+        },
+        "thresholds": {
+          "poor_fov_threshold": 50.0,
+          "adequate_fov_threshold": 75.0,
+          "well_centered_max_offset": 0.08,
+          "poor_centered_min_offset": 0.2,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "dr_grade": "Grade 3 (Severe DR)",
+      "filename": "aptos_eval_6959267_grade3.png"
+    },
+    {
+      "final_class": "GOOD",
+      "composite_score": 75.42,
+      "component_scores": {
+        "focus_score": 57.21,
+        "illumination_score": 75.84,
+        "fov_score": 100.0,
+        "centering_score": 97.85
+      },
+      "triggered_quality_gates": [],
+      "diagnostic_reasons": [
+        "All quality dimensions meet or exceed acceptance criteria (Composite score: 75.42)."
+      ],
+      "recommended_action": "Proceed to DR classification.",
+      "sub_decisions": {
+        "focus_decision": "Sharp",
+        "illumination_decision": "Well Illuminated",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered"
+      },
+      "weights": {
+        "fov": 0.2,
+        "focus": 0.4,
+        "illumination": 0.3,
+        "centering": 0.1
+      },
+      "diagnostics": {
+        "focus_raw_metric": 139.7341,
+        "illumination_mean_brightness": 105.08,
+        "retinal_coverage_pct": 80.58,
+        "radial_center_offset": 0.0086,
+        "optic_disc_confidence": 0.84,
+        "optic_disc_detected": true
+      },
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c0_grade2_dup.png",
+      "focus_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c0_grade2_dup.png",
+        "raw_metric": 139.7341,
+        "tenengrad_energy": 4749.608,
+        "normalized_score": 57.21,
+        "decision": "Sharp",
+        "diagnostics": {
+          "channel_used": "green",
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "foreground_pixels": 118818,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.8058,
+          "laplacian_min": -163.0,
+          "laplacian_max": 234.0,
+          "tenengrad_mean": 4749.61
+        },
+        "thresholds": {
+          "blurry_threshold": 25.0,
+          "sharp_threshold": 50.0,
+          "log_midpoint": 100.0,
+          "log_slope": 2.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "illumination_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c0_grade2_dup.png",
+        "exposure_score": 84.93,
+        "uniformity_score": 64.72,
+        "overall_illumination_score": 75.84,
+        "dark_pixel_pct": 0.37,
+        "bright_pixel_pct": 1.67,
+        "mean_brightness": 105.08,
+        "median_brightness": 100.0,
+        "regional_statistics": {
+          "quadrant_means": {
+            "top_left": 89.45,
+            "top_right": 114.72,
+            "bottom_left": 102.78,
+            "bottom_right": 113.29
+          },
+          "quadrant_imbalance": 0.2405,
+          "center_mean": 109.61,
+          "periphery_mean": 100.74,
+          "center_periphery_ratio": 1.088
+        },
+        "decision": "Well Illuminated",
+        "diagnostics": {
+          "exposure_state": "Acceptable Exposure",
+          "std_brightness": 27.38,
+          "p5_brightness": 81.0,
+          "p95_brightness": 138.0,
+          "foreground_pixels": 118818,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.8058,
+          "resolution_evaluated": [
+            384,
+            384
+          ]
+        },
+        "thresholds": {
+          "poor_threshold": 45.0,
+          "well_threshold": 65.0,
+          "optimal_mean_luminance": 115.0,
+          "dark_cutoff": 30.0,
+          "bright_cutoff": 220.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "fov_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c0_grade2_dup.png",
+        "image_dimensions": [
+          384,
+          384
+        ],
+        "retinal_foreground_area": 118818,
+        "coverage_pct": 80.58,
+        "bounding_box": [
+          0,
+          0,
+          384,
+          384
+        ],
+        "aspect_ratio": 1.0,
+        "retinal_center": [
+          192.39,
+          190.39
+        ],
+        "image_center": [
+          192.0,
+          192.0
+        ],
+        "normalized_horizontal_offset": 0.002,
+        "normalized_vertical_offset": 0.0084,
+        "radial_center_offset": 0.0086,
+        "fov_score": 100.0,
+        "centering_score": 97.85,
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            304.5,
+            146.9
+          ],
+          "radius": 29,
+          "confidence": 0.84,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered",
+        "diagnostics": {
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "total_pixels": 147456,
+          "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+        },
+        "thresholds": {
+          "poor_fov_threshold": 50.0,
+          "adequate_fov_threshold": 75.0,
+          "well_centered_max_offset": 0.08,
+          "poor_centered_min_offset": 0.2,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "dr_grade": "Grade 2 (Moderate DR)",
+      "filename": "cell13_r1_c0_grade2_dup.png"
+    },
+    {
+      "final_class": "GOOD",
+      "composite_score": 74.14,
+      "component_scores": {
+        "focus_score": 61.69,
+        "illumination_score": 77.58,
+        "fov_score": 92.62,
+        "centering_score": 76.69
+      },
+      "triggered_quality_gates": [],
+      "diagnostic_reasons": [
+        "All quality dimensions meet or exceed acceptance criteria (Composite score: 74.14)."
+      ],
+      "recommended_action": "Proceed to DR classification.",
+      "sub_decisions": {
+        "focus_decision": "Sharp",
+        "illumination_decision": "Well Illuminated",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Borderline Centering"
+      },
+      "weights": {
+        "fov": 0.2,
+        "focus": 0.4,
+        "illumination": 0.3,
+        "centering": 0.1
+      },
+      "diagnostics": {
+        "focus_raw_metric": 173.0962,
+        "illumination_mean_brightness": 119.94,
+        "retinal_coverage_pct": 72.74,
+        "radial_center_offset": 0.0933,
+        "optic_disc_confidence": 0.89,
+        "optic_disc_detected": true
+      },
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c2_grade4.png",
+      "focus_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c2_grade4.png",
+        "raw_metric": 173.0962,
+        "tenengrad_energy": 6427.4995,
+        "normalized_score": 61.69,
+        "decision": "Sharp",
+        "diagnostics": {
+          "channel_used": "green",
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "foreground_pixels": 107265,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.7274,
+          "laplacian_min": -163.0,
+          "laplacian_max": 243.0,
+          "tenengrad_mean": 6427.5
+        },
+        "thresholds": {
+          "blurry_threshold": 25.0,
+          "sharp_threshold": 50.0,
+          "log_midpoint": 100.0,
+          "log_slope": 2.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "illumination_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c2_grade4.png",
+        "exposure_score": 84.31,
+        "uniformity_score": 69.35,
+        "overall_illumination_score": 77.58,
+        "dark_pixel_pct": 0.29,
+        "bright_pixel_pct": 2.06,
+        "mean_brightness": 119.94,
+        "median_brightness": 114.0,
+        "regional_statistics": {
+          "quadrant_means": {
+            "top_left": 118.9,
+            "top_right": 107.85,
+            "bottom_left": 133.11,
+            "bottom_right": 123.11
+          },
+          "quadrant_imbalance": 0.2106,
+          "center_mean": 123.61,
+          "periphery_mean": 114.56,
+          "center_periphery_ratio": 1.079
+        },
+        "decision": "Well Illuminated",
+        "diagnostics": {
+          "exposure_state": "Acceptable Exposure",
+          "std_brightness": 27.01,
+          "p5_brightness": 97.0,
+          "p95_brightness": 154.0,
+          "foreground_pixels": 107265,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.7274,
+          "resolution_evaluated": [
+            384,
+            384
+          ]
+        },
+        "thresholds": {
+          "poor_threshold": 45.0,
+          "well_threshold": 65.0,
+          "optimal_mean_luminance": 115.0,
+          "dark_cutoff": 30.0,
+          "bright_cutoff": 220.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "fov_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c2_grade4.png",
+        "image_dimensions": [
+          384,
+          384
+        ],
+        "retinal_foreground_area": 107265,
+        "coverage_pct": 72.74,
+        "bounding_box": [
+          0,
+          0,
+          384,
+          384
+        ],
+        "aspect_ratio": 1.0,
+        "retinal_center": [
+          209.82,
+          190.3
+        ],
+        "image_center": [
+          192.0,
+          192.0
+        ],
+        "normalized_horizontal_offset": 0.0928,
+        "normalized_vertical_offset": 0.0089,
+        "radial_center_offset": 0.0933,
+        "fov_score": 92.62,
+        "centering_score": 76.69,
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            133.9,
+            192.6
+          ],
+          "radius": 28,
+          "confidence": 0.89,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Borderline Centering",
+        "diagnostics": {
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "total_pixels": 147456,
+          "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+        },
+        "thresholds": {
+          "poor_fov_threshold": 50.0,
+          "adequate_fov_threshold": 75.0,
+          "well_centered_max_offset": 0.08,
+          "poor_centered_min_offset": 0.2,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "dr_grade": "Grade 4 (Proliferative DR)",
+      "filename": "cell13_r1_c2_grade4.png"
+    },
+    {
+      "final_class": "BORDERLINE",
+      "composite_score": 70.0,
+      "component_scores": {
+        "focus_score": 59.37,
+        "illumination_score": 55.02,
+        "fov_score": 100.0,
+        "centering_score": 97.46
+      },
+      "triggered_quality_gates": [
+        {
+          "gate": "suboptimal_illumination",
+          "dimension": "illumination",
+          "value": 55.02,
+          "threshold": 65.0,
+          "reason": "Sub-optimal illumination (score 55.02 < 65.0)."
+        }
+      ],
+      "diagnostic_reasons": [
+        "Sub-optimal illumination (score 55.02 < 65.0)."
+      ],
+      "recommended_action": "Enhancement recommended before DR classification.",
+      "sub_decisions": {
+        "focus_decision": "Sharp",
+        "illumination_decision": "Borderline Illumination",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered"
+      },
+      "weights": {
+        "fov": 0.2,
+        "focus": 0.4,
+        "illumination": 0.3,
+        "centering": 0.1
+      },
+      "diagnostics": {
+        "focus_raw_metric": 154.7581,
+        "illumination_mean_brightness": 70.32,
+        "retinal_coverage_pct": 89.88,
+        "radial_center_offset": 0.0102,
+        "optic_disc_confidence": 0.68,
+        "optic_disc_detected": true
+      },
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c1_grade3.png",
+      "focus_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c1_grade3.png",
+        "raw_metric": 154.7581,
+        "tenengrad_energy": 4680.643,
+        "normalized_score": 59.37,
+        "decision": "Sharp",
+        "diagnostics": {
+          "channel_used": "green",
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "foreground_pixels": 132531,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.8988,
+          "laplacian_min": -163.0,
+          "laplacian_max": 224.0,
+          "tenengrad_mean": 4680.64
+        },
+        "thresholds": {
+          "blurry_threshold": 25.0,
+          "sharp_threshold": 50.0,
+          "log_midpoint": 100.0,
+          "log_slope": 2.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "illumination_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c1_grade3.png",
+        "exposure_score": 54.51,
+        "uniformity_score": 55.65,
+        "overall_illumination_score": 55.02,
+        "dark_pixel_pct": 0.22,
+        "bright_pixel_pct": 1.45,
+        "mean_brightness": 70.32,
+        "median_brightness": 67.0,
+        "regional_statistics": {
+          "quadrant_means": {
+            "top_left": 76.82,
+            "top_right": 70.89,
+            "bottom_left": 70.02,
+            "bottom_right": 63.41
+          },
+          "quadrant_imbalance": 0.1907,
+          "center_mean": 70.71,
+          "periphery_mean": 70.02,
+          "center_periphery_ratio": 1.01
+        },
+        "decision": "Borderline Illumination",
+        "diagnostics": {
+          "exposure_state": "Underexposed / Low Luminance",
+          "std_brightness": 28.93,
+          "p5_brightness": 46.0,
+          "p95_brightness": 107.0,
+          "foreground_pixels": 132531,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.8988,
+          "resolution_evaluated": [
+            384,
+            384
+          ]
+        },
+        "thresholds": {
+          "poor_threshold": 45.0,
+          "well_threshold": 65.0,
+          "optimal_mean_luminance": 115.0,
+          "dark_cutoff": 30.0,
+          "bright_cutoff": 220.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "fov_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c1_grade3.png",
+        "image_dimensions": [
+          384,
+          384
+        ],
+        "retinal_foreground_area": 132531,
+        "coverage_pct": 89.88,
+        "bounding_box": [
+          0,
+          0,
+          384,
+          384
+        ],
+        "aspect_ratio": 1.0,
+        "retinal_center": [
+          191.87,
+          190.05
+        ],
+        "image_center": [
+          192.0,
+          192.0
+        ],
+        "normalized_horizontal_offset": 0.0007,
+        "normalized_vertical_offset": 0.0102,
+        "radial_center_offset": 0.0102,
+        "fov_score": 100.0,
+        "centering_score": 97.46,
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            49.3,
+            126.4
+          ],
+          "radius": 25,
+          "confidence": 0.68,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered",
+        "diagnostics": {
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "total_pixels": 147456,
+          "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+        },
+        "thresholds": {
+          "poor_fov_threshold": 50.0,
+          "adequate_fov_threshold": 75.0,
+          "well_centered_max_offset": 0.08,
+          "poor_centered_min_offset": 0.2,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "dr_grade": "Grade 3 (Severe DR)",
+      "filename": "cell13_r1_c1_grade3.png"
+    },
+    {
+      "final_class": "BORDERLINE",
+      "composite_score": 68.8,
+      "component_scores": {
+        "focus_score": 31.15,
+        "illumination_score": 87.99,
+        "fov_score": 100.0,
+        "centering_score": 99.4
+      },
+      "triggered_quality_gates": [
+        {
+          "gate": "suboptimal_focus",
+          "dimension": "focus",
+          "value": 31.15,
+          "threshold": 50.0,
+          "reason": "Sub-optimal focus (score 31.15 < 50.0)."
+        },
+        {
+          "gate": "composite_below_good",
+          "dimension": "composite",
+          "value": 68.8,
+          "threshold": 70.0,
+          "reason": "Composite quality score (68.80) below standard threshold (70.0)."
+        }
+      ],
+      "diagnostic_reasons": [
+        "Sub-optimal focus (score 31.15 < 50.0).",
+        "Composite quality score (68.80) below standard threshold (70.0)."
+      ],
+      "recommended_action": "Enhancement recommended before DR classification.",
+      "sub_decisions": {
+        "focus_decision": "Borderline",
+        "illumination_decision": "Well Illuminated",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered"
+      },
+      "weights": {
+        "fov": 0.2,
+        "focus": 0.4,
+        "illumination": 0.3,
+        "centering": 0.1
+      },
+      "diagnostics": {
+        "focus_raw_metric": 40.1236,
+        "illumination_mean_brightness": 106.75,
+        "retinal_coverage_pct": 79.37,
+        "radial_center_offset": 0.0024,
+        "optic_disc_confidence": 0.88,
+        "optic_disc_detected": true
+      },
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c1_grade1.png",
+      "focus_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c1_grade1.png",
+        "raw_metric": 40.1236,
+        "tenengrad_energy": 1368.2142,
+        "normalized_score": 31.15,
+        "decision": "Borderline",
+        "diagnostics": {
+          "channel_used": "green",
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "foreground_pixels": 117029,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.7937,
+          "laplacian_min": -78.0,
+          "laplacian_max": 119.0,
+          "tenengrad_mean": 1368.21
+        },
+        "thresholds": {
+          "blurry_threshold": 25.0,
+          "sharp_threshold": 50.0,
+          "log_midpoint": 100.0,
+          "log_slope": 2.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "illumination_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c1_grade1.png",
+        "exposure_score": 96.32,
+        "uniformity_score": 77.81,
+        "overall_illumination_score": 87.99,
+        "dark_pixel_pct": 0.41,
+        "bright_pixel_pct": 0.0,
+        "mean_brightness": 106.75,
+        "median_brightness": 105.0,
+        "regional_statistics": {
+          "quadrant_means": {
+            "top_left": 114.83,
+            "top_right": 96.42,
+            "bottom_left": 112.11,
+            "bottom_right": 103.83
+          },
+          "quadrant_imbalance": 0.1725,
+          "center_mean": 108.58,
+          "periphery_mean": 106.06,
+          "center_periphery_ratio": 1.024
+        },
+        "decision": "Well Illuminated",
+        "diagnostics": {
+          "exposure_state": "Acceptable Exposure",
+          "std_brightness": 15.8,
+          "p5_brightness": 92.0,
+          "p95_brightness": 131.0,
+          "foreground_pixels": 117029,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.7937,
+          "resolution_evaluated": [
+            384,
+            384
+          ]
+        },
+        "thresholds": {
+          "poor_threshold": 45.0,
+          "well_threshold": 65.0,
+          "optimal_mean_luminance": 115.0,
+          "dark_cutoff": 30.0,
+          "bright_cutoff": 220.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "fov_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c1_grade1.png",
+        "image_dimensions": [
+          384,
+          384
+        ],
+        "retinal_foreground_area": 117029,
+        "coverage_pct": 79.37,
+        "bounding_box": [
+          0,
+          0,
+          384,
+          384
+        ],
+        "aspect_ratio": 1.0,
+        "retinal_center": [
+          192.45,
+          191.9
+        ],
+        "image_center": [
+          192.0,
+          192.0
+        ],
+        "normalized_horizontal_offset": 0.0024,
+        "normalized_vertical_offset": 0.0005,
+        "radial_center_offset": 0.0024,
+        "fov_score": 100.0,
+        "centering_score": 99.4,
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            72.9,
+            122.9
+          ],
+          "radius": 29,
+          "confidence": 0.88,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered",
+        "diagnostics": {
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "total_pixels": 147456,
+          "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+        },
+        "thresholds": {
+          "poor_fov_threshold": 50.0,
+          "adequate_fov_threshold": 75.0,
+          "well_centered_max_offset": 0.08,
+          "poor_centered_min_offset": 0.2,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "dr_grade": "Grade 1 (Mild DR)",
+      "filename": "cell13_r0_c1_grade1.png"
+    },
+    {
+      "final_class": "BORDERLINE",
+      "composite_score": 63.25,
+      "component_scores": {
+        "focus_score": 21.63,
+        "illumination_score": 83.16,
+        "fov_score": 100.0,
+        "centering_score": 96.54
+      },
+      "triggered_quality_gates": [
+        {
+          "gate": "suboptimal_focus",
+          "dimension": "focus",
+          "value": 21.63,
+          "threshold": 50.0,
+          "reason": "Sub-optimal focus (score 21.63 < 50.0)."
+        },
+        {
+          "gate": "composite_below_good",
+          "dimension": "composite",
+          "value": 63.25,
+          "threshold": 70.0,
+          "reason": "Composite quality score (63.25) below standard threshold (70.0)."
+        }
+      ],
+      "diagnostic_reasons": [
+        "Sub-optimal focus (score 21.63 < 50.0).",
+        "Composite quality score (63.25) below standard threshold (70.0)."
+      ],
+      "recommended_action": "Enhancement recommended before DR classification.",
+      "sub_decisions": {
+        "focus_decision": "Blurry",
+        "illumination_decision": "Well Illuminated",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered"
+      },
+      "weights": {
+        "fov": 0.2,
+        "focus": 0.4,
+        "illumination": 0.3,
+        "centering": 0.1
+      },
+      "diagnostics": {
+        "focus_raw_metric": 22.7205,
+        "illumination_mean_brightness": 91.76,
+        "retinal_coverage_pct": 88.72,
+        "radial_center_offset": 0.0138,
+        "optic_disc_confidence": 0.71,
+        "optic_disc_detected": true
+      },
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_train_sample_c10.png",
+      "focus_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_train_sample_c10.png",
+        "raw_metric": 22.7205,
+        "tenengrad_energy": 896.6692,
+        "normalized_score": 21.63,
+        "decision": "Blurry",
+        "diagnostics": {
+          "channel_used": "green",
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "foreground_pixels": 130827,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.8872,
+          "laplacian_min": -130.0,
+          "laplacian_max": 204.0,
+          "tenengrad_mean": 896.67
+        },
+        "thresholds": {
+          "blurry_threshold": 25.0,
+          "sharp_threshold": 50.0,
+          "log_midpoint": 100.0,
+          "log_slope": 2.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "illumination_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_train_sample_c10.png",
+        "exposure_score": 86.51,
+        "uniformity_score": 79.06,
+        "overall_illumination_score": 83.16,
+        "dark_pixel_pct": 0.23,
+        "bright_pixel_pct": 0.0,
+        "mean_brightness": 91.76,
+        "median_brightness": 91.0,
+        "regional_statistics": {
+          "quadrant_means": {
+            "top_left": 91.36,
+            "top_right": 100.98,
+            "bottom_left": 85.95,
+            "bottom_right": 88.46
+          },
+          "quadrant_imbalance": 0.1638,
+          "center_mean": 95.05,
+          "periphery_mean": 90.15,
+          "center_periphery_ratio": 1.054
+        },
+        "decision": "Well Illuminated",
+        "diagnostics": {
+          "exposure_state": "Acceptable Exposure",
+          "std_brightness": 12.75,
+          "p5_brightness": 77.0,
+          "p95_brightness": 107.0,
+          "foreground_pixels": 130827,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.8872,
+          "resolution_evaluated": [
+            384,
+            384
+          ]
+        },
+        "thresholds": {
+          "poor_threshold": 45.0,
+          "well_threshold": 65.0,
+          "optimal_mean_luminance": 115.0,
+          "dark_cutoff": 30.0,
+          "bright_cutoff": 220.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "fov_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_train_sample_c10.png",
+        "image_dimensions": [
+          384,
+          384
+        ],
+        "retinal_foreground_area": 130827,
+        "coverage_pct": 88.72,
+        "bounding_box": [
+          0,
+          0,
+          384,
+          384
+        ],
+        "aspect_ratio": 1.0,
+        "retinal_center": [
+          191.65,
+          189.37
+        ],
+        "image_center": [
+          192.0,
+          192.0
+        ],
+        "normalized_horizontal_offset": 0.0018,
+        "normalized_vertical_offset": 0.0137,
+        "radial_center_offset": 0.0138,
+        "fov_score": 100.0,
+        "centering_score": 96.54,
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            333.8,
+            179.5
+          ],
+          "radius": 32,
+          "confidence": 0.71,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered",
+        "diagnostics": {
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "total_pixels": 147456,
+          "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+        },
+        "thresholds": {
+          "poor_fov_threshold": 50.0,
+          "adequate_fov_threshold": 75.0,
+          "well_centered_max_offset": 0.08,
+          "poor_centered_min_offset": 0.2,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "dr_grade": "Grade 0 (APTOS Train Sample)",
+      "filename": "aptos_train_sample_c10.png"
+    },
+    {
+      "final_class": "BORDERLINE",
+      "composite_score": 62.48,
+      "component_scores": {
+        "focus_score": 25.13,
+        "illumination_score": 75.55,
+        "fov_score": 100.0,
+        "centering_score": 97.62
+      },
+      "triggered_quality_gates": [
+        {
+          "gate": "suboptimal_focus",
+          "dimension": "focus",
+          "value": 25.13,
+          "threshold": 50.0,
+          "reason": "Sub-optimal focus (score 25.13 < 50.0)."
+        },
+        {
+          "gate": "composite_below_good",
+          "dimension": "composite",
+          "value": 62.48,
+          "threshold": 70.0,
+          "reason": "Composite quality score (62.48) below standard threshold (70.0)."
+        }
+      ],
+      "diagnostic_reasons": [
+        "Sub-optimal focus (score 25.13 < 50.0).",
+        "Composite quality score (62.48) below standard threshold (70.0)."
+      ],
+      "recommended_action": "Enhancement recommended before DR classification.",
+      "sub_decisions": {
+        "focus_decision": "Borderline",
+        "illumination_decision": "Well Illuminated",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered"
+      },
+      "weights": {
+        "fov": 0.2,
+        "focus": 0.4,
+        "illumination": 0.3,
+        "centering": 0.1
+      },
+      "diagnostics": {
+        "focus_raw_metric": 28.4526,
+        "illumination_mean_brightness": 78.27,
+        "retinal_coverage_pct": 89.41,
+        "radial_center_offset": 0.0095,
+        "optic_disc_confidence": 0.68,
+        "optic_disc_detected": true
+      },
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c0_grade0.png",
+      "focus_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c0_grade0.png",
+        "raw_metric": 28.4526,
+        "tenengrad_energy": 1013.9213,
+        "normalized_score": 25.13,
+        "decision": "Borderline",
+        "diagnostics": {
+          "channel_used": "green",
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "foreground_pixels": 131840,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.8941,
+          "laplacian_min": -121.0,
+          "laplacian_max": 130.0,
+          "tenengrad_mean": 1013.92
+        },
+        "thresholds": {
+          "blurry_threshold": 25.0,
+          "sharp_threshold": 50.0,
+          "log_midpoint": 100.0,
+          "log_slope": 2.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "illumination_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c0_grade0.png",
+        "exposure_score": 70.95,
+        "uniformity_score": 81.18,
+        "overall_illumination_score": 75.55,
+        "dark_pixel_pct": 0.2,
+        "bright_pixel_pct": 0.0,
+        "mean_brightness": 78.27,
+        "median_brightness": 79.0,
+        "regional_statistics": {
+          "quadrant_means": {
+            "top_left": 81.28,
+            "top_right": 83.51,
+            "bottom_left": 74.41,
+            "bottom_right": 73.74
+          },
+          "quadrant_imbalance": 0.1248,
+          "center_mean": 78.89,
+          "periphery_mean": 77.97,
+          "center_periphery_ratio": 1.012
+        },
+        "decision": "Well Illuminated",
+        "diagnostics": {
+          "exposure_state": "Acceptable Exposure",
+          "std_brightness": 11.09,
+          "p5_brightness": 62.0,
+          "p95_brightness": 92.0,
+          "foreground_pixels": 131840,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.8941,
+          "resolution_evaluated": [
+            384,
+            384
+          ]
+        },
+        "thresholds": {
+          "poor_threshold": 45.0,
+          "well_threshold": 65.0,
+          "optimal_mean_luminance": 115.0,
+          "dark_cutoff": 30.0,
+          "bright_cutoff": 220.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "fov_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c0_grade0.png",
+        "image_dimensions": [
+          384,
+          384
+        ],
+        "retinal_foreground_area": 131840,
+        "coverage_pct": 89.41,
+        "bounding_box": [
+          0,
+          0,
+          384,
+          384
+        ],
+        "aspect_ratio": 1.0,
+        "retinal_center": [
+          191.84,
+          190.18
+        ],
+        "image_center": [
+          192.0,
+          192.0
+        ],
+        "normalized_horizontal_offset": 0.0008,
+        "normalized_vertical_offset": 0.0095,
+        "radial_center_offset": 0.0095,
+        "fov_score": 100.0,
+        "centering_score": 97.62,
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            310.5,
+            185.4
+          ],
+          "radius": 30,
+          "confidence": 0.68,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered",
+        "diagnostics": {
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "total_pixels": 147456,
+          "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+        },
+        "thresholds": {
+          "poor_fov_threshold": 50.0,
+          "adequate_fov_threshold": 75.0,
+          "well_centered_max_offset": 0.08,
+          "poor_centered_min_offset": 0.2,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "dr_grade": "Grade 0 (No DR)",
+      "filename": "cell13_r0_c0_grade0.png"
+    },
+    {
+      "final_class": "BORDERLINE",
+      "composite_score": 59.97,
+      "component_scores": {
+        "focus_score": 22.57,
+        "illumination_score": 70.2,
+        "fov_score": 100.0,
+        "centering_score": 98.78
+      },
+      "triggered_quality_gates": [
+        {
+          "gate": "suboptimal_focus",
+          "dimension": "focus",
+          "value": 22.57,
+          "threshold": 50.0,
+          "reason": "Sub-optimal focus (score 22.57 < 50.0)."
+        },
+        {
+          "gate": "composite_below_good",
+          "dimension": "composite",
+          "value": 59.97,
+          "threshold": 70.0,
+          "reason": "Composite quality score (59.97) below standard threshold (70.0)."
+        }
+      ],
+      "diagnostic_reasons": [
+        "Sub-optimal focus (score 22.57 < 50.0).",
+        "Composite quality score (59.97) below standard threshold (70.0)."
+      ],
+      "recommended_action": "Enhancement recommended before DR classification.",
+      "sub_decisions": {
+        "focus_decision": "Blurry",
+        "illumination_decision": "Well Illuminated",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered"
+      },
+      "weights": {
+        "fov": 0.2,
+        "focus": 0.4,
+        "illumination": 0.3,
+        "centering": 0.1
+      },
+      "diagnostics": {
+        "focus_raw_metric": 24.1941,
+        "illumination_mean_brightness": 85.84,
+        "retinal_coverage_pct": 78.92,
+        "radial_center_offset": 0.0049,
+        "optic_disc_confidence": 0.74,
+        "optic_disc_detected": true
+      },
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c2_grade2.png",
+      "focus_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c2_grade2.png",
+        "raw_metric": 24.1941,
+        "tenengrad_energy": 1050.927,
+        "normalized_score": 22.57,
+        "decision": "Blurry",
+        "diagnostics": {
+          "channel_used": "green",
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "foreground_pixels": 116368,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.7892,
+          "laplacian_min": -90.0,
+          "laplacian_max": 96.0,
+          "tenengrad_mean": 1050.93
+        },
+        "thresholds": {
+          "blurry_threshold": 25.0,
+          "sharp_threshold": 50.0,
+          "log_midpoint": 100.0,
+          "log_slope": 2.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "illumination_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c2_grade2.png",
+        "exposure_score": 78.94,
+        "uniformity_score": 59.51,
+        "overall_illumination_score": 70.2,
+        "dark_pixel_pct": 0.39,
+        "bright_pixel_pct": 0.1,
+        "mean_brightness": 85.84,
+        "median_brightness": 85.0,
+        "regional_statistics": {
+          "quadrant_means": {
+            "top_left": 73.84,
+            "top_right": 80.78,
+            "bottom_left": 83.72,
+            "bottom_right": 105.08
+          },
+          "quadrant_imbalance": 0.3639,
+          "center_mean": 90.67,
+          "periphery_mean": 84.06,
+          "center_periphery_ratio": 1.079
+        },
+        "decision": "Well Illuminated",
+        "diagnostics": {
+          "exposure_state": "Acceptable Exposure",
+          "std_brightness": 20.02,
+          "p5_brightness": 57.0,
+          "p95_brightness": 117.0,
+          "foreground_pixels": 116368,
+          "total_pixels": 147456,
+          "foreground_fraction": 0.7892,
+          "resolution_evaluated": [
+            384,
+            384
+          ]
+        },
+        "thresholds": {
+          "poor_threshold": 45.0,
+          "well_threshold": 65.0,
+          "optimal_mean_luminance": 115.0,
+          "dark_cutoff": 30.0,
+          "bright_cutoff": 220.0,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "fov_assessment": {
+        "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c2_grade2.png",
+        "image_dimensions": [
+          384,
+          384
+        ],
+        "retinal_foreground_area": 116368,
+        "coverage_pct": 78.92,
+        "bounding_box": [
+          0,
+          0,
+          384,
+          384
+        ],
+        "aspect_ratio": 1.0,
+        "retinal_center": [
+          191.76,
+          191.09
+        ],
+        "image_center": [
+          192.0,
+          192.0
+        ],
+        "normalized_horizontal_offset": 0.0012,
+        "normalized_vertical_offset": 0.0047,
+        "radial_center_offset": 0.0049,
+        "fov_score": 100.0,
+        "centering_score": 98.78,
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            289.9,
+            275.9
+          ],
+          "radius": 21,
+          "confidence": 0.74,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered",
+        "diagnostics": {
+          "resolution_evaluated": [
+            384,
+            384
+          ],
+          "total_pixels": 147456,
+          "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+        },
+        "thresholds": {
+          "poor_fov_threshold": 50.0,
+          "adequate_fov_threshold": 75.0,
+          "well_centered_max_offset": 0.08,
+          "poor_centered_min_offset": 0.2,
+          "status": "engineering_baseline_not_clinically_validated",
+          "clinical_validation": false
+        }
+      },
+      "dr_grade": "Grade 2 (Moderate DR)",
+      "filename": "cell13_r0_c2_grade2.png"
+    }
+  ]
+}

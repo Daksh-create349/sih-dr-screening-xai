@@ -1,0 +1,288 @@
+{
+  "milestone": "Milestone 13 - Step 2: System Runtime Profiling",
+  "environment": {
+    "python_version": "3.13.5",
+    "python_executable": "/opt/anaconda3/bin/python",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "system": "Darwin",
+    "release": "25.6.0",
+    "machine": "arm64",
+    "processor": "arm",
+    "cpu_count": 10
+  },
+  "image_count": 9,
+  "repetitions": 3,
+  "total_evaluations_per_component": 27,
+  "cold_model_load": {
+    "cold_load_seconds": 0.6192,
+    "cold_load_ms": 619.23
+  },
+  "image_sizes": {
+    "file_details": [
+      {
+        "filename": "aptos_eval_6959267_grade3.png",
+        "size_bytes": 385184,
+        "size_kb": 376.16,
+        "size_mb": 0.3673
+      },
+      {
+        "filename": "aptos_train_sample_c10.png",
+        "size_bytes": 166504,
+        "size_kb": 162.6,
+        "size_mb": 0.1588
+      },
+      {
+        "filename": "cell13_r0_c0_grade0.png",
+        "size_bytes": 185854,
+        "size_kb": 181.5,
+        "size_mb": 0.1772
+      },
+      {
+        "filename": "cell13_r0_c1_grade1.png",
+        "size_bytes": 227884,
+        "size_kb": 222.54,
+        "size_mb": 0.2173
+      },
+      {
+        "filename": "cell13_r0_c2_grade2.png",
+        "size_bytes": 182018,
+        "size_kb": 177.75,
+        "size_mb": 0.1736
+      },
+      {
+        "filename": "cell13_r1_c0_grade2_dup.png",
+        "size_bytes": 226430,
+        "size_kb": 221.12,
+        "size_mb": 0.2159
+      },
+      {
+        "filename": "cell13_r1_c1_grade3.png",
+        "size_bytes": 203125,
+        "size_kb": 198.36,
+        "size_mb": 0.1937
+      },
+      {
+        "filename": "cell13_r1_c2_grade4.png",
+        "size_bytes": 201238,
+        "size_kb": 196.52,
+        "size_mb": 0.1919
+      },
+      {
+        "filename": "confirmed_grade4_proliferative.jpg",
+        "size_bytes": 10343,
+        "size_kb": 10.1,
+        "size_mb": 0.0099
+      }
+    ],
+    "count": 9,
+    "mean_bytes": 198731.1,
+    "median_bytes": 201238.0,
+    "min_bytes": 10343,
+    "max_bytes": 385184,
+    "std_bytes": 90296.6,
+    "mean_mb": 0.1895,
+    "median_mb": 0.1919,
+    "min_mb": 0.0099,
+    "max_mb": 0.3673
+  },
+  "path_distribution": {
+    "GOOD": 4,
+    "BORDERLINE": 5,
+    "UNGRADEABLE": 0
+  },
+  "per_image_summary": [
+    {
+      "filename": "aptos_eval_6959267_grade3.png",
+      "quality_status": "GOOD",
+      "composite_score": 81.9
+    },
+    {
+      "filename": "aptos_train_sample_c10.png",
+      "quality_status": "BORDERLINE",
+      "composite_score": 63.25
+    },
+    {
+      "filename": "cell13_r0_c0_grade0.png",
+      "quality_status": "BORDERLINE",
+      "composite_score": 62.48
+    },
+    {
+      "filename": "cell13_r0_c1_grade1.png",
+      "quality_status": "BORDERLINE",
+      "composite_score": 68.8
+    },
+    {
+      "filename": "cell13_r0_c2_grade2.png",
+      "quality_status": "BORDERLINE",
+      "composite_score": 59.97
+    },
+    {
+      "filename": "cell13_r1_c0_grade2_dup.png",
+      "quality_status": "GOOD",
+      "composite_score": 75.42
+    },
+    {
+      "filename": "cell13_r1_c1_grade3.png",
+      "quality_status": "BORDERLINE",
+      "composite_score": 70.0
+    },
+    {
+      "filename": "cell13_r1_c2_grade4.png",
+      "quality_status": "GOOD",
+      "composite_score": 74.14
+    },
+    {
+      "filename": "confirmed_grade4_proliferative.jpg",
+      "quality_status": "GOOD",
+      "composite_score": 86.42
+    }
+  ],
+  "components": {
+    "image_loading": {
+      "mean_ms": 4.125,
+      "median_ms": 4.364,
+      "std_ms": 1.147,
+      "min_ms": 1.158,
+      "max_ms": 6.702,
+      "p50_ms": 4.364,
+      "p90_ms": 5.07,
+      "p95_ms": 5.315,
+      "sample_count": 27
+    },
+    "iqa_scoring": {
+      "mean_ms": 21.206,
+      "median_ms": 21.923,
+      "std_ms": 3.092,
+      "min_ms": 13.055,
+      "max_ms": 26.422,
+      "p50_ms": 21.923,
+      "p90_ms": 23.907,
+      "p95_ms": 24.346,
+      "sample_count": 27
+    },
+    "quality_decision": {
+      "mean_ms": 0.008,
+      "median_ms": 0.008,
+      "std_ms": 0.001,
+      "min_ms": 0.005,
+      "max_ms": 0.01,
+      "p50_ms": 0.008,
+      "p90_ms": 0.009,
+      "p95_ms": 0.009,
+      "sample_count": 27
+    },
+    "borderline_enhancement": {
+      "mean_ms": 5.32,
+      "median_ms": 3.075,
+      "std_ms": 11.379,
+      "min_ms": 1.583,
+      "max_ms": 63.178,
+      "p50_ms": 3.075,
+      "p90_ms": 4.372,
+      "p95_ms": 4.724,
+      "sample_count": 27
+    },
+    "classifier_inference": {
+      "mean_ms": 277.44,
+      "median_ms": 279.282,
+      "std_ms": 8.639,
+      "min_ms": 236.726,
+      "max_ms": 283.856,
+      "p50_ms": 279.282,
+      "p90_ms": 282.761,
+      "p95_ms": 283.075,
+      "sample_count": 27
+    },
+    "referable_decision": {
+      "mean_ms": 0.637,
+      "median_ms": 0.651,
+      "std_ms": 0.422,
+      "min_ms": 0.006,
+      "max_ms": 1.274,
+      "p50_ms": 0.651,
+      "p90_ms": 1.196,
+      "p95_ms": 1.268,
+      "sample_count": 27
+    },
+    "gradcam_computation": {
+      "mean_ms": 1026.382,
+      "median_ms": 1023.894,
+      "std_ms": 8.371,
+      "min_ms": 1014.946,
+      "max_ms": 1052.725,
+      "p50_ms": 1023.894,
+      "p90_ms": 1035.934,
+      "p95_ms": 1045.515,
+      "sample_count": 27
+    },
+    "evidence_generation": {
+      "mean_ms": 1044.899,
+      "median_ms": 1039.107,
+      "std_ms": 26.041,
+      "min_ms": 1017.9,
+      "max_ms": 1151.922,
+      "p50_ms": 1039.107,
+      "p90_ms": 1064.523,
+      "p95_ms": 1086.902,
+      "sample_count": 27
+    },
+    "report_generation": {
+      "mean_ms": 202.355,
+      "median_ms": 328.561,
+      "std_ms": 155.397,
+      "min_ms": 14.891,
+      "max_ms": 355.727,
+      "p50_ms": 328.561,
+      "p90_ms": 348.999,
+      "p95_ms": 354.304,
+      "sample_count": 27
+    },
+    "pipeline_end_to_end": {
+      "mean_ms": 489.919,
+      "median_ms": 608.322,
+      "std_ms": 160.146,
+      "min_ms": 290.313,
+      "max_ms": 658.142,
+      "p50_ms": 608.322,
+      "p90_ms": 645.065,
+      "p95_ms": 654.437,
+      "sample_count": 27
+    }
+  },
+  "paths": {
+    "path_a_good": {
+      "mean_ms": 2369.965,
+      "median_ms": 2364.026,
+      "std_ms": 34.116,
+      "min_ms": 2334.173,
+      "max_ms": 2468.05,
+      "p50_ms": 2364.026,
+      "p90_ms": 2389.946,
+      "p95_ms": 2425.698,
+      "sample_count": 12
+    },
+    "path_b_borderline": {
+      "mean_ms": 2419.153,
+      "median_ms": 2402.916,
+      "std_ms": 45.041,
+      "min_ms": 2387.773,
+      "max_ms": 2559.767,
+      "p50_ms": 2402.916,
+      "p90_ms": 2463.908,
+      "p95_ms": 2514.906,
+      "sample_count": 15
+    },
+    "path_c_ungradeable": {
+      "mean_ms": 15.513,
+      "median_ms": 15.601,
+      "std_ms": 0.79,
+      "min_ms": 14.428,
+      "max_ms": 16.951,
+      "p50_ms": 15.601,
+      "p90_ms": 16.322,
+      "p95_ms": 16.636,
+      "sample_count": 9
+    }
+  },
+  "measured_status": "MEASURED"
+}

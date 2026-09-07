@@ -1,0 +1,1629 @@
+{
+  "dataset_directory": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images",
+  "output_directory": "/Users/dakshsrivastava/Desktop/DR /image_quality/results/enhancement",
+  "total_borderline_evaluated": 5,
+  "candidate_methods_tested": [
+    "clahe",
+    "unsharp",
+    "ben_graham",
+    "denoise"
+  ],
+  "summary_counts": {
+    "improved": 5,
+    "unchanged": 0,
+    "degraded": 0,
+    "now_good": 0,
+    "still_borderline": 5,
+    "now_ungradeable": 0
+  },
+  "score_statistics": {
+    "min_delta_composite": 4.45,
+    "max_delta_composite": 9.63,
+    "mean_delta_composite": 7.14,
+    "median_delta_composite": 7.19
+  },
+  "results": [
+    {
+      "original_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_train_sample_c10.png",
+      "best_method": "clahe",
+      "selected_evaluation": {
+        "original_path": "in_memory_array",
+        "enhanced_path": "in_memory_array",
+        "enhancement_method": "clahe",
+        "accepted": true,
+        "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+        "before_scores": {
+          "composite_score": 63.25,
+          "component_scores": {
+            "focus_score": 21.63,
+            "illumination_score": 83.16,
+            "fov_score": 100.0,
+            "centering_score": 96.54
+          },
+          "final_class": "BORDERLINE",
+          "triggered_gates": [
+            "suboptimal_focus",
+            "composite_below_good"
+          ]
+        },
+        "after_scores": {
+          "composite_score": 69.03,
+          "component_scores": {
+            "focus_score": 33.8,
+            "illumination_score": 86.18,
+            "fov_score": 100.0,
+            "centering_score": 96.55
+          },
+          "final_class": "BORDERLINE",
+          "triggered_gates": [
+            "suboptimal_focus",
+            "composite_below_good"
+          ]
+        },
+        "score_differences": {
+          "delta_composite": 5.78,
+          "delta_focus": 12.17,
+          "delta_illumination": 3.02,
+          "delta_fov": 0.0,
+          "delta_centering": 0.01
+        },
+        "distortion_metrics": {
+          "delta_e": 8.81,
+          "chroma_shift": 0.27,
+          "orig_dark_clip_pct": 7.06,
+          "enh_dark_clip_pct": 4.52,
+          "dark_clip_diff_pct": -2.54,
+          "orig_bright_clip_pct": 0.36,
+          "enh_bright_clip_pct": 0.52,
+          "bright_clip_diff_pct": 0.17,
+          "laplacian_orig_var": 27.58,
+          "laplacian_enh_var": 60.44,
+          "gradient_ratio": 2.19
+        },
+        "safeguard_violations": [],
+        "final_routing": {
+          "active_image_source": "enhanced",
+          "effective_class": "BORDERLINE",
+          "effective_composite_score": 69.03
+        }
+      },
+      "all_evaluations": [
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "clahe",
+          "accepted": true,
+          "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+          "before_scores": {
+            "composite_score": 63.25,
+            "component_scores": {
+              "focus_score": 21.63,
+              "illumination_score": 83.16,
+              "fov_score": 100.0,
+              "centering_score": 96.54
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 69.03,
+            "component_scores": {
+              "focus_score": 33.8,
+              "illumination_score": 86.18,
+              "fov_score": 100.0,
+              "centering_score": 96.55
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "score_differences": {
+            "delta_composite": 5.78,
+            "delta_focus": 12.17,
+            "delta_illumination": 3.02,
+            "delta_fov": 0.0,
+            "delta_centering": 0.01
+          },
+          "distortion_metrics": {
+            "delta_e": 8.81,
+            "chroma_shift": 0.27,
+            "orig_dark_clip_pct": 7.06,
+            "enh_dark_clip_pct": 4.52,
+            "dark_clip_diff_pct": -2.54,
+            "orig_bright_clip_pct": 0.36,
+            "enh_bright_clip_pct": 0.52,
+            "bright_clip_diff_pct": 0.17,
+            "laplacian_orig_var": 27.58,
+            "laplacian_enh_var": 60.44,
+            "gradient_ratio": 2.19
+          },
+          "safeguard_violations": [],
+          "final_routing": {
+            "active_image_source": "enhanced",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 69.03
+          }
+        },
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "unsharp",
+          "accepted": true,
+          "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+          "before_scores": {
+            "composite_score": 63.25,
+            "component_scores": {
+              "focus_score": 21.63,
+              "illumination_score": 83.16,
+              "fov_score": 100.0,
+              "centering_score": 96.54
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 68.86,
+            "component_scores": {
+              "focus_score": 35.59,
+              "illumination_score": 83.23,
+              "fov_score": 100.0,
+              "centering_score": 96.53
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "score_differences": {
+            "delta_composite": 5.61,
+            "delta_focus": 13.96,
+            "delta_illumination": 0.07,
+            "delta_fov": 0.0,
+            "delta_centering": -0.01
+          },
+          "distortion_metrics": {
+            "delta_e": 1.07,
+            "chroma_shift": 0.63,
+            "orig_dark_clip_pct": 7.06,
+            "enh_dark_clip_pct": 8.37,
+            "dark_clip_diff_pct": 1.31,
+            "orig_bright_clip_pct": 0.36,
+            "enh_bright_clip_pct": 0.36,
+            "bright_clip_diff_pct": 0.01,
+            "laplacian_orig_var": 27.58,
+            "laplacian_enh_var": 70.76,
+            "gradient_ratio": 2.57
+          },
+          "safeguard_violations": [],
+          "final_routing": {
+            "active_image_source": "enhanced",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 68.86
+          }
+        },
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "ben_graham",
+          "accepted": false,
+          "rejection_reason": "Severe color distortion: chromaticity shift 56.1 > 15.0; High-frequency noise amplification: gradient ratio 10.2 > 3.5",
+          "before_scores": {
+            "composite_score": 63.25,
+            "component_scores": {
+              "focus_score": 21.63,
+              "illumination_score": 83.16,
+              "fov_score": 100.0,
+              "centering_score": 96.54
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 82.34,
+            "component_scores": {
+              "focus_score": 69.93,
+              "illumination_score": 82.37,
+              "fov_score": 100.0,
+              "centering_score": 96.59
+            },
+            "final_class": "GOOD",
+            "triggered_gates": []
+          },
+          "score_differences": {
+            "delta_composite": 19.09,
+            "delta_focus": 48.3,
+            "delta_illumination": -0.79,
+            "delta_fov": 0.0,
+            "delta_centering": 0.05
+          },
+          "distortion_metrics": {
+            "delta_e": 69.78,
+            "chroma_shift": 56.13,
+            "orig_dark_clip_pct": 7.06,
+            "enh_dark_clip_pct": 0.13,
+            "dark_clip_diff_pct": -6.93,
+            "orig_bright_clip_pct": 0.36,
+            "enh_bright_clip_pct": 1.65,
+            "bright_clip_diff_pct": 1.29,
+            "laplacian_orig_var": 27.58,
+            "laplacian_enh_var": 280.92,
+            "gradient_ratio": 10.19
+          },
+          "safeguard_violations": [
+            "Severe color distortion: chromaticity shift 56.1 > 15.0",
+            "High-frequency noise amplification: gradient ratio 10.2 > 3.5"
+          ],
+          "final_routing": {
+            "active_image_source": "original_fallback",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 63.25
+          }
+        },
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "denoise",
+          "accepted": true,
+          "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+          "before_scores": {
+            "composite_score": 63.25,
+            "component_scores": {
+              "focus_score": 21.63,
+              "illumination_score": 83.16,
+              "fov_score": 100.0,
+              "centering_score": 96.54
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 63.38,
+            "component_scores": {
+              "focus_score": 21.92,
+              "illumination_score": 83.2,
+              "fov_score": 100.0,
+              "centering_score": 96.54
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "score_differences": {
+            "delta_composite": 0.13,
+            "delta_focus": 0.29,
+            "delta_illumination": 0.04,
+            "delta_fov": 0.0,
+            "delta_centering": 0.0
+          },
+          "distortion_metrics": {
+            "delta_e": 0.71,
+            "chroma_shift": 0.46,
+            "orig_dark_clip_pct": 7.06,
+            "enh_dark_clip_pct": 6.53,
+            "dark_clip_diff_pct": -0.53,
+            "orig_bright_clip_pct": 0.36,
+            "enh_bright_clip_pct": 0.35,
+            "bright_clip_diff_pct": -0.0,
+            "laplacian_orig_var": 27.58,
+            "laplacian_enh_var": 33.14,
+            "gradient_ratio": 1.2
+          },
+          "safeguard_violations": [],
+          "final_routing": {
+            "active_image_source": "enhanced",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 63.38
+          }
+        }
+      ],
+      "saved_enhanced_path": "/Users/dakshsrivastava/Desktop/DR /image_quality/results/enhancement/aptos_train_sample_c10_clahe.png",
+      "decision_summary": "Selected 'clahe' with composite score 69.03 (+5.78 improvement).",
+      "original_quality": {
+        "composite_score": 63.25,
+        "final_class": "BORDERLINE",
+        "triggered_gates": [
+          "suboptimal_focus",
+          "composite_below_good"
+        ]
+      },
+      "dr_grade": "Grade 0 (APTOS Train Sample)",
+      "original_filename": "aptos_train_sample_c10.png"
+    },
+    {
+      "original_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c0_grade0.png",
+      "best_method": "clahe",
+      "selected_evaluation": {
+        "original_path": "in_memory_array",
+        "enhanced_path": "in_memory_array",
+        "enhancement_method": "clahe",
+        "accepted": true,
+        "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+        "before_scores": {
+          "composite_score": 62.48,
+          "component_scores": {
+            "focus_score": 25.13,
+            "illumination_score": 75.55,
+            "fov_score": 100.0,
+            "centering_score": 97.62
+          },
+          "final_class": "BORDERLINE",
+          "triggered_gates": [
+            "suboptimal_focus",
+            "composite_below_good"
+          ]
+        },
+        "after_scores": {
+          "composite_score": 71.12,
+          "component_scores": {
+            "focus_score": 44.96,
+            "illumination_score": 77.91,
+            "fov_score": 100.0,
+            "centering_score": 97.59
+          },
+          "final_class": "BORDERLINE",
+          "triggered_gates": [
+            "suboptimal_focus"
+          ]
+        },
+        "score_differences": {
+          "delta_composite": 8.64,
+          "delta_focus": 19.83,
+          "delta_illumination": 2.36,
+          "delta_fov": 0.0,
+          "delta_centering": -0.03
+        },
+        "distortion_metrics": {
+          "delta_e": 9.35,
+          "chroma_shift": 0.22,
+          "orig_dark_clip_pct": 33.06,
+          "enh_dark_clip_pct": 14.85,
+          "dark_clip_diff_pct": -18.22,
+          "orig_bright_clip_pct": 0.02,
+          "enh_bright_clip_pct": 0.43,
+          "bright_clip_diff_pct": 0.42,
+          "laplacian_orig_var": 34.54,
+          "laplacian_enh_var": 102.95,
+          "gradient_ratio": 2.98
+        },
+        "safeguard_violations": [],
+        "final_routing": {
+          "active_image_source": "enhanced",
+          "effective_class": "BORDERLINE",
+          "effective_composite_score": 71.12
+        }
+      },
+      "all_evaluations": [
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "clahe",
+          "accepted": true,
+          "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+          "before_scores": {
+            "composite_score": 62.48,
+            "component_scores": {
+              "focus_score": 25.13,
+              "illumination_score": 75.55,
+              "fov_score": 100.0,
+              "centering_score": 97.62
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 71.12,
+            "component_scores": {
+              "focus_score": 44.96,
+              "illumination_score": 77.91,
+              "fov_score": 100.0,
+              "centering_score": 97.59
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus"
+            ]
+          },
+          "score_differences": {
+            "delta_composite": 8.64,
+            "delta_focus": 19.83,
+            "delta_illumination": 2.36,
+            "delta_fov": 0.0,
+            "delta_centering": -0.03
+          },
+          "distortion_metrics": {
+            "delta_e": 9.35,
+            "chroma_shift": 0.22,
+            "orig_dark_clip_pct": 33.06,
+            "enh_dark_clip_pct": 14.85,
+            "dark_clip_diff_pct": -18.22,
+            "orig_bright_clip_pct": 0.02,
+            "enh_bright_clip_pct": 0.43,
+            "bright_clip_diff_pct": 0.42,
+            "laplacian_orig_var": 34.54,
+            "laplacian_enh_var": 102.95,
+            "gradient_ratio": 2.98
+          },
+          "safeguard_violations": [],
+          "final_routing": {
+            "active_image_source": "enhanced",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 71.12
+          }
+        },
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "unsharp",
+          "accepted": true,
+          "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+          "before_scores": {
+            "composite_score": 62.48,
+            "component_scores": {
+              "focus_score": 25.13,
+              "illumination_score": 75.55,
+              "fov_score": 100.0,
+              "centering_score": 97.62
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 68.49,
+            "component_scores": {
+              "focus_score": 40.18,
+              "illumination_score": 75.53,
+              "fov_score": 100.0,
+              "centering_score": 97.59
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "score_differences": {
+            "delta_composite": 6.01,
+            "delta_focus": 15.05,
+            "delta_illumination": -0.02,
+            "delta_fov": 0.0,
+            "delta_centering": -0.03
+          },
+          "distortion_metrics": {
+            "delta_e": 1.28,
+            "chroma_shift": 0.73,
+            "orig_dark_clip_pct": 33.06,
+            "enh_dark_clip_pct": 33.02,
+            "dark_clip_diff_pct": -0.05,
+            "orig_bright_clip_pct": 0.02,
+            "enh_bright_clip_pct": 0.04,
+            "bright_clip_diff_pct": 0.02,
+            "laplacian_orig_var": 34.54,
+            "laplacian_enh_var": 88.59,
+            "gradient_ratio": 2.56
+          },
+          "safeguard_violations": [],
+          "final_routing": {
+            "active_image_source": "enhanced",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 68.49
+          }
+        },
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "ben_graham",
+          "accepted": false,
+          "rejection_reason": "Severe color distortion: chromaticity shift 53.1 > 15.0; High-frequency noise amplification: gradient ratio 10.2 > 3.5",
+          "before_scores": {
+            "composite_score": 62.48,
+            "component_scores": {
+              "focus_score": 25.13,
+              "illumination_score": 75.55,
+              "fov_score": 100.0,
+              "centering_score": 97.62
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 83.39,
+            "component_scores": {
+              "focus_score": 73.08,
+              "illumination_score": 81.35,
+              "fov_score": 100.0,
+              "centering_score": 97.56
+            },
+            "final_class": "GOOD",
+            "triggered_gates": []
+          },
+          "score_differences": {
+            "delta_composite": 20.91,
+            "delta_focus": 47.95,
+            "delta_illumination": 5.8,
+            "delta_fov": 0.0,
+            "delta_centering": -0.06
+          },
+          "distortion_metrics": {
+            "delta_e": 74.78,
+            "chroma_shift": 53.12,
+            "orig_dark_clip_pct": 33.06,
+            "enh_dark_clip_pct": 0.13,
+            "dark_clip_diff_pct": -32.94,
+            "orig_bright_clip_pct": 0.02,
+            "enh_bright_clip_pct": 1.89,
+            "bright_clip_diff_pct": 1.87,
+            "laplacian_orig_var": 34.54,
+            "laplacian_enh_var": 353.08,
+            "gradient_ratio": 10.22
+          },
+          "safeguard_violations": [
+            "Severe color distortion: chromaticity shift 53.1 > 15.0",
+            "High-frequency noise amplification: gradient ratio 10.2 > 3.5"
+          ],
+          "final_routing": {
+            "active_image_source": "original_fallback",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 62.48
+          }
+        },
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "denoise",
+          "accepted": true,
+          "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+          "before_scores": {
+            "composite_score": 62.48,
+            "component_scores": {
+              "focus_score": 25.13,
+              "illumination_score": 75.55,
+              "fov_score": 100.0,
+              "centering_score": 97.62
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 62.22,
+            "component_scores": {
+              "focus_score": 24.44,
+              "illumination_score": 75.6,
+              "fov_score": 100.0,
+              "centering_score": 97.61
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "score_differences": {
+            "delta_composite": -0.26,
+            "delta_focus": -0.69,
+            "delta_illumination": 0.05,
+            "delta_fov": 0.0,
+            "delta_centering": -0.01
+          },
+          "distortion_metrics": {
+            "delta_e": 0.92,
+            "chroma_shift": 0.57,
+            "orig_dark_clip_pct": 33.06,
+            "enh_dark_clip_pct": 33.13,
+            "dark_clip_diff_pct": 0.06,
+            "orig_bright_clip_pct": 0.02,
+            "enh_bright_clip_pct": 0.02,
+            "bright_clip_diff_pct": -0.0,
+            "laplacian_orig_var": 34.54,
+            "laplacian_enh_var": 37.92,
+            "gradient_ratio": 1.1
+          },
+          "safeguard_violations": [],
+          "final_routing": {
+            "active_image_source": "enhanced",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 62.22
+          }
+        }
+      ],
+      "saved_enhanced_path": "/Users/dakshsrivastava/Desktop/DR /image_quality/results/enhancement/cell13_r0_c0_grade0_clahe.png",
+      "decision_summary": "Selected 'clahe' with composite score 71.12 (+8.64 improvement).",
+      "original_quality": {
+        "composite_score": 62.48,
+        "final_class": "BORDERLINE",
+        "triggered_gates": [
+          "suboptimal_focus",
+          "composite_below_good"
+        ]
+      },
+      "dr_grade": "Grade 0 (No DR)",
+      "original_filename": "cell13_r0_c0_grade0.png"
+    },
+    {
+      "original_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c1_grade1.png",
+      "best_method": "clahe",
+      "selected_evaluation": {
+        "original_path": "in_memory_array",
+        "enhanced_path": "in_memory_array",
+        "enhancement_method": "clahe",
+        "accepted": true,
+        "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+        "before_scores": {
+          "composite_score": 68.8,
+          "component_scores": {
+            "focus_score": 31.15,
+            "illumination_score": 87.99,
+            "fov_score": 100.0,
+            "centering_score": 99.4
+          },
+          "final_class": "BORDERLINE",
+          "triggered_gates": [
+            "suboptimal_focus",
+            "composite_below_good"
+          ]
+        },
+        "after_scores": {
+          "composite_score": 75.99,
+          "component_scores": {
+            "focus_score": 48.57,
+            "illumination_score": 88.75,
+            "fov_score": 100.0,
+            "centering_score": 99.39
+          },
+          "final_class": "BORDERLINE",
+          "triggered_gates": [
+            "suboptimal_focus"
+          ]
+        },
+        "score_differences": {
+          "delta_composite": 7.19,
+          "delta_focus": 17.42,
+          "delta_illumination": 0.76,
+          "delta_fov": 0.0,
+          "delta_centering": -0.01
+        },
+        "distortion_metrics": {
+          "delta_e": 8.68,
+          "chroma_shift": 0.23,
+          "orig_dark_clip_pct": 15.35,
+          "enh_dark_clip_pct": 8.55,
+          "dark_clip_diff_pct": -6.8,
+          "orig_bright_clip_pct": 1.17,
+          "enh_bright_clip_pct": 2.83,
+          "bright_clip_diff_pct": 1.65,
+          "laplacian_orig_var": 37.8,
+          "laplacian_enh_var": 103.15,
+          "gradient_ratio": 2.73
+        },
+        "safeguard_violations": [],
+        "final_routing": {
+          "active_image_source": "enhanced",
+          "effective_class": "BORDERLINE",
+          "effective_composite_score": 75.99
+        }
+      },
+      "all_evaluations": [
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "clahe",
+          "accepted": true,
+          "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+          "before_scores": {
+            "composite_score": 68.8,
+            "component_scores": {
+              "focus_score": 31.15,
+              "illumination_score": 87.99,
+              "fov_score": 100.0,
+              "centering_score": 99.4
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 75.99,
+            "component_scores": {
+              "focus_score": 48.57,
+              "illumination_score": 88.75,
+              "fov_score": 100.0,
+              "centering_score": 99.39
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus"
+            ]
+          },
+          "score_differences": {
+            "delta_composite": 7.19,
+            "delta_focus": 17.42,
+            "delta_illumination": 0.76,
+            "delta_fov": 0.0,
+            "delta_centering": -0.01
+          },
+          "distortion_metrics": {
+            "delta_e": 8.68,
+            "chroma_shift": 0.23,
+            "orig_dark_clip_pct": 15.35,
+            "enh_dark_clip_pct": 8.55,
+            "dark_clip_diff_pct": -6.8,
+            "orig_bright_clip_pct": 1.17,
+            "enh_bright_clip_pct": 2.83,
+            "bright_clip_diff_pct": 1.65,
+            "laplacian_orig_var": 37.8,
+            "laplacian_enh_var": 103.15,
+            "gradient_ratio": 2.73
+          },
+          "safeguard_violations": [],
+          "final_routing": {
+            "active_image_source": "enhanced",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 75.99
+          }
+        },
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "unsharp",
+          "accepted": true,
+          "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+          "before_scores": {
+            "composite_score": 68.8,
+            "component_scores": {
+              "focus_score": 31.15,
+              "illumination_score": 87.99,
+              "fov_score": 100.0,
+              "centering_score": 99.4
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 75.99,
+            "component_scores": {
+              "focus_score": 48.95,
+              "illumination_score": 88.25,
+              "fov_score": 100.0,
+              "centering_score": 99.38
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus"
+            ]
+          },
+          "score_differences": {
+            "delta_composite": 7.19,
+            "delta_focus": 17.8,
+            "delta_illumination": 0.26,
+            "delta_fov": 0.0,
+            "delta_centering": -0.02
+          },
+          "distortion_metrics": {
+            "delta_e": 1.73,
+            "chroma_shift": 1.02,
+            "orig_dark_clip_pct": 15.35,
+            "enh_dark_clip_pct": 15.41,
+            "dark_clip_diff_pct": 0.06,
+            "orig_bright_clip_pct": 1.17,
+            "enh_bright_clip_pct": 1.25,
+            "bright_clip_diff_pct": 0.07,
+            "laplacian_orig_var": 37.8,
+            "laplacian_enh_var": 102.62,
+            "gradient_ratio": 2.72
+          },
+          "safeguard_violations": [],
+          "final_routing": {
+            "active_image_source": "enhanced",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 75.99
+          }
+        },
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "ben_graham",
+          "accepted": false,
+          "rejection_reason": "Severe color distortion: chromaticity shift 64.3 > 15.0; High-frequency noise amplification: gradient ratio 11.8 > 3.5; Dimension 'illumination' degraded significantly (-11.0 points)",
+          "before_scores": {
+            "composite_score": 68.8,
+            "component_scores": {
+              "focus_score": 31.15,
+              "illumination_score": 87.99,
+              "fov_score": 100.0,
+              "centering_score": 99.4
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 85.5,
+            "component_scores": {
+              "focus_score": 81.15,
+              "illumination_score": 76.99,
+              "fov_score": 100.0,
+              "centering_score": 99.42
+            },
+            "final_class": "GOOD",
+            "triggered_gates": []
+          },
+          "score_differences": {
+            "delta_composite": 16.7,
+            "delta_focus": 50.0,
+            "delta_illumination": -11.0,
+            "delta_fov": 0.0,
+            "delta_centering": 0.02
+          },
+          "distortion_metrics": {
+            "delta_e": 74.08,
+            "chroma_shift": 64.26,
+            "orig_dark_clip_pct": 15.35,
+            "enh_dark_clip_pct": 0.29,
+            "dark_clip_diff_pct": -15.06,
+            "orig_bright_clip_pct": 1.17,
+            "enh_bright_clip_pct": 2.41,
+            "bright_clip_diff_pct": 1.24,
+            "laplacian_orig_var": 37.8,
+            "laplacian_enh_var": 446.5,
+            "gradient_ratio": 11.81
+          },
+          "safeguard_violations": [
+            "Severe color distortion: chromaticity shift 64.3 > 15.0",
+            "High-frequency noise amplification: gradient ratio 11.8 > 3.5",
+            "Dimension 'illumination' degraded significantly (-11.0 points)"
+          ],
+          "final_routing": {
+            "active_image_source": "original_fallback",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 68.8
+          }
+        },
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "denoise",
+          "accepted": true,
+          "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+          "before_scores": {
+            "composite_score": 68.8,
+            "component_scores": {
+              "focus_score": 31.15,
+              "illumination_score": 87.99,
+              "fov_score": 100.0,
+              "centering_score": 99.4
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 67.12,
+            "component_scores": {
+              "focus_score": 26.91,
+              "illumination_score": 88.05,
+              "fov_score": 100.0,
+              "centering_score": 99.41
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "score_differences": {
+            "delta_composite": -1.68,
+            "delta_focus": -4.24,
+            "delta_illumination": 0.06,
+            "delta_fov": 0.0,
+            "delta_centering": 0.01
+          },
+          "distortion_metrics": {
+            "delta_e": 1.28,
+            "chroma_shift": 0.8,
+            "orig_dark_clip_pct": 15.35,
+            "enh_dark_clip_pct": 15.49,
+            "dark_clip_diff_pct": 0.14,
+            "orig_bright_clip_pct": 1.17,
+            "enh_bright_clip_pct": 1.13,
+            "bright_clip_diff_pct": -0.04,
+            "laplacian_orig_var": 37.8,
+            "laplacian_enh_var": 36.44,
+            "gradient_ratio": 0.96
+          },
+          "safeguard_violations": [],
+          "final_routing": {
+            "active_image_source": "enhanced",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 67.12
+          }
+        }
+      ],
+      "saved_enhanced_path": "/Users/dakshsrivastava/Desktop/DR /image_quality/results/enhancement/cell13_r0_c1_grade1_clahe.png",
+      "decision_summary": "Selected 'clahe' with composite score 75.99 (+7.19 improvement).",
+      "original_quality": {
+        "composite_score": 68.8,
+        "final_class": "BORDERLINE",
+        "triggered_gates": [
+          "suboptimal_focus",
+          "composite_below_good"
+        ]
+      },
+      "dr_grade": "Grade 1 (Mild DR)",
+      "original_filename": "cell13_r0_c1_grade1.png"
+    },
+    {
+      "original_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c2_grade2.png",
+      "best_method": "clahe",
+      "selected_evaluation": {
+        "original_path": "in_memory_array",
+        "enhanced_path": "in_memory_array",
+        "enhancement_method": "clahe",
+        "accepted": true,
+        "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+        "before_scores": {
+          "composite_score": 59.97,
+          "component_scores": {
+            "focus_score": 22.57,
+            "illumination_score": 70.2,
+            "fov_score": 100.0,
+            "centering_score": 98.78
+          },
+          "final_class": "BORDERLINE",
+          "triggered_gates": [
+            "suboptimal_focus",
+            "composite_below_good"
+          ]
+        },
+        "after_scores": {
+          "composite_score": 69.6,
+          "component_scores": {
+            "focus_score": 38.74,
+            "illumination_score": 80.75,
+            "fov_score": 100.0,
+            "centering_score": 98.75
+          },
+          "final_class": "BORDERLINE",
+          "triggered_gates": [
+            "suboptimal_focus",
+            "composite_below_good"
+          ]
+        },
+        "score_differences": {
+          "delta_composite": 9.63,
+          "delta_focus": 16.17,
+          "delta_illumination": 10.55,
+          "delta_fov": 0.0,
+          "delta_centering": -0.03
+        },
+        "distortion_metrics": {
+          "delta_e": 15.13,
+          "chroma_shift": 0.14,
+          "orig_dark_clip_pct": 8.47,
+          "enh_dark_clip_pct": 1.98,
+          "dark_clip_diff_pct": -6.49,
+          "orig_bright_clip_pct": 0.3,
+          "enh_bright_clip_pct": 0.3,
+          "bright_clip_diff_pct": 0.0,
+          "laplacian_orig_var": 22.47,
+          "laplacian_enh_var": 59.41,
+          "gradient_ratio": 2.64
+        },
+        "safeguard_violations": [],
+        "final_routing": {
+          "active_image_source": "enhanced",
+          "effective_class": "BORDERLINE",
+          "effective_composite_score": 69.6
+        }
+      },
+      "all_evaluations": [
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "clahe",
+          "accepted": true,
+          "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+          "before_scores": {
+            "composite_score": 59.97,
+            "component_scores": {
+              "focus_score": 22.57,
+              "illumination_score": 70.2,
+              "fov_score": 100.0,
+              "centering_score": 98.78
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 69.6,
+            "component_scores": {
+              "focus_score": 38.74,
+              "illumination_score": 80.75,
+              "fov_score": 100.0,
+              "centering_score": 98.75
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "score_differences": {
+            "delta_composite": 9.63,
+            "delta_focus": 16.17,
+            "delta_illumination": 10.55,
+            "delta_fov": 0.0,
+            "delta_centering": -0.03
+          },
+          "distortion_metrics": {
+            "delta_e": 15.13,
+            "chroma_shift": 0.14,
+            "orig_dark_clip_pct": 8.47,
+            "enh_dark_clip_pct": 1.98,
+            "dark_clip_diff_pct": -6.49,
+            "orig_bright_clip_pct": 0.3,
+            "enh_bright_clip_pct": 0.3,
+            "bright_clip_diff_pct": 0.0,
+            "laplacian_orig_var": 22.47,
+            "laplacian_enh_var": 59.41,
+            "gradient_ratio": 2.64
+          },
+          "safeguard_violations": [],
+          "final_routing": {
+            "active_image_source": "enhanced",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 69.6
+          }
+        },
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "unsharp",
+          "accepted": true,
+          "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+          "before_scores": {
+            "composite_score": 59.97,
+            "component_scores": {
+              "focus_score": 22.57,
+              "illumination_score": 70.2,
+              "fov_score": 100.0,
+              "centering_score": 98.78
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 65.91,
+            "component_scores": {
+              "focus_score": 37.3,
+              "illumination_score": 70.38,
+              "fov_score": 100.0,
+              "centering_score": 98.71
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "score_differences": {
+            "delta_composite": 5.94,
+            "delta_focus": 14.73,
+            "delta_illumination": 0.18,
+            "delta_fov": 0.0,
+            "delta_centering": -0.07
+          },
+          "distortion_metrics": {
+            "delta_e": 1.45,
+            "chroma_shift": 0.77,
+            "orig_dark_clip_pct": 8.47,
+            "enh_dark_clip_pct": 8.89,
+            "dark_clip_diff_pct": 0.43,
+            "orig_bright_clip_pct": 0.3,
+            "enh_bright_clip_pct": 0.31,
+            "bright_clip_diff_pct": 0.01,
+            "laplacian_orig_var": 22.47,
+            "laplacian_enh_var": 57.62,
+            "gradient_ratio": 2.56
+          },
+          "safeguard_violations": [],
+          "final_routing": {
+            "active_image_source": "enhanced",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 65.91
+          }
+        },
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "ben_graham",
+          "accepted": false,
+          "rejection_reason": "Severe color distortion: chromaticity shift 42.5 > 15.0; High-frequency noise amplification: gradient ratio 15.7 > 3.5",
+          "before_scores": {
+            "composite_score": 59.97,
+            "component_scores": {
+              "focus_score": 22.57,
+              "illumination_score": 70.2,
+              "fov_score": 100.0,
+              "centering_score": 98.78
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 84.46,
+            "component_scores": {
+              "focus_score": 76.39,
+              "illumination_score": 80.16,
+              "fov_score": 100.0,
+              "centering_score": 98.59
+            },
+            "final_class": "GOOD",
+            "triggered_gates": []
+          },
+          "score_differences": {
+            "delta_composite": 24.49,
+            "delta_focus": 53.82,
+            "delta_illumination": 9.96,
+            "delta_fov": 0.0,
+            "delta_centering": -0.19
+          },
+          "distortion_metrics": {
+            "delta_e": 69.01,
+            "chroma_shift": 42.52,
+            "orig_dark_clip_pct": 8.47,
+            "enh_dark_clip_pct": 0.17,
+            "dark_clip_diff_pct": -8.3,
+            "orig_bright_clip_pct": 0.3,
+            "enh_bright_clip_pct": 1.48,
+            "bright_clip_diff_pct": 1.18,
+            "laplacian_orig_var": 22.47,
+            "laplacian_enh_var": 351.8,
+            "gradient_ratio": 15.66
+          },
+          "safeguard_violations": [
+            "Severe color distortion: chromaticity shift 42.5 > 15.0",
+            "High-frequency noise amplification: gradient ratio 15.7 > 3.5"
+          ],
+          "final_routing": {
+            "active_image_source": "original_fallback",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 59.97
+          }
+        },
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "denoise",
+          "accepted": true,
+          "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+          "before_scores": {
+            "composite_score": 59.97,
+            "component_scores": {
+              "focus_score": 22.57,
+              "illumination_score": 70.2,
+              "fov_score": 100.0,
+              "centering_score": 98.78
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 59.37,
+            "component_scores": {
+              "focus_score": 21.0,
+              "illumination_score": 70.3,
+              "fov_score": 100.0,
+              "centering_score": 98.77
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_focus",
+              "composite_below_good"
+            ]
+          },
+          "score_differences": {
+            "delta_composite": -0.6,
+            "delta_focus": -1.57,
+            "delta_illumination": 0.1,
+            "delta_fov": 0.0,
+            "delta_centering": -0.01
+          },
+          "distortion_metrics": {
+            "delta_e": 1.05,
+            "chroma_shift": 0.63,
+            "orig_dark_clip_pct": 8.47,
+            "enh_dark_clip_pct": 8.3,
+            "dark_clip_diff_pct": -0.17,
+            "orig_bright_clip_pct": 0.3,
+            "enh_bright_clip_pct": 0.3,
+            "bright_clip_diff_pct": 0.0,
+            "laplacian_orig_var": 22.47,
+            "laplacian_enh_var": 25.22,
+            "gradient_ratio": 1.12
+          },
+          "safeguard_violations": [],
+          "final_routing": {
+            "active_image_source": "enhanced",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 59.37
+          }
+        }
+      ],
+      "saved_enhanced_path": "/Users/dakshsrivastava/Desktop/DR /image_quality/results/enhancement/cell13_r0_c2_grade2_clahe.png",
+      "decision_summary": "Selected 'clahe' with composite score 69.60 (+9.63 improvement).",
+      "original_quality": {
+        "composite_score": 59.97,
+        "final_class": "BORDERLINE",
+        "triggered_gates": [
+          "suboptimal_focus",
+          "composite_below_good"
+        ]
+      },
+      "dr_grade": "Grade 2 (Moderate DR)",
+      "original_filename": "cell13_r0_c2_grade2.png"
+    },
+    {
+      "original_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c1_grade3.png",
+      "best_method": "clahe",
+      "selected_evaluation": {
+        "original_path": "in_memory_array",
+        "enhanced_path": "in_memory_array",
+        "enhancement_method": "clahe",
+        "accepted": true,
+        "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+        "before_scores": {
+          "composite_score": 70.0,
+          "component_scores": {
+            "focus_score": 59.37,
+            "illumination_score": 55.02,
+            "fov_score": 100.0,
+            "centering_score": 97.46
+          },
+          "final_class": "BORDERLINE",
+          "triggered_gates": [
+            "suboptimal_illumination"
+          ]
+        },
+        "after_scores": {
+          "composite_score": 74.45,
+          "component_scores": {
+            "focus_score": 65.23,
+            "illumination_score": 62.05,
+            "fov_score": 100.0,
+            "centering_score": 97.48
+          },
+          "final_class": "BORDERLINE",
+          "triggered_gates": [
+            "suboptimal_illumination"
+          ]
+        },
+        "score_differences": {
+          "delta_composite": 4.45,
+          "delta_focus": 5.86,
+          "delta_illumination": 7.03,
+          "delta_fov": 0.0,
+          "delta_centering": 0.02
+        },
+        "distortion_metrics": {
+          "delta_e": 12.1,
+          "chroma_shift": 0.38,
+          "orig_dark_clip_pct": 32.61,
+          "enh_dark_clip_pct": 13.4,
+          "dark_clip_diff_pct": -19.2,
+          "orig_bright_clip_pct": 1.69,
+          "enh_bright_clip_pct": 2.22,
+          "bright_clip_diff_pct": 0.53,
+          "laplacian_orig_var": 249.99,
+          "laplacian_enh_var": 307.87,
+          "gradient_ratio": 1.23
+        },
+        "safeguard_violations": [],
+        "final_routing": {
+          "active_image_source": "enhanced",
+          "effective_class": "BORDERLINE",
+          "effective_composite_score": 74.45
+        }
+      },
+      "all_evaluations": [
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "clahe",
+          "accepted": true,
+          "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+          "before_scores": {
+            "composite_score": 70.0,
+            "component_scores": {
+              "focus_score": 59.37,
+              "illumination_score": 55.02,
+              "fov_score": 100.0,
+              "centering_score": 97.46
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_illumination"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 74.45,
+            "component_scores": {
+              "focus_score": 65.23,
+              "illumination_score": 62.05,
+              "fov_score": 100.0,
+              "centering_score": 97.48
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_illumination"
+            ]
+          },
+          "score_differences": {
+            "delta_composite": 4.45,
+            "delta_focus": 5.86,
+            "delta_illumination": 7.03,
+            "delta_fov": 0.0,
+            "delta_centering": 0.02
+          },
+          "distortion_metrics": {
+            "delta_e": 12.1,
+            "chroma_shift": 0.38,
+            "orig_dark_clip_pct": 32.61,
+            "enh_dark_clip_pct": 13.4,
+            "dark_clip_diff_pct": -19.2,
+            "orig_bright_clip_pct": 1.69,
+            "enh_bright_clip_pct": 2.22,
+            "bright_clip_diff_pct": 0.53,
+            "laplacian_orig_var": 249.99,
+            "laplacian_enh_var": 307.87,
+            "gradient_ratio": 1.23
+          },
+          "safeguard_violations": [],
+          "final_routing": {
+            "active_image_source": "enhanced",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 74.45
+          }
+        },
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "unsharp",
+          "accepted": true,
+          "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+          "before_scores": {
+            "composite_score": 70.0,
+            "component_scores": {
+              "focus_score": 59.37,
+              "illumination_score": 55.02,
+              "fov_score": 100.0,
+              "centering_score": 97.46
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_illumination"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 70.49,
+            "component_scores": {
+              "focus_score": 60.88,
+              "illumination_score": 54.75,
+              "fov_score": 100.0,
+              "centering_score": 97.14
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_illumination"
+            ]
+          },
+          "score_differences": {
+            "delta_composite": 0.49,
+            "delta_focus": 1.51,
+            "delta_illumination": -0.27,
+            "delta_fov": 0.0,
+            "delta_centering": -0.32
+          },
+          "distortion_metrics": {
+            "delta_e": 1.79,
+            "chroma_shift": 1.0,
+            "orig_dark_clip_pct": 32.61,
+            "enh_dark_clip_pct": 32.48,
+            "dark_clip_diff_pct": -0.13,
+            "orig_bright_clip_pct": 1.69,
+            "enh_bright_clip_pct": 1.7,
+            "bright_clip_diff_pct": 0.01,
+            "laplacian_orig_var": 249.99,
+            "laplacian_enh_var": 345.98,
+            "gradient_ratio": 1.38
+          },
+          "safeguard_violations": [],
+          "final_routing": {
+            "active_image_source": "enhanced",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 70.49
+          }
+        },
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "ben_graham",
+          "accepted": false,
+          "rejection_reason": "Severe color distortion: chromaticity shift 44.0 > 15.0; Dimension 'centering' degraded significantly (-8.3 points)",
+          "before_scores": {
+            "composite_score": 70.0,
+            "component_scores": {
+              "focus_score": 59.37,
+              "illumination_score": 55.02,
+              "fov_score": 100.0,
+              "centering_score": 97.46
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_illumination"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 82.69,
+            "component_scores": {
+              "focus_score": 79.73,
+              "illumination_score": 72.96,
+              "fov_score": 100.0,
+              "centering_score": 89.12
+            },
+            "final_class": "GOOD",
+            "triggered_gates": []
+          },
+          "score_differences": {
+            "delta_composite": 12.69,
+            "delta_focus": 20.36,
+            "delta_illumination": 17.94,
+            "delta_fov": 0.0,
+            "delta_centering": -8.34
+          },
+          "distortion_metrics": {
+            "delta_e": 77.87,
+            "chroma_shift": 43.98,
+            "orig_dark_clip_pct": 32.61,
+            "enh_dark_clip_pct": 1.83,
+            "dark_clip_diff_pct": -30.78,
+            "orig_bright_clip_pct": 1.69,
+            "enh_bright_clip_pct": 3.74,
+            "bright_clip_diff_pct": 2.05,
+            "laplacian_orig_var": 249.99,
+            "laplacian_enh_var": 641.68,
+            "gradient_ratio": 2.57
+          },
+          "safeguard_violations": [
+            "Severe color distortion: chromaticity shift 44.0 > 15.0",
+            "Dimension 'centering' degraded significantly (-8.3 points)"
+          ],
+          "final_routing": {
+            "active_image_source": "original_fallback",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 70.0
+          }
+        },
+        {
+          "original_path": "in_memory_array",
+          "enhanced_path": "in_memory_array",
+          "enhancement_method": "denoise",
+          "accepted": true,
+          "rejection_reason": "Accepted: measurable quality improvement with zero safeguard violations.",
+          "before_scores": {
+            "composite_score": 70.0,
+            "component_scores": {
+              "focus_score": 59.37,
+              "illumination_score": 55.02,
+              "fov_score": 100.0,
+              "centering_score": 97.46
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_illumination"
+            ]
+          },
+          "after_scores": {
+            "composite_score": 69.66,
+            "component_scores": {
+              "focus_score": 58.51,
+              "illumination_score": 55.05,
+              "fov_score": 100.0,
+              "centering_score": 97.45
+            },
+            "final_class": "BORDERLINE",
+            "triggered_gates": [
+              "suboptimal_illumination",
+              "composite_below_good"
+            ]
+          },
+          "score_differences": {
+            "delta_composite": -0.34,
+            "delta_focus": -0.86,
+            "delta_illumination": 0.03,
+            "delta_fov": 0.0,
+            "delta_centering": -0.01
+          },
+          "distortion_metrics": {
+            "delta_e": 1.17,
+            "chroma_shift": 0.74,
+            "orig_dark_clip_pct": 32.61,
+            "enh_dark_clip_pct": 32.71,
+            "dark_clip_diff_pct": 0.1,
+            "orig_bright_clip_pct": 1.69,
+            "enh_bright_clip_pct": 1.69,
+            "bright_clip_diff_pct": -0.0,
+            "laplacian_orig_var": 249.99,
+            "laplacian_enh_var": 249.1,
+            "gradient_ratio": 1.0
+          },
+          "safeguard_violations": [],
+          "final_routing": {
+            "active_image_source": "enhanced",
+            "effective_class": "BORDERLINE",
+            "effective_composite_score": 69.66
+          }
+        }
+      ],
+      "saved_enhanced_path": "/Users/dakshsrivastava/Desktop/DR /image_quality/results/enhancement/cell13_r1_c1_grade3_clahe.png",
+      "decision_summary": "Selected 'clahe' with composite score 74.45 (+4.45 improvement).",
+      "original_quality": {
+        "composite_score": 70.0,
+        "final_class": "BORDERLINE",
+        "triggered_gates": [
+          "suboptimal_illumination"
+        ]
+      },
+      "dr_grade": "Grade 3 (Severe DR)",
+      "original_filename": "cell13_r1_c1_grade3.png"
+    }
+  ]
+}

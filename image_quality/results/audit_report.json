@@ -1,0 +1,288 @@
+{
+  "dataset_directory": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images",
+  "total_images_discovered": 9,
+  "successfully_audited": 9,
+  "failed_audits": 0,
+  "audit_pass_rate_pct": 100.0,
+  "image_records": [
+    {
+      "filename": "aptos_eval_6959267_grade3.png",
+      "path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_eval_6959267_grade3.png",
+      "extension": ".png",
+      "file_size_bytes": 385184,
+      "height": 527,
+      "width": 620,
+      "channels": 3,
+      "dtype": "uint8",
+      "min_pixel": 0.0,
+      "max_pixel": 255.0,
+      "mean_pixel": 103.25392462916489,
+      "std_pixel": 77.55660116017164,
+      "channel_means": {
+        "R": 151.6099865336353,
+        "G": 128.140790842872,
+        "B": 30.01099651098733
+      },
+      "cropped_shape": [
+        524,
+        620,
+        3
+      ],
+      "preprocessed_shape": [
+        384,
+        384,
+        3
+      ],
+      "preprocessed_dtype": "float32",
+      "status": "OK"
+    },
+    {
+      "filename": "aptos_train_sample_c10.png",
+      "path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_train_sample_c10.png",
+      "extension": ".png",
+      "file_size_bytes": 166504,
+      "height": 462,
+      "width": 462,
+      "channels": 3,
+      "dtype": "uint8",
+      "min_pixel": 0.0,
+      "max_pixel": 255.0,
+      "mean_pixel": 73.49922071675319,
+      "std_pixel": 62.608837496723005,
+      "channel_means": {
+        "R": 142.1361902887877,
+        "G": 63.80355971589738,
+        "B": 14.557912145574484
+      },
+      "cropped_shape": [
+        462,
+        462,
+        3
+      ],
+      "preprocessed_shape": [
+        384,
+        384,
+        3
+      ],
+      "preprocessed_dtype": "float32",
+      "status": "OK"
+    },
+    {
+      "filename": "cell13_r0_c0_grade0.png",
+      "path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c0_grade0.png",
+      "extension": ".png",
+      "file_size_bytes": 185854,
+      "height": 462,
+      "width": 462,
+      "channels": 3,
+      "dtype": "uint8",
+      "min_pixel": 0.0,
+      "max_pixel": 252.0,
+      "mean_pixel": 62.369331846604574,
+      "std_pixel": 57.5707654133546,
+      "channel_means": {
+        "R": 126.76009163996177,
+        "G": 53.70671464177958,
+        "B": 6.641189258072375
+      },
+      "cropped_shape": [
+        462,
+        462,
+        3
+      ],
+      "preprocessed_shape": [
+        384,
+        384,
+        3
+      ],
+      "preprocessed_dtype": "float32",
+      "status": "OK"
+    },
+    {
+      "filename": "cell13_r0_c1_grade1.png",
+      "path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c1_grade1.png",
+      "extension": ".png",
+      "file_size_bytes": 227884,
+      "height": 462,
+      "width": 462,
+      "channels": 3,
+      "dtype": "uint8",
+      "min_pixel": 0.0,
+      "max_pixel": 255.0,
+      "mean_pixel": 76.85110692578225,
+      "std_pixel": 75.39845770430857,
+      "channel_means": {
+        "R": 150.60481906261128,
+        "G": 65.44579842956466,
+        "B": 14.502703285170817
+      },
+      "cropped_shape": [
+        462,
+        462,
+        3
+      ],
+      "preprocessed_shape": [
+        384,
+        384,
+        3
+      ],
+      "preprocessed_dtype": "float32",
+      "status": "OK"
+    },
+    {
+      "filename": "cell13_r0_c2_grade2.png",
+      "path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c2_grade2.png",
+      "extension": ".png",
+      "file_size_bytes": 182018,
+      "height": 462,
+      "width": 462,
+      "channels": 3,
+      "dtype": "uint8",
+      "min_pixel": 0.0,
+      "max_pixel": 255.0,
+      "mean_pixel": 60.46356889863383,
+      "std_pixel": 54.131052352429144,
+      "channel_means": {
+        "R": 105.06633121568187,
+        "G": 58.53141807687262,
+        "B": 17.792957403347014
+      },
+      "cropped_shape": [
+        462,
+        462,
+        3
+      ],
+      "preprocessed_shape": [
+        384,
+        384,
+        3
+      ],
+      "preprocessed_dtype": "float32",
+      "status": "OK"
+    },
+    {
+      "filename": "cell13_r1_c0_grade2_dup.png",
+      "path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c0_grade2_dup.png",
+      "extension": ".png",
+      "file_size_bytes": 226430,
+      "height": 462,
+      "width": 462,
+      "channels": 3,
+      "dtype": "uint8",
+      "min_pixel": 0.0,
+      "max_pixel": 255.0,
+      "mean_pixel": 77.44219092595716,
+      "std_pixel": 67.71845505337369,
+      "channel_means": {
+        "R": 134.7218005659564,
+        "G": 70.78711980660033,
+        "B": 26.817652405314742
+      },
+      "cropped_shape": [
+        462,
+        462,
+        3
+      ],
+      "preprocessed_shape": [
+        384,
+        384,
+        3
+      ],
+      "preprocessed_dtype": "float32",
+      "status": "OK"
+    },
+    {
+      "filename": "cell13_r1_c1_grade3.png",
+      "path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c1_grade3.png",
+      "extension": ".png",
+      "file_size_bytes": 203125,
+      "height": 462,
+      "width": 462,
+      "channels": 3,
+      "dtype": "uint8",
+      "min_pixel": 0.0,
+      "max_pixel": 255.0,
+      "mean_pixel": 56.20996764178582,
+      "std_pixel": 54.467774674082676,
+      "channel_means": {
+        "R": 106.98505462791177,
+        "G": 51.40628455238845,
+        "B": 10.238563745057252
+      },
+      "cropped_shape": [
+        462,
+        462,
+        3
+      ],
+      "preprocessed_shape": [
+        384,
+        384,
+        3
+      ],
+      "preprocessed_dtype": "float32",
+      "status": "OK"
+    },
+    {
+      "filename": "cell13_r1_c2_grade4.png",
+      "path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c2_grade4.png",
+      "extension": ".png",
+      "file_size_bytes": 201238,
+      "height": 462,
+      "width": 462,
+      "channels": 3,
+      "dtype": "uint8",
+      "min_pixel": 0.0,
+      "max_pixel": 255.0,
+      "mean_pixel": 79.93565837721682,
+      "std_pixel": 67.35009063656015,
+      "channel_means": {
+        "R": 120.25517700193025,
+        "G": 79.70524821498847,
+        "B": 39.84654991473173
+      },
+      "cropped_shape": [
+        462,
+        462,
+        3
+      ],
+      "preprocessed_shape": [
+        384,
+        384,
+        3
+      ],
+      "preprocessed_dtype": "float32",
+      "status": "OK"
+    },
+    {
+      "filename": "confirmed_grade4_proliferative.jpg",
+      "path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/confirmed_grade4_proliferative.jpg",
+      "extension": ".jpg",
+      "file_size_bytes": 10343,
+      "height": 203,
+      "width": 300,
+      "channels": 3,
+      "dtype": "uint8",
+      "min_pixel": 0.0,
+      "max_pixel": 255.0,
+      "mean_pixel": 92.31868089764642,
+      "std_pixel": 79.57999175206244,
+      "channel_means": {
+        "R": 141.07768472906403,
+        "G": 101.00428571428571,
+        "B": 34.87407224958949
+      },
+      "cropped_shape": [
+        203,
+        300,
+        3
+      ],
+      "preprocessed_shape": [
+        384,
+        384,
+        3
+      ],
+      "preprocessed_dtype": "float32",
+      "status": "OK"
+    }
+  ]
+}

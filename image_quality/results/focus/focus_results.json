@@ -1,0 +1,296 @@
+{
+  "dataset_directory": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images",
+  "total_images_evaluated": 9,
+  "score_statistics": {
+    "min_score": 21.63,
+    "max_score": 88.87,
+    "median_score": 57.21,
+    "mean_score": 49.72,
+    "std_score": 24.05,
+    "min_raw_laplacian": 22.7205,
+    "max_raw_laplacian": 1093.4328,
+    "median_raw_laplacian": 139.73
+  },
+  "decision_counts": {
+    "Sharp": 5,
+    "Borderline": 2,
+    "Blurry": 2
+  },
+  "thresholds_used": {
+    "blurry_threshold": 25.0,
+    "sharp_threshold": 50.0,
+    "nature": "engineering_heuristic_baseline_not_clinically_validated"
+  },
+  "results": [
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_train_sample_c10.png",
+      "raw_metric": 22.7205,
+      "tenengrad_energy": 896.6692,
+      "normalized_score": 21.63,
+      "decision": "Blurry",
+      "diagnostics": {
+        "channel_used": "green",
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "foreground_pixels": 130827,
+        "total_pixels": 147456,
+        "foreground_fraction": 0.8872,
+        "laplacian_min": -130.0,
+        "laplacian_max": 204.0,
+        "tenengrad_mean": 896.67
+      },
+      "thresholds": {
+        "blurry_threshold": 25.0,
+        "sharp_threshold": 50.0,
+        "log_midpoint": 100.0,
+        "log_slope": 2.0,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 0 (APTOS Train Sample)",
+      "filename": "aptos_train_sample_c10.png"
+    },
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c2_grade2.png",
+      "raw_metric": 24.1941,
+      "tenengrad_energy": 1050.927,
+      "normalized_score": 22.57,
+      "decision": "Blurry",
+      "diagnostics": {
+        "channel_used": "green",
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "foreground_pixels": 116368,
+        "total_pixels": 147456,
+        "foreground_fraction": 0.7892,
+        "laplacian_min": -90.0,
+        "laplacian_max": 96.0,
+        "tenengrad_mean": 1050.93
+      },
+      "thresholds": {
+        "blurry_threshold": 25.0,
+        "sharp_threshold": 50.0,
+        "log_midpoint": 100.0,
+        "log_slope": 2.0,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 2 (Moderate DR)",
+      "filename": "cell13_r0_c2_grade2.png"
+    },
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c0_grade0.png",
+      "raw_metric": 28.4526,
+      "tenengrad_energy": 1013.9213,
+      "normalized_score": 25.13,
+      "decision": "Borderline",
+      "diagnostics": {
+        "channel_used": "green",
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "foreground_pixels": 131840,
+        "total_pixels": 147456,
+        "foreground_fraction": 0.8941,
+        "laplacian_min": -121.0,
+        "laplacian_max": 130.0,
+        "tenengrad_mean": 1013.92
+      },
+      "thresholds": {
+        "blurry_threshold": 25.0,
+        "sharp_threshold": 50.0,
+        "log_midpoint": 100.0,
+        "log_slope": 2.0,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 0 (No DR)",
+      "filename": "cell13_r0_c0_grade0.png"
+    },
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c1_grade1.png",
+      "raw_metric": 40.1236,
+      "tenengrad_energy": 1368.2142,
+      "normalized_score": 31.15,
+      "decision": "Borderline",
+      "diagnostics": {
+        "channel_used": "green",
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "foreground_pixels": 117029,
+        "total_pixels": 147456,
+        "foreground_fraction": 0.7937,
+        "laplacian_min": -78.0,
+        "laplacian_max": 119.0,
+        "tenengrad_mean": 1368.21
+      },
+      "thresholds": {
+        "blurry_threshold": 25.0,
+        "sharp_threshold": 50.0,
+        "log_midpoint": 100.0,
+        "log_slope": 2.0,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 1 (Mild DR)",
+      "filename": "cell13_r0_c1_grade1.png"
+    },
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c0_grade2_dup.png",
+      "raw_metric": 139.7341,
+      "tenengrad_energy": 4749.608,
+      "normalized_score": 57.21,
+      "decision": "Sharp",
+      "diagnostics": {
+        "channel_used": "green",
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "foreground_pixels": 118818,
+        "total_pixels": 147456,
+        "foreground_fraction": 0.8058,
+        "laplacian_min": -163.0,
+        "laplacian_max": 234.0,
+        "tenengrad_mean": 4749.61
+      },
+      "thresholds": {
+        "blurry_threshold": 25.0,
+        "sharp_threshold": 50.0,
+        "log_midpoint": 100.0,
+        "log_slope": 2.0,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 2 (Moderate DR)",
+      "filename": "cell13_r1_c0_grade2_dup.png"
+    },
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c1_grade3.png",
+      "raw_metric": 154.7581,
+      "tenengrad_energy": 4680.643,
+      "normalized_score": 59.37,
+      "decision": "Sharp",
+      "diagnostics": {
+        "channel_used": "green",
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "foreground_pixels": 132531,
+        "total_pixels": 147456,
+        "foreground_fraction": 0.8988,
+        "laplacian_min": -163.0,
+        "laplacian_max": 224.0,
+        "tenengrad_mean": 4680.64
+      },
+      "thresholds": {
+        "blurry_threshold": 25.0,
+        "sharp_threshold": 50.0,
+        "log_midpoint": 100.0,
+        "log_slope": 2.0,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 3 (Severe DR)",
+      "filename": "cell13_r1_c1_grade3.png"
+    },
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c2_grade4.png",
+      "raw_metric": 173.0962,
+      "tenengrad_energy": 6427.4995,
+      "normalized_score": 61.69,
+      "decision": "Sharp",
+      "diagnostics": {
+        "channel_used": "green",
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "foreground_pixels": 107265,
+        "total_pixels": 147456,
+        "foreground_fraction": 0.7274,
+        "laplacian_min": -163.0,
+        "laplacian_max": 243.0,
+        "tenengrad_mean": 6427.5
+      },
+      "thresholds": {
+        "blurry_threshold": 25.0,
+        "sharp_threshold": 50.0,
+        "log_midpoint": 100.0,
+        "log_slope": 2.0,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 4 (Proliferative DR)",
+      "filename": "cell13_r1_c2_grade4.png"
+    },
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_eval_6959267_grade3.png",
+      "raw_metric": 487.2981,
+      "tenengrad_energy": 17861.4079,
+      "normalized_score": 79.83,
+      "decision": "Sharp",
+      "diagnostics": {
+        "channel_used": "green",
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "foreground_pixels": 127392,
+        "total_pixels": 147456,
+        "foreground_fraction": 0.8639,
+        "laplacian_min": -224.0,
+        "laplacian_max": 245.0,
+        "tenengrad_mean": 17861.41
+      },
+      "thresholds": {
+        "blurry_threshold": 25.0,
+        "sharp_threshold": 50.0,
+        "log_midpoint": 100.0,
+        "log_slope": 2.0,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 3 (Severe DR)",
+      "filename": "aptos_eval_6959267_grade3.png"
+    },
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/confirmed_grade4_proliferative.jpg",
+      "raw_metric": 1093.4328,
+      "tenengrad_energy": 16373.0022,
+      "normalized_score": 88.87,
+      "decision": "Sharp",
+      "diagnostics": {
+        "channel_used": "green",
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "foreground_pixels": 108182,
+        "total_pixels": 147456,
+        "foreground_fraction": 0.7337,
+        "laplacian_min": -344.0,
+        "laplacian_max": 228.0,
+        "tenengrad_mean": 16373.0
+      },
+      "thresholds": {
+        "blurry_threshold": 25.0,
+        "sharp_threshold": 50.0,
+        "log_midpoint": 100.0,
+        "log_slope": 2.0,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 4 (Proliferative DR)",
+      "filename": "confirmed_grade4_proliferative.jpg"
+    }
+  ]
+}

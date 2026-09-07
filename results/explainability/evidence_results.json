@@ -1,0 +1,1774 @@
+{
+  "milestone": "Milestone 11 - Step 3: Anatomical Retinal Localization & Evidence",
+  "model_name": "APTOS_DR_EfficientNetB3_V2",
+  "total_images_evaluated": 9,
+  "all_images_passed": true,
+  "overall_status": "PASS",
+  "per_image_results": [
+    {
+      "image_filename": "aptos_eval_6959267_grade3.png",
+      "original_dimensions": [
+        527,
+        620
+      ],
+      "predicted_class": 3,
+      "predicted_class_name": "Severe DR",
+      "predicted_probabilities": [
+        1.1e-05,
+        0.00708,
+        0.172195,
+        0.617225,
+        0.203489
+      ],
+      "target_class": 3,
+      "target_score": 0.617225,
+      "top_attention_region": "superior_retina",
+      "top_attention_mass_pct": 63.58,
+      "macular_overlap_pct": 0.07,
+      "optic_disc_overlap_pct": 0.0,
+      "attention_bounding_box": {
+        "bounding_box": [
+          466,
+          54,
+          148,
+          141
+        ],
+        "x": 466,
+        "y": 54,
+        "width": 148,
+        "height": 141,
+        "area_fraction": 0.0639,
+        "mean_attention": 0.818017,
+        "max_attention": 1.0,
+        "status": "localized_attention_cluster"
+      },
+      "anatomical_landmarks": {
+        "retinal_field": {
+          "bounding_box": [
+            8,
+            3,
+            606,
+            516
+          ],
+          "center": [
+            311.0,
+            261.0
+          ],
+          "center_x": 311.0,
+          "center_y": 261.0,
+          "radius": 258.0,
+          "area_pixels": 277761,
+          "coverage_pct": 85.01,
+          "aspect_ratio": 1.174
+        },
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            193.1,
+            273.5
+          ],
+          "radius": 21,
+          "confidence": 0.73,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "macula": {
+          "detected": true,
+          "center": [
+            311.0,
+            262.0
+          ],
+          "center_x": 311.0,
+          "center_y": 262.0,
+          "radius": 25.2,
+          "confidence": 0.71,
+          "method": "geometric_displacement_and_photometric_minimum",
+          "status": "high_confidence",
+          "is_reliable": true,
+          "notes": "Macular candidate estimated via temporal displacement from optic disc and local photometric absorption minimum."
+        }
+      },
+      "attention_statistics": {
+        "retinal_foreground": {
+          "attention_mean": 0.262535,
+          "attention_max": 1.0,
+          "attention_mass": 72921.8672,
+          "attention_fraction": 1.0,
+          "overlap_fraction": 1.0,
+          "region_area_fraction": 1.0,
+          "pixel_count": 277761
+        },
+        "superior_retina": {
+          "attention_mean": 0.338652,
+          "attention_max": 1.0,
+          "attention_mass": 46366.1641,
+          "attention_fraction": 0.6358,
+          "overlap_fraction": 1.0,
+          "region_area_fraction": 0.4929,
+          "pixel_count": 136914
+        },
+        "inferior_retina": {
+          "attention_mean": 0.188543,
+          "attention_max": 0.455145,
+          "attention_mass": 26555.7129,
+          "attention_fraction": 0.3642,
+          "overlap_fraction": 0.0,
+          "region_area_fraction": 0.5071,
+          "pixel_count": 140847
+        },
+        "nasal_retina": {
+          "attention_mean": 0.269139,
+          "attention_max": 0.500742,
+          "attention_mass": 36258.9805,
+          "attention_fraction": 0.4972,
+          "overlap_fraction": 0.0013,
+          "region_area_fraction": 0.485,
+          "pixel_count": 134722
+        },
+        "temporal_retina": {
+          "attention_mean": 0.256314,
+          "attention_max": 1.0,
+          "attention_mass": 36662.8945,
+          "attention_fraction": 0.5028,
+          "overlap_fraction": 0.9987,
+          "region_area_fraction": 0.515,
+          "pixel_count": 143039
+        },
+        "posterior_pole": {
+          "attention_mean": 0.291846,
+          "attention_max": 0.500742,
+          "attention_mass": 18457.7695,
+          "attention_fraction": 0.2531,
+          "overlap_fraction": 0.0013,
+          "region_area_fraction": 0.2277,
+          "pixel_count": 63245
+        },
+        "peripheral_retina": {
+          "attention_mean": 0.249154,
+          "attention_max": 1.0,
+          "attention_mass": 39895.582,
+          "attention_fraction": 0.5471,
+          "overlap_fraction": 0.9907,
+          "region_area_fraction": 0.5765,
+          "pixel_count": 160124
+        },
+        "optic_disc_region": {
+          "attention_mean": 0.321328,
+          "attention_max": 0.373448,
+          "attention_mass": 999.3308,
+          "attention_fraction": 0.0137,
+          "overlap_fraction": 0.0,
+          "region_area_fraction": 0.0112,
+          "pixel_count": 3110
+        },
+        "macular_region": {
+          "attention_mean": 0.402389,
+          "attention_max": 0.500742,
+          "attention_mass": 1804.7167,
+          "attention_fraction": 0.0247,
+          "overlap_fraction": 0.0007,
+          "region_area_fraction": 0.0161,
+          "pixel_count": 4485
+        }
+      },
+      "coordinate_mapping": {
+        "original_dimensions": [
+          527,
+          620
+        ],
+        "crop_dimensions": [
+          524,
+          620
+        ],
+        "crop_box": {
+          "x": 0,
+          "y": 3,
+          "w": 620,
+          "h": 524
+        },
+        "warped_shape": [
+          527,
+          620
+        ],
+        "interpolation_method": "cv2.INTER_CUBIC",
+        "finite_values": true,
+        "mean_activation": 0.238273,
+        "max_activation": 1.0
+      },
+      "narrative_summary": "Model classified retinal image as Grade 3 (Severe DR) with 61.7% confidence. Model feature attribution is concentrated predominantly in the Superior Retina (63.6% of total retinal attention mass). Attention overlap with macular context is 0.1%, and optic disc overlap is 0.0%. Primary attention cluster bounded at [x=466, y=54, w=148, h=141]. Evidence status: feature attribution only.",
+      "safety_disclaimer": "Grad-CAM heatmaps represent neural network mathematical feature attribution indicating image regions that influenced the model's classification score. They do NOT identify, segment, or prove the presence of clinical lesions (e.g., microaneurysms, hemorrhages, hard exudates) and do NOT constitute medical diagnosis or replace ophthalmological evaluation.",
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/evidence/aptos_eval_6959267_grade3_evidence.png"
+    },
+    {
+      "image_filename": "aptos_train_sample_c10.png",
+      "original_dimensions": [
+        462,
+        462
+      ],
+      "predicted_class": 2,
+      "predicted_class_name": "Moderate DR",
+      "predicted_probabilities": [
+        4.4e-05,
+        0.073131,
+        0.922224,
+        0.00105,
+        0.003551
+      ],
+      "target_class": 2,
+      "target_score": 0.922224,
+      "top_attention_region": "superior_retina",
+      "top_attention_mass_pct": 71.47,
+      "macular_overlap_pct": 3.6,
+      "optic_disc_overlap_pct": 0.06,
+      "attention_bounding_box": {
+        "bounding_box": [
+          117,
+          79,
+          193,
+          126
+        ],
+        "x": 117,
+        "y": 79,
+        "width": 193,
+        "height": 126,
+        "area_fraction": 0.1139,
+        "mean_attention": 0.784112,
+        "max_attention": 0.999984,
+        "status": "localized_attention_cluster"
+      },
+      "anatomical_landmarks": {
+        "retinal_field": {
+          "bounding_box": [
+            0,
+            0,
+            462,
+            462
+          ],
+          "center": [
+            231.0,
+            231.0
+          ],
+          "center_x": 231.0,
+          "center_y": 231.0,
+          "radius": 231.0,
+          "area_pixels": 189229,
+          "coverage_pct": 88.66,
+          "aspect_ratio": 1.0
+        },
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            401.4,
+            215.8
+          ],
+          "radius": 37,
+          "confidence": 0.71,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "macula": {
+          "detected": true,
+          "center": [
+            236.0,
+            261.0
+          ],
+          "center_x": 236.0,
+          "center_y": 261.0,
+          "radius": 44.4,
+          "confidence": 0.7,
+          "method": "geometric_displacement_and_photometric_minimum",
+          "status": "high_confidence",
+          "is_reliable": true,
+          "notes": "Macular candidate estimated via temporal displacement from optic disc and local photometric absorption minimum."
+        }
+      },
+      "attention_statistics": {
+        "retinal_foreground": {
+          "attention_mean": 0.257419,
+          "attention_max": 0.999984,
+          "attention_mass": 48711.1562,
+          "attention_fraction": 1.0,
+          "overlap_fraction": 1.0,
+          "region_area_fraction": 1.0,
+          "pixel_count": 189229
+        },
+        "superior_retina": {
+          "attention_mean": 0.362399,
+          "attention_max": 0.999984,
+          "attention_mass": 34813.8477,
+          "attention_fraction": 0.7147,
+          "overlap_fraction": 0.9669,
+          "region_area_fraction": 0.5077,
+          "pixel_count": 96065
+        },
+        "inferior_retina": {
+          "attention_mean": 0.14917,
+          "attention_max": 0.607194,
+          "attention_mass": 13897.3027,
+          "attention_fraction": 0.2853,
+          "overlap_fraction": 0.0331,
+          "region_area_fraction": 0.4923,
+          "pixel_count": 93164
+        },
+        "nasal_retina": {
+          "attention_mean": 0.25978,
+          "attention_max": 0.997024,
+          "attention_mass": 24606.6504,
+          "attention_fraction": 0.5052,
+          "overlap_fraction": 0.5447,
+          "region_area_fraction": 0.5006,
+          "pixel_count": 94721
+        },
+        "temporal_retina": {
+          "attention_mean": 0.255052,
+          "attention_max": 0.999984,
+          "attention_mass": 24104.5,
+          "attention_fraction": 0.4948,
+          "overlap_fraction": 0.4553,
+          "region_area_fraction": 0.4994,
+          "pixel_count": 94508
+        },
+        "posterior_pole": {
+          "attention_mean": 0.428907,
+          "attention_max": 0.999984,
+          "attention_mass": 21747.7129,
+          "attention_fraction": 0.4465,
+          "overlap_fraction": 0.5716,
+          "region_area_fraction": 0.268,
+          "pixel_count": 50705
+        },
+        "peripheral_retina": {
+          "attention_mean": 0.148029,
+          "attention_max": 0.646958,
+          "attention_mass": 14050.8877,
+          "attention_fraction": 0.2885,
+          "overlap_fraction": 0.1082,
+          "region_area_fraction": 0.5016,
+          "pixel_count": 94920
+        },
+        "optic_disc_region": {
+          "attention_mean": 0.147341,
+          "attention_max": 0.512549,
+          "attention_mass": 1426.4045,
+          "attention_fraction": 0.0293,
+          "overlap_fraction": 0.0006,
+          "region_area_fraction": 0.0512,
+          "pixel_count": 9681
+        },
+        "macular_region": {
+          "attention_mean": 0.327888,
+          "attention_max": 0.72686,
+          "attention_mass": 4565.8423,
+          "attention_fraction": 0.0937,
+          "overlap_fraction": 0.036,
+          "region_area_fraction": 0.0736,
+          "pixel_count": 13925
+        }
+      },
+      "coordinate_mapping": {
+        "original_dimensions": [
+          462,
+          462
+        ],
+        "crop_dimensions": [
+          462,
+          462
+        ],
+        "crop_box": {
+          "x": 0,
+          "y": 0,
+          "w": 462,
+          "h": 462
+        },
+        "warped_shape": [
+          462,
+          462
+        ],
+        "interpolation_method": "cv2.INTER_CUBIC",
+        "finite_values": true,
+        "mean_activation": 0.233028,
+        "max_activation": 0.999984
+      },
+      "narrative_summary": "Model classified retinal image as Grade 2 (Moderate DR) with 92.2% confidence. Model feature attribution is concentrated predominantly in the Superior Retina (71.5% of total retinal attention mass). Attention overlap with macular context is 3.6%, and optic disc overlap is 0.1%. Primary attention cluster bounded at [x=117, y=79, w=193, h=126]. Evidence status: feature attribution only.",
+      "safety_disclaimer": "Grad-CAM heatmaps represent neural network mathematical feature attribution indicating image regions that influenced the model's classification score. They do NOT identify, segment, or prove the presence of clinical lesions (e.g., microaneurysms, hemorrhages, hard exudates) and do NOT constitute medical diagnosis or replace ophthalmological evaluation.",
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/evidence/aptos_train_sample_c10_evidence.png"
+    },
+    {
+      "image_filename": "cell13_r0_c0_grade0.png",
+      "original_dimensions": [
+        462,
+        462
+      ],
+      "predicted_class": 1,
+      "predicted_class_name": "Mild DR",
+      "predicted_probabilities": [
+        0.002274,
+        0.837416,
+        0.159922,
+        1e-05,
+        0.000377
+      ],
+      "target_class": 1,
+      "target_score": 0.837416,
+      "top_attention_region": "peripheral_retina",
+      "top_attention_mass_pct": 50.89,
+      "macular_overlap_pct": 6.64,
+      "optic_disc_overlap_pct": 2.34,
+      "attention_bounding_box": {
+        "bounding_box": [
+          29,
+          284,
+          94,
+          178
+        ],
+        "x": 29,
+        "y": 284,
+        "width": 94,
+        "height": 178,
+        "area_fraction": 0.0784,
+        "mean_attention": 0.774212,
+        "max_attention": 0.980273,
+        "status": "localized_attention_cluster"
+      },
+      "anatomical_landmarks": {
+        "retinal_field": {
+          "bounding_box": [
+            0,
+            0,
+            462,
+            462
+          ],
+          "center": [
+            231.0,
+            231.0
+          ],
+          "center_x": 231.0,
+          "center_y": 231.0,
+          "radius": 231.0,
+          "area_pixels": 190714,
+          "coverage_pct": 89.35,
+          "aspect_ratio": 1.0
+        },
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            374.0,
+            223.2
+          ],
+          "radius": 36,
+          "confidence": 0.68,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "macula": {
+          "detected": true,
+          "center": [
+            234.0,
+            225.0
+          ],
+          "center_x": 234.0,
+          "center_y": 225.0,
+          "radius": 43.2,
+          "confidence": 0.69,
+          "method": "geometric_displacement_and_photometric_minimum",
+          "status": "moderate_confidence",
+          "is_reliable": true,
+          "notes": "Macular candidate estimated via temporal displacement from optic disc and local photometric absorption minimum."
+        }
+      },
+      "attention_statistics": {
+        "retinal_foreground": {
+          "attention_mean": 0.348383,
+          "attention_max": 0.980273,
+          "attention_mass": 66441.6094,
+          "attention_fraction": 1.0,
+          "overlap_fraction": 1.0,
+          "region_area_fraction": 1.0,
+          "pixel_count": 190714
+        },
+        "superior_retina": {
+          "attention_mean": 0.348894,
+          "attention_max": 0.779538,
+          "attention_mass": 33574.7305,
+          "attention_fraction": 0.5053,
+          "overlap_fraction": 0.435,
+          "region_area_fraction": 0.5046,
+          "pixel_count": 96232
+        },
+        "inferior_retina": {
+          "attention_mean": 0.347864,
+          "attention_max": 0.980273,
+          "attention_mass": 32866.875,
+          "attention_fraction": 0.4947,
+          "overlap_fraction": 0.565,
+          "region_area_fraction": 0.4954,
+          "pixel_count": 94482
+        },
+        "nasal_retina": {
+          "attention_mean": 0.342095,
+          "attention_max": 0.880633,
+          "attention_mass": 32693.6289,
+          "attention_fraction": 0.4921,
+          "overlap_fraction": 0.5713,
+          "region_area_fraction": 0.5011,
+          "pixel_count": 95569
+        },
+        "temporal_retina": {
+          "attention_mean": 0.3547,
+          "attention_max": 0.980273,
+          "attention_mass": 33747.9766,
+          "attention_fraction": 0.5079,
+          "overlap_fraction": 0.4287,
+          "region_area_fraction": 0.4989,
+          "pixel_count": 95145
+        },
+        "posterior_pole": {
+          "attention_mean": 0.340308,
+          "attention_max": 0.706915,
+          "attention_mass": 17255.332,
+          "attention_fraction": 0.2597,
+          "overlap_fraction": 0.2222,
+          "region_area_fraction": 0.2659,
+          "pixel_count": 50705
+        },
+        "peripheral_retina": {
+          "attention_mean": 0.350719,
+          "attention_max": 0.980273,
+          "attention_mass": 33811.1016,
+          "attention_fraction": 0.5089,
+          "overlap_fraction": 0.4978,
+          "region_area_fraction": 0.5055,
+          "pixel_count": 96405
+        },
+        "optic_disc_region": {
+          "attention_mean": 0.26289,
+          "attention_max": 0.683015,
+          "attention_mass": 2407.0203,
+          "attention_fraction": 0.0362,
+          "overlap_fraction": 0.0234,
+          "region_area_fraction": 0.048,
+          "pixel_count": 9156
+        },
+        "macular_region": {
+          "attention_mean": 0.338216,
+          "attention_max": 0.592967,
+          "attention_mass": 4455.3149,
+          "attention_fraction": 0.0671,
+          "overlap_fraction": 0.0664,
+          "region_area_fraction": 0.0691,
+          "pixel_count": 13173
+        }
+      },
+      "coordinate_mapping": {
+        "original_dimensions": [
+          462,
+          462
+        ],
+        "crop_dimensions": [
+          462,
+          462
+        ],
+        "crop_box": {
+          "x": 0,
+          "y": 0,
+          "w": 462,
+          "h": 462
+        },
+        "warped_shape": [
+          462,
+          462
+        ],
+        "interpolation_method": "cv2.INTER_CUBIC",
+        "finite_values": true,
+        "mean_activation": 0.343534,
+        "max_activation": 1.0
+      },
+      "narrative_summary": "Model classified retinal image as Grade 1 (Mild DR) with 83.7% confidence. Model feature attribution is concentrated predominantly in the Peripheral Retina (50.9% of total retinal attention mass). Attention overlap with macular context is 6.6%, and optic disc overlap is 2.3%. Primary attention cluster bounded at [x=29, y=284, w=94, h=178]. Evidence status: feature attribution only.",
+      "safety_disclaimer": "Grad-CAM heatmaps represent neural network mathematical feature attribution indicating image regions that influenced the model's classification score. They do NOT identify, segment, or prove the presence of clinical lesions (e.g., microaneurysms, hemorrhages, hard exudates) and do NOT constitute medical diagnosis or replace ophthalmological evaluation.",
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/evidence/cell13_r0_c0_grade0_evidence.png"
+    },
+    {
+      "image_filename": "cell13_r0_c1_grade1.png",
+      "original_dimensions": [
+        462,
+        462
+      ],
+      "predicted_class": 0,
+      "predicted_class_name": "No DR",
+      "predicted_probabilities": [
+        0.999989,
+        1.1e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_class": 0,
+      "target_score": 0.999989,
+      "top_attention_region": "superior_retina",
+      "top_attention_mass_pct": 66.36,
+      "macular_overlap_pct": 15.04,
+      "optic_disc_overlap_pct": 0.0,
+      "attention_bounding_box": {
+        "bounding_box": [
+          174,
+          56,
+          156,
+          159
+        ],
+        "x": 174,
+        "y": 56,
+        "width": 156,
+        "height": 159,
+        "area_fraction": 0.1162,
+        "mean_attention": 0.772738,
+        "max_attention": 1.0,
+        "status": "localized_attention_cluster"
+      },
+      "anatomical_landmarks": {
+        "retinal_field": {
+          "bounding_box": [
+            0,
+            0,
+            462,
+            462
+          ],
+          "center": [
+            231.0,
+            231.0
+          ],
+          "center_x": 231.0,
+          "center_y": 231.0,
+          "radius": 231.0,
+          "area_pixels": 169201,
+          "coverage_pct": 79.27,
+          "aspect_ratio": 1.0
+        },
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            88.0,
+            148.0
+          ],
+          "radius": 34,
+          "confidence": 0.88,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "macula": {
+          "detected": true,
+          "center": [
+            272.0,
+            213.0
+          ],
+          "center_x": 272.0,
+          "center_y": 213.0,
+          "radius": 40.8,
+          "confidence": 0.79,
+          "method": "geometric_displacement_and_photometric_minimum",
+          "status": "high_confidence",
+          "is_reliable": true,
+          "notes": "Macular candidate estimated via temporal displacement from optic disc and local photometric absorption minimum."
+        }
+      },
+      "attention_statistics": {
+        "retinal_foreground": {
+          "attention_mean": 0.286428,
+          "attention_max": 1.0,
+          "attention_mass": 48463.8516,
+          "attention_fraction": 1.0,
+          "overlap_fraction": 1.0,
+          "region_area_fraction": 1.0,
+          "pixel_count": 169201
+        },
+        "superior_retina": {
+          "attention_mean": 0.381222,
+          "attention_max": 1.0,
+          "attention_mass": 32158.3242,
+          "attention_fraction": 0.6636,
+          "overlap_fraction": 0.9994,
+          "region_area_fraction": 0.4986,
+          "pixel_count": 84356
+        },
+        "inferior_retina": {
+          "attention_mean": 0.19218,
+          "attention_max": 0.505264,
+          "attention_mass": 16305.5234,
+          "attention_fraction": 0.3364,
+          "overlap_fraction": 0.0006,
+          "region_area_fraction": 0.5014,
+          "pixel_count": 84845
+        },
+        "nasal_retina": {
+          "attention_mean": 0.29873,
+          "attention_max": 1.0,
+          "attention_mass": 25110.9531,
+          "attention_fraction": 0.5181,
+          "overlap_fraction": 0.4347,
+          "region_area_fraction": 0.4968,
+          "pixel_count": 84059
+        },
+        "temporal_retina": {
+          "attention_mean": 0.274282,
+          "attention_max": 0.946313,
+          "attention_mass": 23352.8965,
+          "attention_fraction": 0.4819,
+          "overlap_fraction": 0.5653,
+          "region_area_fraction": 0.5032,
+          "pixel_count": 85142
+        },
+        "posterior_pole": {
+          "attention_mean": 0.408122,
+          "attention_max": 1.0,
+          "attention_mass": 20693.8105,
+          "attention_fraction": 0.427,
+          "overlap_fraction": 0.4904,
+          "region_area_fraction": 0.2997,
+          "pixel_count": 50705
+        },
+        "peripheral_retina": {
+          "attention_mean": 0.185972,
+          "attention_max": 0.686352,
+          "attention_mass": 13927.8057,
+          "attention_fraction": 0.2874,
+          "overlap_fraction": 0.1786,
+          "region_area_fraction": 0.4426,
+          "pixel_count": 74892
+        },
+        "optic_disc_region": {
+          "attention_mean": 0.289714,
+          "attention_max": 0.499544,
+          "attention_mass": 2367.8301,
+          "attention_fraction": 0.0489,
+          "overlap_fraction": 0.0,
+          "region_area_fraction": 0.0483,
+          "pixel_count": 8173
+        },
+        "macular_region": {
+          "attention_mean": 0.433273,
+          "attention_max": 0.952547,
+          "attention_mass": 5099.186,
+          "attention_fraction": 0.1052,
+          "overlap_fraction": 0.1504,
+          "region_area_fraction": 0.0696,
+          "pixel_count": 11769
+        }
+      },
+      "coordinate_mapping": {
+        "original_dimensions": [
+          462,
+          462
+        ],
+        "crop_dimensions": [
+          462,
+          462
+        ],
+        "crop_box": {
+          "x": 0,
+          "y": 0,
+          "w": 462,
+          "h": 462
+        },
+        "warped_shape": [
+          462,
+          462
+        ],
+        "interpolation_method": "cv2.INTER_CUBIC",
+        "finite_values": true,
+        "mean_activation": 0.245794,
+        "max_activation": 1.0
+      },
+      "narrative_summary": "Model classified retinal image as Grade 0 (No DR) with 100.0% confidence. Model feature attribution is concentrated predominantly in the Superior Retina (66.4% of total retinal attention mass). Attention overlap with macular context is 15.0%, and optic disc overlap is 0.0%. Primary attention cluster bounded at [x=174, y=56, w=156, h=159]. Evidence status: feature attribution only.",
+      "safety_disclaimer": "Grad-CAM heatmaps represent neural network mathematical feature attribution indicating image regions that influenced the model's classification score. They do NOT identify, segment, or prove the presence of clinical lesions (e.g., microaneurysms, hemorrhages, hard exudates) and do NOT constitute medical diagnosis or replace ophthalmological evaluation.",
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/evidence/cell13_r0_c1_grade1_evidence.png"
+    },
+    {
+      "image_filename": "cell13_r0_c2_grade2.png",
+      "original_dimensions": [
+        462,
+        462
+      ],
+      "predicted_class": 0,
+      "predicted_class_name": "No DR",
+      "predicted_probabilities": [
+        0.99992,
+        7.7e-05,
+        3e-06,
+        1e-06,
+        0.0
+      ],
+      "target_class": 0,
+      "target_score": 0.99992,
+      "top_attention_region": "nasal_retina",
+      "top_attention_mass_pct": 65.15,
+      "macular_overlap_pct": 2.88,
+      "optic_disc_overlap_pct": 5.97,
+      "attention_bounding_box": {
+        "bounding_box": [
+          201,
+          0,
+          171,
+          208
+        ],
+        "x": 201,
+        "y": 0,
+        "width": 171,
+        "height": 208,
+        "area_fraction": 0.1666,
+        "mean_attention": 0.808178,
+        "max_attention": 1.0,
+        "status": "localized_attention_cluster"
+      },
+      "anatomical_landmarks": {
+        "retinal_field": {
+          "bounding_box": [
+            0,
+            0,
+            462,
+            462
+          ],
+          "center": [
+            231.0,
+            231.0
+          ],
+          "center_x": 231.0,
+          "center_y": 231.0,
+          "radius": 231.0,
+          "area_pixels": 168342,
+          "coverage_pct": 78.87,
+          "aspect_ratio": 1.0
+        },
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            351.8,
+            331.4
+          ],
+          "radius": 24,
+          "confidence": 0.7,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "macula": {
+          "detected": true,
+          "center": [
+            260.0,
+            267.0
+          ],
+          "center_x": 260.0,
+          "center_y": 267.0,
+          "radius": 28.8,
+          "confidence": 0.7,
+          "method": "geometric_displacement_and_photometric_minimum",
+          "status": "high_confidence",
+          "is_reliable": true,
+          "notes": "Macular candidate estimated via temporal displacement from optic disc and local photometric absorption minimum."
+        }
+      },
+      "attention_statistics": {
+        "retinal_foreground": {
+          "attention_mean": 0.377633,
+          "attention_max": 1.0,
+          "attention_mass": 63571.4883,
+          "attention_fraction": 1.0,
+          "overlap_fraction": 1.0,
+          "region_area_fraction": 1.0,
+          "pixel_count": 168342
+        },
+        "superior_retina": {
+          "attention_mean": 0.469739,
+          "attention_max": 1.0,
+          "attention_mass": 39654.457,
+          "attention_fraction": 0.6238,
+          "overlap_fraction": 0.7395,
+          "region_area_fraction": 0.5015,
+          "pixel_count": 84418
+        },
+        "inferior_retina": {
+          "attention_mean": 0.284984,
+          "attention_max": 0.77628,
+          "attention_mass": 23917.0293,
+          "attention_fraction": 0.3762,
+          "overlap_fraction": 0.2605,
+          "region_area_fraction": 0.4985,
+          "pixel_count": 83924
+        },
+        "nasal_retina": {
+          "attention_mean": 0.491168,
+          "attention_max": 1.0,
+          "attention_mass": 41416.8008,
+          "attention_fraction": 0.6515,
+          "overlap_fraction": 0.7909,
+          "region_area_fraction": 0.5009,
+          "pixel_count": 84323
+        },
+        "temporal_retina": {
+          "attention_mean": 0.263687,
+          "attention_max": 0.868464,
+          "attention_mass": 22154.6797,
+          "attention_fraction": 0.3485,
+          "overlap_fraction": 0.2091,
+          "region_area_fraction": 0.4991,
+          "pixel_count": 84019
+        },
+        "posterior_pole": {
+          "attention_mean": 0.385242,
+          "attention_max": 0.991671,
+          "attention_mass": 19533.7031,
+          "attention_fraction": 0.3073,
+          "overlap_fraction": 0.3702,
+          "region_area_fraction": 0.3012,
+          "pixel_count": 50705
+        },
+        "peripheral_retina": {
+          "attention_mean": 0.323544,
+          "attention_max": 0.939183,
+          "attention_mass": 23952.9043,
+          "attention_fraction": 0.3768,
+          "overlap_fraction": 0.2674,
+          "region_area_fraction": 0.4398,
+          "pixel_count": 74033
+        },
+        "optic_disc_region": {
+          "attention_mean": 0.55721,
+          "attention_max": 0.664875,
+          "attention_mass": 2270.0745,
+          "attention_fraction": 0.0357,
+          "overlap_fraction": 0.0597,
+          "region_area_fraction": 0.0242,
+          "pixel_count": 4074
+        },
+        "macular_region": {
+          "attention_mean": 0.406891,
+          "attention_max": 0.576482,
+          "attention_mass": 2391.3008,
+          "attention_fraction": 0.0376,
+          "overlap_fraction": 0.0288,
+          "region_area_fraction": 0.0349,
+          "pixel_count": 5877
+        }
+      },
+      "coordinate_mapping": {
+        "original_dimensions": [
+          462,
+          462
+        ],
+        "crop_dimensions": [
+          462,
+          462
+        ],
+        "crop_box": {
+          "x": 0,
+          "y": 0,
+          "w": 462,
+          "h": 462
+        },
+        "warped_shape": [
+          462,
+          462
+        ],
+        "interpolation_method": "cv2.INTER_CUBIC",
+        "finite_values": true,
+        "mean_activation": 0.320025,
+        "max_activation": 1.0
+      },
+      "narrative_summary": "Model classified retinal image as Grade 0 (No DR) with 100.0% confidence. Model feature attribution is concentrated predominantly in the Nasal Retina (65.1% of total retinal attention mass). Attention overlap with macular context is 2.9%, and optic disc overlap is 6.0%. Primary attention cluster bounded at [x=201, y=0, w=171, h=208]. Evidence status: feature attribution only.",
+      "safety_disclaimer": "Grad-CAM heatmaps represent neural network mathematical feature attribution indicating image regions that influenced the model's classification score. They do NOT identify, segment, or prove the presence of clinical lesions (e.g., microaneurysms, hemorrhages, hard exudates) and do NOT constitute medical diagnosis or replace ophthalmological evaluation.",
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/evidence/cell13_r0_c2_grade2_evidence.png"
+    },
+    {
+      "image_filename": "cell13_r1_c0_grade2_dup.png",
+      "original_dimensions": [
+        462,
+        462
+      ],
+      "predicted_class": 0,
+      "predicted_class_name": "No DR",
+      "predicted_probabilities": [
+        0.999922,
+        7.8e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_class": 0,
+      "target_score": 0.999922,
+      "top_attention_region": "temporal_retina",
+      "top_attention_mass_pct": 60.74,
+      "macular_overlap_pct": 18.77,
+      "optic_disc_overlap_pct": 0.0,
+      "attention_bounding_box": {
+        "bounding_box": [
+          130,
+          44,
+          105,
+          147
+        ],
+        "x": 130,
+        "y": 44,
+        "width": 105,
+        "height": 147,
+        "area_fraction": 0.0723,
+        "mean_attention": 0.808284,
+        "max_attention": 1.0,
+        "status": "localized_attention_cluster"
+      },
+      "anatomical_landmarks": {
+        "retinal_field": {
+          "bounding_box": [
+            0,
+            0,
+            462,
+            462
+          ],
+          "center": [
+            231.0,
+            231.0
+          ],
+          "center_x": 231.0,
+          "center_y": 231.0,
+          "radius": 231.0,
+          "area_pixels": 171739,
+          "coverage_pct": 80.46,
+          "aspect_ratio": 1.0
+        },
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            366.8,
+            176.8
+          ],
+          "radius": 35,
+          "confidence": 0.84,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "macula": {
+          "detected": true,
+          "center": [
+            184.0,
+            209.0
+          ],
+          "center_x": 184.0,
+          "center_y": 209.0,
+          "radius": 42.0,
+          "confidence": 0.77,
+          "method": "geometric_displacement_and_photometric_minimum",
+          "status": "high_confidence",
+          "is_reliable": true,
+          "notes": "Macular candidate estimated via temporal displacement from optic disc and local photometric absorption minimum."
+        }
+      },
+      "attention_statistics": {
+        "retinal_foreground": {
+          "attention_mean": 0.323758,
+          "attention_max": 1.0,
+          "attention_mass": 55601.8281,
+          "attention_fraction": 1.0,
+          "overlap_fraction": 1.0,
+          "region_area_fraction": 1.0,
+          "pixel_count": 171739
+        },
+        "superior_retina": {
+          "attention_mean": 0.29362,
+          "attention_max": 1.0,
+          "attention_mass": 25553.1992,
+          "attention_fraction": 0.4596,
+          "overlap_fraction": 0.5152,
+          "region_area_fraction": 0.5067,
+          "pixel_count": 87028
+        },
+        "inferior_retina": {
+          "attention_mean": 0.354719,
+          "attention_max": 0.769237,
+          "attention_mass": 30048.627,
+          "attention_fraction": 0.5404,
+          "overlap_fraction": 0.4848,
+          "region_area_fraction": 0.4933,
+          "pixel_count": 84711
+        },
+        "nasal_retina": {
+          "attention_mean": 0.252744,
+          "attention_max": 0.769237,
+          "attention_mass": 21830.9941,
+          "attention_fraction": 0.3926,
+          "overlap_fraction": 0.3492,
+          "region_area_fraction": 0.5029,
+          "pixel_count": 86376
+        },
+        "temporal_retina": {
+          "attention_mean": 0.395614,
+          "attention_max": 1.0,
+          "attention_mass": 33770.8281,
+          "attention_fraction": 0.6074,
+          "overlap_fraction": 0.6508,
+          "region_area_fraction": 0.4971,
+          "pixel_count": 85363
+        },
+        "posterior_pole": {
+          "attention_mean": 0.453752,
+          "attention_max": 0.994091,
+          "attention_mass": 23007.5137,
+          "attention_fraction": 0.4138,
+          "overlap_fraction": 0.5944,
+          "region_area_fraction": 0.2952,
+          "pixel_count": 50705
+        },
+        "peripheral_retina": {
+          "attention_mean": 0.205611,
+          "attention_max": 0.827316,
+          "attention_mass": 15920.4316,
+          "attention_fraction": 0.2863,
+          "overlap_fraction": 0.1175,
+          "region_area_fraction": 0.4509,
+          "pixel_count": 77430
+        },
+        "optic_disc_region": {
+          "attention_mean": 0.068891,
+          "attention_max": 0.160429,
+          "attention_mass": 596.8753,
+          "attention_fraction": 0.0107,
+          "overlap_fraction": 0.0,
+          "region_area_fraction": 0.0504,
+          "pixel_count": 8664
+        },
+        "macular_region": {
+          "attention_mean": 0.540311,
+          "attention_max": 0.880199,
+          "attention_mass": 6728.4902,
+          "attention_fraction": 0.121,
+          "overlap_fraction": 0.1877,
+          "region_area_fraction": 0.0725,
+          "pixel_count": 12453
+        }
+      },
+      "coordinate_mapping": {
+        "original_dimensions": [
+          462,
+          462
+        ],
+        "crop_dimensions": [
+          462,
+          462
+        ],
+        "crop_box": {
+          "x": 0,
+          "y": 0,
+          "w": 462,
+          "h": 462
+        },
+        "warped_shape": [
+          462,
+          462
+        ],
+        "interpolation_method": "cv2.INTER_CUBIC",
+        "finite_values": true,
+        "mean_activation": 0.279021,
+        "max_activation": 1.0
+      },
+      "narrative_summary": "Model classified retinal image as Grade 0 (No DR) with 100.0% confidence. Model feature attribution is concentrated predominantly in the Temporal Retina (60.7% of total retinal attention mass). Attention overlap with macular context is 18.8%, and optic disc overlap is 0.0%. Primary attention cluster bounded at [x=130, y=44, w=105, h=147]. Evidence status: feature attribution only.",
+      "safety_disclaimer": "Grad-CAM heatmaps represent neural network mathematical feature attribution indicating image regions that influenced the model's classification score. They do NOT identify, segment, or prove the presence of clinical lesions (e.g., microaneurysms, hemorrhages, hard exudates) and do NOT constitute medical diagnosis or replace ophthalmological evaluation.",
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/evidence/cell13_r1_c0_grade2_dup_evidence.png"
+    },
+    {
+      "image_filename": "cell13_r1_c1_grade3.png",
+      "original_dimensions": [
+        462,
+        462
+      ],
+      "predicted_class": 3,
+      "predicted_class_name": "Severe DR",
+      "predicted_probabilities": [
+        0.0,
+        0.002639,
+        0.384461,
+        0.587052,
+        0.025849
+      ],
+      "target_class": 3,
+      "target_score": 0.587052,
+      "top_attention_region": "superior_retina",
+      "top_attention_mass_pct": 58.91,
+      "macular_overlap_pct": 10.08,
+      "optic_disc_overlap_pct": 3.33,
+      "attention_bounding_box": {
+        "bounding_box": [
+          91,
+          18,
+          268,
+          314
+        ],
+        "x": 91,
+        "y": 18,
+        "width": 268,
+        "height": 314,
+        "area_fraction": 0.3943,
+        "mean_attention": 0.763361,
+        "max_attention": 1.0,
+        "status": "localized_attention_cluster"
+      },
+      "anatomical_landmarks": {
+        "retinal_field": {
+          "bounding_box": [
+            0,
+            0,
+            462,
+            462
+          ],
+          "center": [
+            231.0,
+            231.0
+          ],
+          "center_x": 231.0,
+          "center_y": 231.0,
+          "radius": 231.0,
+          "area_pixels": 191727,
+          "coverage_pct": 89.83,
+          "aspect_ratio": 1.0
+        },
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            60.0,
+            152.9
+          ],
+          "radius": 30,
+          "confidence": 0.69,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "macula": {
+          "detected": true,
+          "center": [
+            199.0,
+            195.0
+          ],
+          "center_x": 199.0,
+          "center_y": 195.0,
+          "radius": 36.0,
+          "confidence": 0.69,
+          "method": "geometric_displacement_and_photometric_minimum",
+          "status": "moderate_confidence",
+          "is_reliable": true,
+          "notes": "Macular candidate estimated via temporal displacement from optic disc and local photometric absorption minimum."
+        }
+      },
+      "attention_statistics": {
+        "retinal_foreground": {
+          "attention_mean": 0.399614,
+          "attention_max": 1.0,
+          "attention_mass": 76616.8438,
+          "attention_fraction": 1.0,
+          "overlap_fraction": 1.0,
+          "region_area_fraction": 1.0,
+          "pixel_count": 191727
+        },
+        "superior_retina": {
+          "attention_mean": 0.464873,
+          "attention_max": 0.950162,
+          "attention_mass": 45136.875,
+          "attention_fraction": 0.5891,
+          "overlap_fraction": 0.6747,
+          "region_area_fraction": 0.5064,
+          "pixel_count": 97095
+        },
+        "inferior_retina": {
+          "attention_mean": 0.332657,
+          "attention_max": 1.0,
+          "attention_mass": 31479.9668,
+          "attention_fraction": 0.4109,
+          "overlap_fraction": 0.3253,
+          "region_area_fraction": 0.4936,
+          "pixel_count": 94632
+        },
+        "nasal_retina": {
+          "attention_mean": 0.442452,
+          "attention_max": 0.86324,
+          "attention_mass": 42313.0352,
+          "attention_fraction": 0.5523,
+          "overlap_fraction": 0.5619,
+          "region_area_fraction": 0.4988,
+          "pixel_count": 95633
+        },
+        "temporal_retina": {
+          "attention_mean": 0.356982,
+          "attention_max": 1.0,
+          "attention_mass": 34303.8164,
+          "attention_fraction": 0.4477,
+          "overlap_fraction": 0.4381,
+          "region_area_fraction": 0.5012,
+          "pixel_count": 96094
+        },
+        "posterior_pole": {
+          "attention_mean": 0.609807,
+          "attention_max": 1.0,
+          "attention_mass": 30920.2617,
+          "attention_fraction": 0.4036,
+          "overlap_fraction": 0.4784,
+          "region_area_fraction": 0.2645,
+          "pixel_count": 50705
+        },
+        "peripheral_retina": {
+          "attention_mean": 0.271189,
+          "attention_max": 0.828289,
+          "attention_mass": 26418.7227,
+          "attention_fraction": 0.3448,
+          "overlap_fraction": 0.2533,
+          "region_area_fraction": 0.5081,
+          "pixel_count": 97418
+        },
+        "optic_disc_region": {
+          "attention_mean": 0.459413,
+          "attention_max": 0.711199,
+          "attention_mass": 2917.2695,
+          "attention_fraction": 0.0381,
+          "overlap_fraction": 0.0333,
+          "region_area_fraction": 0.0331,
+          "pixel_count": 6350
+        },
+        "macular_region": {
+          "attention_mean": 0.586807,
+          "attention_max": 0.716011,
+          "attention_mass": 5366.3467,
+          "attention_fraction": 0.07,
+          "overlap_fraction": 0.1008,
+          "region_area_fraction": 0.0477,
+          "pixel_count": 9145
+        }
+      },
+      "coordinate_mapping": {
+        "original_dimensions": [
+          462,
+          462
+        ],
+        "crop_dimensions": [
+          462,
+          462
+        ],
+        "crop_box": {
+          "x": 0,
+          "y": 0,
+          "w": 462,
+          "h": 462
+        },
+        "warped_shape": [
+          462,
+          462
+        ],
+        "interpolation_method": "cv2.INTER_CUBIC",
+        "finite_values": true,
+        "mean_activation": 0.367511,
+        "max_activation": 1.0
+      },
+      "narrative_summary": "Model classified retinal image as Grade 3 (Severe DR) with 58.7% confidence. Model feature attribution is concentrated predominantly in the Superior Retina (58.9% of total retinal attention mass). Attention overlap with macular context is 10.1%, and optic disc overlap is 3.3%. Primary attention cluster bounded at [x=91, y=18, w=268, h=314]. Evidence status: feature attribution only.",
+      "safety_disclaimer": "Grad-CAM heatmaps represent neural network mathematical feature attribution indicating image regions that influenced the model's classification score. They do NOT identify, segment, or prove the presence of clinical lesions (e.g., microaneurysms, hemorrhages, hard exudates) and do NOT constitute medical diagnosis or replace ophthalmological evaluation.",
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/evidence/cell13_r1_c1_grade3_evidence.png"
+    },
+    {
+      "image_filename": "cell13_r1_c2_grade4.png",
+      "original_dimensions": [
+        462,
+        462
+      ],
+      "predicted_class": 0,
+      "predicted_class_name": "No DR",
+      "predicted_probabilities": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_class": 0,
+      "target_score": 1.0,
+      "top_attention_region": "temporal_retina",
+      "top_attention_mass_pct": 61.12,
+      "macular_overlap_pct": 16.23,
+      "optic_disc_overlap_pct": 0.0,
+      "attention_bounding_box": {
+        "bounding_box": [
+          231,
+          37,
+          153,
+          206
+        ],
+        "x": 231,
+        "y": 37,
+        "width": 153,
+        "height": 206,
+        "area_fraction": 0.1477,
+        "mean_attention": 0.783919,
+        "max_attention": 1.0,
+        "status": "localized_attention_cluster"
+      },
+      "anatomical_landmarks": {
+        "retinal_field": {
+          "bounding_box": [
+            0,
+            0,
+            462,
+            462
+          ],
+          "center": [
+            231.0,
+            231.0
+          ],
+          "center_x": 231.0,
+          "center_y": 231.0,
+          "radius": 231.0,
+          "area_pixels": 155012,
+          "coverage_pct": 72.62,
+          "aspect_ratio": 1.0
+        },
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            161.7,
+            232.0
+          ],
+          "radius": 33,
+          "confidence": 0.9,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "macula": {
+          "detected": true,
+          "center": [
+            269.0,
+            208.0
+          ],
+          "center_x": 269.0,
+          "center_y": 208.0,
+          "radius": 39.6,
+          "confidence": 0.8,
+          "method": "geometric_displacement_and_photometric_minimum",
+          "status": "high_confidence",
+          "is_reliable": true,
+          "notes": "Macular candidate estimated via temporal displacement from optic disc and local photometric absorption minimum."
+        }
+      },
+      "attention_statistics": {
+        "retinal_foreground": {
+          "attention_mean": 0.386097,
+          "attention_max": 1.0,
+          "attention_mass": 59849.7383,
+          "attention_fraction": 1.0,
+          "overlap_fraction": 1.0,
+          "region_area_fraction": 1.0,
+          "pixel_count": 155012
+        },
+        "superior_retina": {
+          "attention_mean": 0.422413,
+          "attention_max": 1.0,
+          "attention_mass": 33233.75,
+          "attention_fraction": 0.5553,
+          "overlap_fraction": 0.6153,
+          "region_area_fraction": 0.5075,
+          "pixel_count": 78676
+        },
+        "inferior_retina": {
+          "attention_mean": 0.348669,
+          "attention_max": 0.849996,
+          "attention_mass": 26615.9883,
+          "attention_fraction": 0.4447,
+          "overlap_fraction": 0.3847,
+          "region_area_fraction": 0.4925,
+          "pixel_count": 76336
+        },
+        "nasal_retina": {
+          "attention_mean": 0.346085,
+          "attention_max": 0.849996,
+          "attention_mass": 23272.1133,
+          "attention_fraction": 0.3888,
+          "overlap_fraction": 0.301,
+          "region_area_fraction": 0.4338,
+          "pixel_count": 67244
+        },
+        "temporal_retina": {
+          "attention_mean": 0.416754,
+          "attention_max": 1.0,
+          "attention_mass": 36577.625,
+          "attention_fraction": 0.6112,
+          "overlap_fraction": 0.699,
+          "region_area_fraction": 0.5662,
+          "pixel_count": 87768
+        },
+        "posterior_pole": {
+          "attention_mean": 0.363985,
+          "attention_max": 0.849941,
+          "attention_mass": 18455.8438,
+          "attention_fraction": 0.3084,
+          "overlap_fraction": 0.3213,
+          "region_area_fraction": 0.3271,
+          "pixel_count": 50705
+        },
+        "peripheral_retina": {
+          "attention_mean": 0.334576,
+          "attention_max": 1.0,
+          "attention_mass": 20309.7578,
+          "attention_fraction": 0.3393,
+          "overlap_fraction": 0.2551,
+          "region_area_fraction": 0.3916,
+          "pixel_count": 60703
+        },
+        "optic_disc_region": {
+          "attention_mean": 0.111722,
+          "attention_max": 0.392599,
+          "attention_mass": 860.371,
+          "attention_fraction": 0.0144,
+          "overlap_fraction": 0.0,
+          "region_area_fraction": 0.0497,
+          "pixel_count": 7701
+        },
+        "macular_region": {
+          "attention_mean": 0.551661,
+          "attention_max": 0.777185,
+          "attention_mass": 6106.3325,
+          "attention_fraction": 0.102,
+          "overlap_fraction": 0.1623,
+          "region_area_fraction": 0.0714,
+          "pixel_count": 11069
+        }
+      },
+      "coordinate_mapping": {
+        "original_dimensions": [
+          462,
+          462
+        ],
+        "crop_dimensions": [
+          462,
+          462
+        ],
+        "crop_box": {
+          "x": 0,
+          "y": 0,
+          "w": 462,
+          "h": 462
+        },
+        "warped_shape": [
+          462,
+          462
+        ],
+        "interpolation_method": "cv2.INTER_CUBIC",
+        "finite_values": true,
+        "mean_activation": 0.317412,
+        "max_activation": 1.0
+      },
+      "narrative_summary": "Model classified retinal image as Grade 0 (No DR) with 100.0% confidence. Model feature attribution is concentrated predominantly in the Temporal Retina (61.1% of total retinal attention mass). Attention overlap with macular context is 16.2%, and optic disc overlap is 0.0%. Primary attention cluster bounded at [x=231, y=37, w=153, h=206]. Evidence status: feature attribution only.",
+      "safety_disclaimer": "Grad-CAM heatmaps represent neural network mathematical feature attribution indicating image regions that influenced the model's classification score. They do NOT identify, segment, or prove the presence of clinical lesions (e.g., microaneurysms, hemorrhages, hard exudates) and do NOT constitute medical diagnosis or replace ophthalmological evaluation.",
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/evidence/cell13_r1_c2_grade4_evidence.png"
+    },
+    {
+      "image_filename": "confirmed_grade4_proliferative.jpg",
+      "original_dimensions": [
+        203,
+        300
+      ],
+      "predicted_class": 4,
+      "predicted_class_name": "Proliferative DR",
+      "predicted_probabilities": [
+        0.000115,
+        0.000758,
+        0.046666,
+        0.26753,
+        0.684931
+      ],
+      "target_class": 4,
+      "target_score": 0.684931,
+      "top_attention_region": "temporal_retina",
+      "top_attention_mass_pct": 61.12,
+      "macular_overlap_pct": 0.0,
+      "optic_disc_overlap_pct": 0.0,
+      "attention_bounding_box": {
+        "bounding_box": [
+          46,
+          15,
+          57,
+          69
+        ],
+        "x": 46,
+        "y": 15,
+        "width": 57,
+        "height": 69,
+        "area_fraction": 0.0646,
+        "mean_attention": 0.792749,
+        "max_attention": 1.0,
+        "status": "localized_attention_cluster"
+      },
+      "anatomical_landmarks": {
+        "retinal_field": {
+          "bounding_box": [
+            0,
+            0,
+            300,
+            203
+          ],
+          "center": [
+            150.0,
+            101.5
+          ],
+          "center_x": 150.0,
+          "center_y": 101.5,
+          "radius": 101.5,
+          "area_pixels": 44358,
+          "coverage_pct": 72.84,
+          "aspect_ratio": 1.478
+        },
+        "optic_disc": {
+          "detected": true,
+          "center": [
+            205.4,
+            92.1
+          ],
+          "radius": 16,
+          "confidence": 0.79,
+          "is_reliable": true,
+          "method": "interior_morphology_candidate_scoring",
+          "notes": "Optic disc candidate localized within expected physiological dimensions."
+        },
+        "macula": {
+          "detected": true,
+          "center": [
+            137.0,
+            115.0
+          ],
+          "center_x": 137.0,
+          "center_y": 115.0,
+          "radius": 19.2,
+          "confidence": 0.74,
+          "method": "geometric_displacement_and_photometric_minimum",
+          "status": "high_confidence",
+          "is_reliable": true,
+          "notes": "Macular candidate estimated via temporal displacement from optic disc and local photometric absorption minimum."
+        }
+      },
+      "attention_statistics": {
+        "retinal_foreground": {
+          "attention_mean": 0.337644,
+          "attention_max": 1.0,
+          "attention_mass": 14977.2051,
+          "attention_fraction": 1.0,
+          "overlap_fraction": 1.0,
+          "region_area_fraction": 1.0,
+          "pixel_count": 44358
+        },
+        "superior_retina": {
+          "attention_mean": 0.36867,
+          "attention_max": 1.0,
+          "attention_mass": 8232.4004,
+          "attention_fraction": 0.5497,
+          "overlap_fraction": 0.5847,
+          "region_area_fraction": 0.5034,
+          "pixel_count": 22330
+        },
+        "inferior_retina": {
+          "attention_mean": 0.306192,
+          "attention_max": 0.808718,
+          "attention_mass": 6744.8047,
+          "attention_fraction": 0.4503,
+          "overlap_fraction": 0.4153,
+          "region_area_fraction": 0.4966,
+          "pixel_count": 22028
+        },
+        "nasal_retina": {
+          "attention_mean": 0.26035,
+          "attention_max": 0.692586,
+          "attention_mass": 5822.7275,
+          "attention_fraction": 0.3888,
+          "overlap_fraction": 0.1515,
+          "region_area_fraction": 0.5042,
+          "pixel_count": 22365
+        },
+        "temporal_retina": {
+          "attention_mean": 0.416245,
+          "attention_max": 1.0,
+          "attention_mass": 9154.4785,
+          "attention_fraction": 0.6112,
+          "overlap_fraction": 0.8485,
+          "region_area_fraction": 0.4958,
+          "pixel_count": 21993
+        },
+        "posterior_pole": {
+          "attention_mean": 0.304527,
+          "attention_max": 0.5198,
+          "attention_mass": 2983.1504,
+          "attention_fraction": 0.1992,
+          "overlap_fraction": 0.0031,
+          "region_area_fraction": 0.2208,
+          "pixel_count": 9796
+        },
+        "peripheral_retina": {
+          "attention_mean": 0.345986,
+          "attention_max": 1.0,
+          "attention_mass": 9044.7646,
+          "attention_fraction": 0.6039,
+          "overlap_fraction": 0.7796,
+          "region_area_fraction": 0.5893,
+          "pixel_count": 26142
+        },
+        "optic_disc_region": {
+          "attention_mean": 0.108182,
+          "attention_max": 0.304806,
+          "attention_mass": 195.9185,
+          "attention_fraction": 0.0131,
+          "overlap_fraction": 0.0,
+          "region_area_fraction": 0.0408,
+          "pixel_count": 1811
+        },
+        "macular_region": {
+          "attention_mean": 0.356025,
+          "attention_max": 0.461782,
+          "attention_mass": 926.0211,
+          "attention_fraction": 0.0618,
+          "overlap_fraction": 0.0,
+          "region_area_fraction": 0.0586,
+          "pixel_count": 2601
+        }
+      },
+      "coordinate_mapping": {
+        "original_dimensions": [
+          203,
+          300
+        ],
+        "crop_dimensions": [
+          203,
+          300
+        ],
+        "crop_box": {
+          "x": 0,
+          "y": 0,
+          "w": 300,
+          "h": 203
+        },
+        "warped_shape": [
+          203,
+          300
+        ],
+        "interpolation_method": "cv2.INTER_CUBIC",
+        "finite_values": true,
+        "mean_activation": 0.273708,
+        "max_activation": 1.0
+      },
+      "narrative_summary": "Model classified retinal image as Grade 4 (Proliferative DR) with 68.5% confidence. Model feature attribution is concentrated predominantly in the Temporal Retina (61.1% of total retinal attention mass). Attention overlap with macular context is 0.0%, and optic disc overlap is 0.0%. Primary attention cluster bounded at [x=46, y=15, w=57, h=69]. Evidence status: feature attribution only.",
+      "safety_disclaimer": "Grad-CAM heatmaps represent neural network mathematical feature attribution indicating image regions that influenced the model's classification score. They do NOT identify, segment, or prove the presence of clinical lesions (e.g., microaneurysms, hemorrhages, hard exudates) and do NOT constitute medical diagnosis or replace ophthalmological evaluation.",
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/evidence/confirmed_grade4_proliferative_evidence.png"
+    }
+  ],
+  "safety_disclaimer": "Grad-CAM heatmaps represent neural network mathematical feature attribution indicating image regions that influenced the model's classification score. They do NOT identify, segment, or prove the presence of clinical lesions (e.g., microaneurysms, hemorrhages, hard exudates) and do NOT constitute medical diagnosis or replace ophthalmological evaluation."
+}

@@ -1,0 +1,385 @@
+{
+  "milestone": "Milestone 11 - Step 1: Grad-CAM Layer Discovery & Verification",
+  "model_verification": {
+    "model_path": "/Users/dakshsrivastava/Desktop/DR /model/MODEL_V2_80pct_backup.keras",
+    "model_name": "APTOS_DR_EfficientNetB3_V2",
+    "input_shape": [
+      null,
+      384,
+      384,
+      3
+    ],
+    "output_shape": [
+      null,
+      5
+    ],
+    "parameter_count": 11184436,
+    "num_classes": 5
+  },
+  "selected_gradcam_layer": {
+    "layer_name": "top_conv",
+    "full_path": "efficientnetb3.top_conv",
+    "layer_type": "Conv2D",
+    "output_shape": [
+      null,
+      12,
+      12,
+      1536
+    ],
+    "spatial_dimensions": [
+      12,
+      12
+    ],
+    "num_channels": 1536,
+    "parent_submodel": "efficientnetb3",
+    "connected_to_output": true,
+    "connection_message": "Connected: gradients computed successfully (max absolute grad: 7.829666e-04)."
+  },
+  "candidate_layers_summary": {
+    "total_layers_scanned": 398,
+    "spatial_feature_layers": 288,
+    "convolutional_spatial_layers": 78,
+    "key_candidates": [
+      {
+        "name": "efficientnetb3.block7b_activation",
+        "type": "Activation",
+        "output_shape": [
+          null,
+          12,
+          12,
+          2304
+        ],
+        "channels": 2304,
+        "is_spatial": true
+      },
+      {
+        "name": "efficientnetb3.block7b_se_excite",
+        "type": "Multiply",
+        "output_shape": [
+          null,
+          12,
+          12,
+          2304
+        ],
+        "channels": 2304,
+        "is_spatial": true
+      },
+      {
+        "name": "efficientnetb3.block7b_project_conv",
+        "type": "Conv2D",
+        "output_shape": [
+          null,
+          12,
+          12,
+          384
+        ],
+        "channels": 384,
+        "is_spatial": true
+      },
+      {
+        "name": "efficientnetb3.block7b_project_bn",
+        "type": "BatchNormalization",
+        "output_shape": [
+          null,
+          12,
+          12,
+          384
+        ],
+        "channels": 384,
+        "is_spatial": true
+      },
+      {
+        "name": "efficientnetb3.block7b_drop",
+        "type": "Dropout",
+        "output_shape": [
+          null,
+          12,
+          12,
+          384
+        ],
+        "channels": 384,
+        "is_spatial": true
+      },
+      {
+        "name": "efficientnetb3.block7b_add",
+        "type": "Add",
+        "output_shape": [
+          null,
+          12,
+          12,
+          384
+        ],
+        "channels": 384,
+        "is_spatial": true
+      },
+      {
+        "name": "efficientnetb3.top_conv",
+        "type": "Conv2D",
+        "output_shape": [
+          null,
+          12,
+          12,
+          1536
+        ],
+        "channels": 1536,
+        "is_spatial": true
+      },
+      {
+        "name": "efficientnetb3.top_bn",
+        "type": "BatchNormalization",
+        "output_shape": [
+          null,
+          12,
+          12,
+          1536
+        ],
+        "channels": 1536,
+        "is_spatial": true
+      },
+      {
+        "name": "efficientnetb3.top_activation",
+        "type": "Activation",
+        "output_shape": [
+          null,
+          12,
+          12,
+          1536
+        ],
+        "channels": 1536,
+        "is_spatial": true
+      },
+      {
+        "name": "efficientnetb3",
+        "type": "Functional",
+        "output_shape": [
+          null,
+          12,
+          12,
+          1536
+        ],
+        "channels": 1536,
+        "is_spatial": true
+      }
+    ]
+  },
+  "real_images_evaluated": {
+    "total_images": 9,
+    "all_features_valid": true,
+    "per_image_results": [
+      {
+        "image_filename": "aptos_eval_6959267_grade3.png",
+        "input_preprocessed_shape": [
+          384,
+          384,
+          3
+        ],
+        "input_tensor_shape": [
+          1,
+          384,
+          384,
+          3
+        ],
+        "feature_tensor_shape": [
+          1,
+          12,
+          12,
+          1536
+        ],
+        "feature_mean": -0.74631,
+        "feature_std": 3.64342,
+        "valid_4d_spatial": true
+      },
+      {
+        "image_filename": "aptos_train_sample_c10.png",
+        "input_preprocessed_shape": [
+          384,
+          384,
+          3
+        ],
+        "input_tensor_shape": [
+          1,
+          384,
+          384,
+          3
+        ],
+        "feature_tensor_shape": [
+          1,
+          12,
+          12,
+          1536
+        ],
+        "feature_mean": -1.07997,
+        "feature_std": 3.72404,
+        "valid_4d_spatial": true
+      },
+      {
+        "image_filename": "cell13_r0_c0_grade0.png",
+        "input_preprocessed_shape": [
+          384,
+          384,
+          3
+        ],
+        "input_tensor_shape": [
+          1,
+          384,
+          384,
+          3
+        ],
+        "feature_tensor_shape": [
+          1,
+          12,
+          12,
+          1536
+        ],
+        "feature_mean": -0.68527,
+        "feature_std": 3.27775,
+        "valid_4d_spatial": true
+      },
+      {
+        "image_filename": "cell13_r0_c1_grade1.png",
+        "input_preprocessed_shape": [
+          384,
+          384,
+          3
+        ],
+        "input_tensor_shape": [
+          1,
+          384,
+          384,
+          3
+        ],
+        "feature_tensor_shape": [
+          1,
+          12,
+          12,
+          1536
+        ],
+        "feature_mean": -0.86715,
+        "feature_std": 3.57855,
+        "valid_4d_spatial": true
+      },
+      {
+        "image_filename": "cell13_r0_c2_grade2.png",
+        "input_preprocessed_shape": [
+          384,
+          384,
+          3
+        ],
+        "input_tensor_shape": [
+          1,
+          384,
+          384,
+          3
+        ],
+        "feature_tensor_shape": [
+          1,
+          12,
+          12,
+          1536
+        ],
+        "feature_mean": -0.81512,
+        "feature_std": 3.46534,
+        "valid_4d_spatial": true
+      },
+      {
+        "image_filename": "cell13_r1_c0_grade2_dup.png",
+        "input_preprocessed_shape": [
+          384,
+          384,
+          3
+        ],
+        "input_tensor_shape": [
+          1,
+          384,
+          384,
+          3
+        ],
+        "feature_tensor_shape": [
+          1,
+          12,
+          12,
+          1536
+        ],
+        "feature_mean": -0.7857,
+        "feature_std": 3.67273,
+        "valid_4d_spatial": true
+      },
+      {
+        "image_filename": "cell13_r1_c1_grade3.png",
+        "input_preprocessed_shape": [
+          384,
+          384,
+          3
+        ],
+        "input_tensor_shape": [
+          1,
+          384,
+          384,
+          3
+        ],
+        "feature_tensor_shape": [
+          1,
+          12,
+          12,
+          1536
+        ],
+        "feature_mean": -0.61053,
+        "feature_std": 3.41666,
+        "valid_4d_spatial": true
+      },
+      {
+        "image_filename": "cell13_r1_c2_grade4.png",
+        "input_preprocessed_shape": [
+          384,
+          384,
+          3
+        ],
+        "input_tensor_shape": [
+          1,
+          384,
+          384,
+          3
+        ],
+        "feature_tensor_shape": [
+          1,
+          12,
+          12,
+          1536
+        ],
+        "feature_mean": -1.01439,
+        "feature_std": 4.38135,
+        "valid_4d_spatial": true
+      },
+      {
+        "image_filename": "confirmed_grade4_proliferative.jpg",
+        "input_preprocessed_shape": [
+          384,
+          384,
+          3
+        ],
+        "input_tensor_shape": [
+          1,
+          384,
+          384,
+          3
+        ],
+        "feature_tensor_shape": [
+          1,
+          12,
+          12,
+          1536
+        ],
+        "feature_mean": -1.1377,
+        "feature_std": 3.39868,
+        "valid_4d_spatial": true
+      }
+    ]
+  },
+  "verification_result": "PASS",
+  "limitations": [
+    "Step 1 verifies layer discovery, feature map extraction, and gradient connectivity only.",
+    "Grad-CAM heatmap generation, thresholding, and visual overlays are deferred to Step 2.",
+    "Evaluated on 9 real fundus audit images from data/real_retinal_images/.",
+    "No clinical claims or lesion-level validation performed in this layer verification step."
+  ]
+}

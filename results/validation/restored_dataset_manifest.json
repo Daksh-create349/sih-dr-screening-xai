@@ -1,0 +1,104 @@
+{
+  "protocol_version": "1.1.0",
+  "dataset_name": "APTOS 2019 Blindness Detection",
+  "overall_status": "BLOCKED",
+  "dataset_status": "BLOCKED",
+  "status_reason": "Benchmark blocked: labelled evaluation dataset not available locally.",
+  "full_labelled_aptos_available": false,
+  "download_limit_mb": 500.0,
+  "download_used_mb": 0.0,
+  "disk_space": {
+    "path": "/Users/dakshsrivastava/Desktop/DR ",
+    "total_bytes": 245107195904,
+    "used_bytes": 203416735744,
+    "free_bytes": 41690460160,
+    "free_gb": 38.83,
+    "free_mb": 39759.12
+  },
+  "provenance": {
+    "source": "Kaggle / Local Workspace Audit",
+    "source_url": "https://www.kaggle.com/c/aptos2019-blindness-detection/data",
+    "local_path": "/Users/dakshsrivastava/Desktop/DR /data",
+    "original_file_size_bytes": 9500000000,
+    "original_file_size_mb": 9059.91,
+    "downloaded_size_bytes": 0,
+    "download_used_mb": 0.0,
+    "hard_download_limit_mb": 500.0,
+    "download_limit_respected": true,
+    "extraction_status": "NOT_APPLICABLE",
+    "image_count": 0,
+    "label_count": 0,
+    "class_distribution": {},
+    "checksum": "None",
+    "dataset_completeness_status": "BLOCKED",
+    "status_reason": "Full labelled APTOS benchmark dataset unavailable locally; canonical archives exceed the strict 500 MB limit."
+  },
+  "exact_files_found": [
+    {
+      "path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_eval_6959267_grade3.png",
+      "filename": "aptos_eval_6959267_grade3.png",
+      "size_bytes": 385184,
+      "size_mb": 0.367,
+      "file_type": "image",
+      "has_labels": false
+    },
+    {
+      "path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_train_sample_c10.png",
+      "filename": "aptos_train_sample_c10.png",
+      "size_bytes": 166504,
+      "size_mb": 0.159,
+      "file_type": "image",
+      "has_labels": false
+    },
+    {
+      "path": "/Users/dakshsrivastava/Desktop/Diabetic-Retinopathy-Trained/Diabetic_retinopathy.ipynb",
+      "filename": "Diabetic_retinopathy.ipynb",
+      "size_bytes": 3679647,
+      "size_mb": 3.509,
+      "file_type": "jupyter_notebook",
+      "has_labels": false
+    },
+    {
+      "path": "/Users/dakshsrivastava/Downloads/best_aptos_model.keras",
+      "filename": "best_aptos_model.keras",
+      "size_bytes": 52489324,
+      "size_mb": 50.058,
+      "file_type": "model_weights",
+      "has_labels": false
+    }
+  ],
+  "total_asset_storage_bytes": 56720659,
+  "total_asset_storage_mb": 54.09,
+  "splits": {},
+  "split_names": [],
+  "counts": {
+    "total_records_discovered": 0,
+    "total_images_resolved": 0,
+    "total_images_missing": 0
+  },
+  "class_distributions": {},
+  "missing_images_count": 0,
+  "duplicate_ids_count": 0,
+  "duplicate_hashes": {},
+  "leakage_findings": {
+    "has_leakage": false,
+    "id_overlaps": {},
+    "hash_overlaps": {},
+    "details": []
+  },
+  "dimensions_summary": {
+    "expected_classifier_input": [
+      384,
+      384,
+      3
+    ],
+    "note": "Images resized via cv2.INTER_AREA to 384x384."
+  },
+  "known_historical_targets": {
+    "train_count_target": 2930,
+    "validation_count_target": 366,
+    "test_count_target": 366,
+    "total_count_target": 3662,
+    "note": "Historical Colab/Kaggle counts to be confirmed."
+  }
+}

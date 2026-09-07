@@ -1,0 +1,42 @@
+{
+  "protocol_version": "1.0.0",
+  "dataset_name": "APTOS 2019 Blindness Detection",
+  "dataset_status": "BLOCKED",
+  "status_reason": "Benchmark blocked: labelled evaluation dataset not available locally.",
+  "discovery": {
+    "searched_paths": [
+      "/Users/dakshsrivastava/Desktop/DR /data/APTOS_2019",
+      "/Users/dakshsrivastava/Desktop/DR /data/aptos2019",
+      "/Users/dakshsrivastava/Desktop/DR /data/aptos",
+      "/Users/dakshsrivastava/Desktop/DR /data",
+      "/Users/dakshsrivastava/Desktop/Diabetic-Retinopathy-Trained",
+      "/Users/dakshsrivastava/Desktop/aptos2019",
+      "/Users/dakshsrivastava/Downloads/aptos2019",
+      "/Users/dakshsrivastava/Downloads"
+    ],
+    "splits_found": {},
+    "missing_splits": [
+      "train",
+      "validation",
+      "test"
+    ],
+    "all_assets_present": false
+  },
+  "splits": {},
+  "total_records_discovered": 0,
+  "total_images_resolved": 0,
+  "total_images_missing": 0,
+  "data_leakage": {
+    "has_leakage": false,
+    "id_overlaps": {},
+    "hash_overlaps": {},
+    "details": []
+  },
+  "known_historical_targets": {
+    "train_count_target": 2930,
+    "validation_count_target": 366,
+    "test_count_target": 366,
+    "total_count_target": 3662,
+    "note": "Historical Colab/Kaggle counts to be confirmed."
+  }
+}

@@ -1,0 +1,935 @@
+{
+  "benchmark_version": "1.0.0",
+  "timestamp": "2026-09-07T13:51:14.877459+00:00",
+  "model": {
+    "checkpoint": "/Users/dakshsrivastava/Desktop/DR /model/MODEL_V2_80pct_backup.keras",
+    "architecture": "APTOS_DR_EfficientNetB3",
+    "input_shape": [
+      null,
+      384,
+      384,
+      3
+    ],
+    "preprocessing_version": "APTOS_Crop_INTER_AREA_384x384_v1",
+    "is_frozen": true
+  },
+  "threshold_protocol": {
+    "active_production_threshold": 0.33,
+    "historical_validation_selected_threshold": 0.1181,
+    "historical_threshold_status": "metadata_only_preserved_from_colab"
+  },
+  "contamination_warning": "Dataset contamination detected across released splits. Metrics from this split should not be interpreted as a clean independent clinical benchmark.",
+  "dataset": {
+    "name": "Local Real Retinal Fundus Integration Set",
+    "sample_count": 9,
+    "category": "engineering_integration_verification",
+    "clinical_benchmark_validity": false,
+    "caveat": "9 images serve strictly for end-to-end integration and determinism verification; not an independent clinical trial cohort."
+  },
+  "historical_benchmark": {
+    "dataset": "Historical Held-Out Test Evaluation",
+    "total_samples": 366,
+    "accuracy_5class": 0.8115,
+    "accuracy_5class_pct": 81.15,
+    "confusion_matrix_5class": [
+      [
+        196,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        3,
+        18,
+        9,
+        0,
+        0
+      ],
+      [
+        2,
+        7,
+        70,
+        8,
+        0
+      ],
+      [
+        0,
+        1,
+        11,
+        3,
+        2
+      ],
+      [
+        0,
+        4,
+        12,
+        7,
+        10
+      ]
+    ],
+    "default_threshold": {
+      "threshold": 0.5,
+      "sensitivity": 0.8978,
+      "specificity": 0.9563,
+      "precision": 0.9248,
+      "accuracy": 0.9344,
+      "confusion_matrix_2x2": [
+        [
+          219,
+          10
+        ],
+        [
+          14,
+          123
+        ]
+      ]
+    },
+    "validation_selected_threshold": {
+      "threshold": 0.1181,
+      "selection_split": "validation",
+      "evaluation_split": "held-out test",
+      "sensitivity": 0.9927,
+      "specificity": 0.8821,
+      "precision": 0.8344,
+      "accuracy": 0.9235,
+      "confusion_matrix_2x2": [
+        [
+          202,
+          27
+        ],
+        [
+          1,
+          136
+        ]
+      ],
+      "note": "Validation-selected threshold used in historical held-out evaluation. Not test-tuned."
+    }
+  },
+  "baseline_1_classifier_only": {
+    "mode": "classifier_only",
+    "description": "Direct classifier preprocessing and EfficientNetB3 inference without IQA gating",
+    "num_evaluated": 9,
+    "num_classified": 9,
+    "num_rejected": 0,
+    "classified_coverage_pct": 100.0,
+    "threshold_used": 0.33,
+    "metrics_5class": {
+      "num_samples": 9,
+      "accuracy": 0.3333,
+      "balanced_accuracy": 0.3,
+      "macro_precision": 0.4,
+      "macro_recall": 0.3,
+      "macro_f1": 0.3333,
+      "weighted_f1": 0.3704,
+      "per_class_metrics": {
+        "0": {
+          "class_name": "No DR",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 2
+        },
+        "1": {
+          "class_name": "Mild DR",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 1
+        },
+        "2": {
+          "class_name": "Moderate DR",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 2
+        },
+        "3": {
+          "class_name": "Severe DR",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 2
+        },
+        "4": {
+          "class_name": "Proliferative DR",
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1_score": 0.6667,
+          "support": 2
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "metrics_referable": {
+      "threshold": 0.33,
+      "num_samples": 9,
+      "positive_count": 6,
+      "negative_count": 3,
+      "true_positives": 3,
+      "false_positives": 1,
+      "true_negatives": 2,
+      "false_negatives": 3,
+      "sensitivity": 0.5,
+      "specificity": 0.6667,
+      "precision_ppv": 0.75,
+      "npv": 0.4,
+      "binary_accuracy": 0.5556,
+      "roc_auc": 0.5,
+      "roc_auc_note": null,
+      "pr_auc": 0.7966,
+      "pr_auc_note": null,
+      "confusion_matrix_2x2": {
+        "tn": 2,
+        "fp": 1,
+        "fn": 3,
+        "tp": 3
+      }
+    },
+    "predictions": [
+      {
+        "filename": "aptos_eval_6959267_grade3.png",
+        "true_grade": 3,
+        "true_referable": true,
+        "mode": "classifier_only",
+        "predicted_grade": 3,
+        "predicted_class_name": "Severe DR",
+        "confidence": 0.62696,
+        "referable_probability": 0.9877,
+        "is_referable": true,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 5e-05,
+          "1": 0.01224,
+          "2": 0.19696,
+          "3": 0.62696,
+          "4": 0.16378
+        },
+        "correct_5class": true,
+        "correct_referable": true
+      },
+      {
+        "filename": "aptos_train_sample_c10.png",
+        "true_grade": 0,
+        "true_referable": false,
+        "mode": "classifier_only",
+        "predicted_grade": 2,
+        "predicted_class_name": "Moderate DR",
+        "confidence": 0.54654,
+        "referable_probability": 0.5905,
+        "is_referable": true,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 0.00435,
+          "1": 0.40513,
+          "2": 0.54654,
+          "3": 0.00284,
+          "4": 0.04113
+        },
+        "correct_5class": false,
+        "correct_referable": false
+      },
+      {
+        "filename": "cell13_r0_c0_grade0.png",
+        "true_grade": 0,
+        "true_referable": false,
+        "mode": "classifier_only",
+        "predicted_grade": 1,
+        "predicted_class_name": "Mild DR",
+        "confidence": 0.67014,
+        "referable_probability": 0.323,
+        "is_referable": false,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 0.00682,
+          "1": 0.67014,
+          "2": 0.28791,
+          "3": 0.00604,
+          "4": 0.02908
+        },
+        "correct_5class": false,
+        "correct_referable": true
+      },
+      {
+        "filename": "cell13_r0_c1_grade1.png",
+        "true_grade": 1,
+        "true_referable": false,
+        "mode": "classifier_only",
+        "predicted_grade": 0,
+        "predicted_class_name": "No DR",
+        "confidence": 0.94301,
+        "referable_probability": 0.0002,
+        "is_referable": false,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 0.94301,
+          "1": 0.05678,
+          "2": 0.00017,
+          "3": 0.0,
+          "4": 3e-05
+        },
+        "correct_5class": false,
+        "correct_referable": true
+      },
+      {
+        "filename": "cell13_r0_c2_grade2.png",
+        "true_grade": 2,
+        "true_referable": true,
+        "mode": "classifier_only",
+        "predicted_grade": 0,
+        "predicted_class_name": "No DR",
+        "confidence": 0.99985,
+        "referable_probability": 0.0,
+        "is_referable": false,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 0.99985,
+          "1": 0.00015,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0
+        },
+        "correct_5class": false,
+        "correct_referable": false
+      },
+      {
+        "filename": "cell13_r1_c0_grade2_dup.png",
+        "true_grade": 2,
+        "true_referable": true,
+        "mode": "classifier_only",
+        "predicted_grade": 0,
+        "predicted_class_name": "No DR",
+        "confidence": 0.99625,
+        "referable_probability": 0.0,
+        "is_referable": false,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 0.99625,
+          "1": 0.00375,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0
+        },
+        "correct_5class": false,
+        "correct_referable": false
+      },
+      {
+        "filename": "cell13_r1_c1_grade3.png",
+        "true_grade": 3,
+        "true_referable": true,
+        "mode": "classifier_only",
+        "predicted_grade": 3,
+        "predicted_class_name": "Severe DR",
+        "confidence": 0.88408,
+        "referable_probability": 0.9964,
+        "is_referable": true,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 6e-05,
+          "1": 0.00353,
+          "2": 0.04898,
+          "3": 0.88408,
+          "4": 0.06334
+        },
+        "correct_5class": true,
+        "correct_referable": true
+      },
+      {
+        "filename": "cell13_r1_c2_grade4.png",
+        "true_grade": 4,
+        "true_referable": true,
+        "mode": "classifier_only",
+        "predicted_grade": 0,
+        "predicted_class_name": "No DR",
+        "confidence": 0.99988,
+        "referable_probability": 0.0,
+        "is_referable": false,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 0.99988,
+          "1": 0.00012,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0
+        },
+        "correct_5class": false,
+        "correct_referable": false
+      },
+      {
+        "filename": "confirmed_grade4_proliferative.jpg",
+        "true_grade": 4,
+        "true_referable": true,
+        "mode": "classifier_only",
+        "predicted_grade": 4,
+        "predicted_class_name": "Proliferative DR",
+        "confidence": 0.92072,
+        "referable_probability": 1.0,
+        "is_referable": true,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.00047,
+          "3": 0.07881,
+          "4": 0.92072
+        },
+        "correct_5class": true,
+        "correct_referable": true
+      }
+    ]
+  },
+  "baseline_2_integrated_pipeline": {
+    "mode": "integrated_pipeline",
+    "description": "Upstream IQA gating, CLAHE enhancement on borderline, and referable screening triage",
+    "num_evaluated": 9,
+    "num_classified": 9,
+    "num_rejected": 0,
+    "classified_coverage_pct": 100.0,
+    "rejected_pct": 0.0,
+    "threshold_used": 0.33,
+    "routing_counts": {
+      "total": 9,
+      "good": 4,
+      "borderline": 5,
+      "ungradeable": 0,
+      "classified": 9,
+      "rejected": 0
+    },
+    "metrics_5class": {
+      "num_samples": 9,
+      "accuracy": 0.3333,
+      "balanced_accuracy": 0.3,
+      "macro_precision": 0.4,
+      "macro_recall": 0.3,
+      "macro_f1": 0.3333,
+      "weighted_f1": 0.3704,
+      "per_class_metrics": {
+        "0": {
+          "class_name": "No DR",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 2
+        },
+        "1": {
+          "class_name": "Mild DR",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 1
+        },
+        "2": {
+          "class_name": "Moderate DR",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 2
+        },
+        "3": {
+          "class_name": "Severe DR",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 2
+        },
+        "4": {
+          "class_name": "Proliferative DR",
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1_score": 0.6667,
+          "support": 2
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "metrics_referable": {
+      "threshold": 0.33,
+      "num_samples": 9,
+      "positive_count": 6,
+      "negative_count": 3,
+      "true_positives": 3,
+      "false_positives": 2,
+      "true_negatives": 1,
+      "false_negatives": 3,
+      "sensitivity": 0.5,
+      "specificity": 0.3333,
+      "precision_ppv": 0.6,
+      "npv": 0.25,
+      "binary_accuracy": 0.4444,
+      "roc_auc": 0.5,
+      "roc_auc_note": null,
+      "pr_auc": 0.7966,
+      "pr_auc_note": null,
+      "confusion_matrix_2x2": {
+        "tn": 1,
+        "fp": 2,
+        "fn": 3,
+        "tp": 3
+      }
+    },
+    "enhancement_events": [
+      {
+        "filename": "aptos_train_sample_c10.png",
+        "initial_quality": "BORDERLINE",
+        "composite_score": 63.25,
+        "effective_composite_score": 69.03,
+        "delta_composite": 5.78,
+        "method": "clahe",
+        "predicted_grade": 2,
+        "referable_probability": 0.6654,
+        "is_referable": true
+      },
+      {
+        "filename": "cell13_r0_c0_grade0.png",
+        "initial_quality": "BORDERLINE",
+        "composite_score": 62.48,
+        "effective_composite_score": 71.12,
+        "delta_composite": 8.64,
+        "method": "clahe",
+        "predicted_grade": 1,
+        "referable_probability": 0.5105,
+        "is_referable": true
+      },
+      {
+        "filename": "cell13_r0_c1_grade1.png",
+        "initial_quality": "BORDERLINE",
+        "composite_score": 68.8,
+        "effective_composite_score": 75.99,
+        "delta_composite": 7.19,
+        "method": "clahe",
+        "predicted_grade": 0,
+        "referable_probability": 0.0001,
+        "is_referable": false
+      },
+      {
+        "filename": "cell13_r0_c2_grade2.png",
+        "initial_quality": "BORDERLINE",
+        "composite_score": 59.97,
+        "effective_composite_score": 69.6,
+        "delta_composite": 9.63,
+        "method": "clahe",
+        "predicted_grade": 0,
+        "referable_probability": 0.0,
+        "is_referable": false
+      },
+      {
+        "filename": "cell13_r1_c1_grade3.png",
+        "initial_quality": "BORDERLINE",
+        "composite_score": 70.0,
+        "effective_composite_score": 74.45,
+        "delta_composite": 4.45,
+        "method": "clahe",
+        "predicted_grade": 3,
+        "referable_probability": 0.9997,
+        "is_referable": true
+      }
+    ],
+    "predictions": [
+      {
+        "filename": "aptos_eval_6959267_grade3.png",
+        "true_grade": 3,
+        "true_referable": true,
+        "mode": "integrated_pipeline",
+        "iqa_status": "GOOD",
+        "final_quality": "GOOD",
+        "enhancement_attempted": false,
+        "enhancement_accepted": null,
+        "enhancement_delta_composite": null,
+        "image_sent_to_classifier": "original",
+        "classifier_run": true,
+        "predicted_grade": 3,
+        "predicted_class_name": "Severe DR",
+        "confidence": 0.62696,
+        "referable_probability": 0.9877,
+        "is_referable": true,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 5e-05,
+          "1": 0.01224,
+          "2": 0.19696,
+          "3": 0.62696,
+          "4": 0.16378
+        },
+        "correct_5class": true,
+        "correct_referable": true
+      },
+      {
+        "filename": "aptos_train_sample_c10.png",
+        "true_grade": 0,
+        "true_referable": false,
+        "mode": "integrated_pipeline",
+        "iqa_status": "BORDERLINE",
+        "final_quality": "BORDERLINE",
+        "enhancement_attempted": true,
+        "enhancement_accepted": true,
+        "enhancement_delta_composite": 5.78,
+        "image_sent_to_classifier": "enhanced_clahe",
+        "classifier_run": true,
+        "predicted_grade": 2,
+        "predicted_class_name": "Moderate DR",
+        "confidence": 0.51554,
+        "referable_probability": 0.6654,
+        "is_referable": true,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 0.00707,
+          "1": 0.32749,
+          "2": 0.51554,
+          "3": 0.06877,
+          "4": 0.08112
+        },
+        "correct_5class": false,
+        "correct_referable": false
+      },
+      {
+        "filename": "cell13_r0_c0_grade0.png",
+        "true_grade": 0,
+        "true_referable": false,
+        "mode": "integrated_pipeline",
+        "iqa_status": "BORDERLINE",
+        "final_quality": "BORDERLINE",
+        "enhancement_attempted": true,
+        "enhancement_accepted": true,
+        "enhancement_delta_composite": 8.64,
+        "image_sent_to_classifier": "enhanced_clahe",
+        "classifier_run": true,
+        "predicted_grade": 1,
+        "predicted_class_name": "Mild DR",
+        "confidence": 0.45861,
+        "referable_probability": 0.5105,
+        "is_referable": true,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 0.03091,
+          "1": 0.45861,
+          "2": 0.27732,
+          "3": 0.15908,
+          "4": 0.07407
+        },
+        "correct_5class": false,
+        "correct_referable": false
+      },
+      {
+        "filename": "cell13_r0_c1_grade1.png",
+        "true_grade": 1,
+        "true_referable": false,
+        "mode": "integrated_pipeline",
+        "iqa_status": "BORDERLINE",
+        "final_quality": "BORDERLINE",
+        "enhancement_attempted": true,
+        "enhancement_accepted": true,
+        "enhancement_delta_composite": 7.19,
+        "image_sent_to_classifier": "enhanced_clahe",
+        "classifier_run": true,
+        "predicted_grade": 0,
+        "predicted_class_name": "No DR",
+        "confidence": 0.99696,
+        "referable_probability": 0.0001,
+        "is_referable": false,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 0.99696,
+          "1": 0.00295,
+          "2": 1e-05,
+          "3": 0.0,
+          "4": 8e-05
+        },
+        "correct_5class": false,
+        "correct_referable": true
+      },
+      {
+        "filename": "cell13_r0_c2_grade2.png",
+        "true_grade": 2,
+        "true_referable": true,
+        "mode": "integrated_pipeline",
+        "iqa_status": "BORDERLINE",
+        "final_quality": "BORDERLINE",
+        "enhancement_attempted": true,
+        "enhancement_accepted": true,
+        "enhancement_delta_composite": 9.63,
+        "image_sent_to_classifier": "enhanced_clahe",
+        "classifier_run": true,
+        "predicted_grade": 0,
+        "predicted_class_name": "No DR",
+        "confidence": 0.99941,
+        "referable_probability": 0.0,
+        "is_referable": false,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 0.99941,
+          "1": 0.00059,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0
+        },
+        "correct_5class": false,
+        "correct_referable": false
+      },
+      {
+        "filename": "cell13_r1_c0_grade2_dup.png",
+        "true_grade": 2,
+        "true_referable": true,
+        "mode": "integrated_pipeline",
+        "iqa_status": "GOOD",
+        "final_quality": "GOOD",
+        "enhancement_attempted": false,
+        "enhancement_accepted": null,
+        "enhancement_delta_composite": null,
+        "image_sent_to_classifier": "original",
+        "classifier_run": true,
+        "predicted_grade": 0,
+        "predicted_class_name": "No DR",
+        "confidence": 0.99625,
+        "referable_probability": 0.0,
+        "is_referable": false,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 0.99625,
+          "1": 0.00375,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0
+        },
+        "correct_5class": false,
+        "correct_referable": false
+      },
+      {
+        "filename": "cell13_r1_c1_grade3.png",
+        "true_grade": 3,
+        "true_referable": true,
+        "mode": "integrated_pipeline",
+        "iqa_status": "BORDERLINE",
+        "final_quality": "BORDERLINE",
+        "enhancement_attempted": true,
+        "enhancement_accepted": true,
+        "enhancement_delta_composite": 4.45,
+        "image_sent_to_classifier": "enhanced_clahe",
+        "classifier_run": true,
+        "predicted_grade": 3,
+        "predicted_class_name": "Severe DR",
+        "confidence": 0.90201,
+        "referable_probability": 0.9997,
+        "is_referable": true,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 2e-05,
+          "1": 0.00032,
+          "2": 0.0389,
+          "3": 0.90201,
+          "4": 0.05874
+        },
+        "correct_5class": true,
+        "correct_referable": true
+      },
+      {
+        "filename": "cell13_r1_c2_grade4.png",
+        "true_grade": 4,
+        "true_referable": true,
+        "mode": "integrated_pipeline",
+        "iqa_status": "GOOD",
+        "final_quality": "GOOD",
+        "enhancement_attempted": false,
+        "enhancement_accepted": null,
+        "enhancement_delta_composite": null,
+        "image_sent_to_classifier": "original",
+        "classifier_run": true,
+        "predicted_grade": 0,
+        "predicted_class_name": "No DR",
+        "confidence": 0.99988,
+        "referable_probability": 0.0,
+        "is_referable": false,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 0.99988,
+          "1": 0.00012,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0
+        },
+        "correct_5class": false,
+        "correct_referable": false
+      },
+      {
+        "filename": "confirmed_grade4_proliferative.jpg",
+        "true_grade": 4,
+        "true_referable": true,
+        "mode": "integrated_pipeline",
+        "iqa_status": "GOOD",
+        "final_quality": "GOOD",
+        "enhancement_attempted": false,
+        "enhancement_accepted": null,
+        "enhancement_delta_composite": null,
+        "image_sent_to_classifier": "original",
+        "classifier_run": true,
+        "predicted_grade": 4,
+        "predicted_class_name": "Proliferative DR",
+        "confidence": 0.92072,
+        "referable_probability": 1.0,
+        "is_referable": true,
+        "threshold": 0.33,
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.00047,
+          "3": 0.07881,
+          "4": 0.92072
+        },
+        "correct_5class": true,
+        "correct_referable": true
+      }
+    ]
+  },
+  "enhancement_effect_analysis": [
+    {
+      "filename": "aptos_train_sample_c10.png",
+      "true_grade": 0,
+      "original_predicted_grade": 2,
+      "enhanced_predicted_grade": 2,
+      "original_confidence": 0.54654,
+      "enhanced_confidence": 0.51554,
+      "original_referable_prob": 0.5905,
+      "enhanced_referable_prob": 0.6654,
+      "delta_referable_prob": 0.0749,
+      "original_referable": true,
+      "enhanced_referable": true,
+      "decision_shifted": false,
+      "composite_score_improvement": 5.78
+    },
+    {
+      "filename": "cell13_r0_c0_grade0.png",
+      "true_grade": 0,
+      "original_predicted_grade": 1,
+      "enhanced_predicted_grade": 1,
+      "original_confidence": 0.67014,
+      "enhanced_confidence": 0.45861,
+      "original_referable_prob": 0.323,
+      "enhanced_referable_prob": 0.5105,
+      "delta_referable_prob": 0.1875,
+      "original_referable": false,
+      "enhanced_referable": true,
+      "decision_shifted": true,
+      "composite_score_improvement": 8.64
+    },
+    {
+      "filename": "cell13_r0_c1_grade1.png",
+      "true_grade": 1,
+      "original_predicted_grade": 0,
+      "enhanced_predicted_grade": 0,
+      "original_confidence": 0.94301,
+      "enhanced_confidence": 0.99696,
+      "original_referable_prob": 0.0002,
+      "enhanced_referable_prob": 0.0001,
+      "delta_referable_prob": -0.0001,
+      "original_referable": false,
+      "enhanced_referable": false,
+      "decision_shifted": false,
+      "composite_score_improvement": 7.19
+    },
+    {
+      "filename": "cell13_r0_c2_grade2.png",
+      "true_grade": 2,
+      "original_predicted_grade": 0,
+      "enhanced_predicted_grade": 0,
+      "original_confidence": 0.99985,
+      "enhanced_confidence": 0.99941,
+      "original_referable_prob": 0.0,
+      "enhanced_referable_prob": 0.0,
+      "delta_referable_prob": 0.0,
+      "original_referable": false,
+      "enhanced_referable": false,
+      "decision_shifted": false,
+      "composite_score_improvement": 9.63
+    },
+    {
+      "filename": "cell13_r1_c1_grade3.png",
+      "true_grade": 3,
+      "original_predicted_grade": 3,
+      "enhanced_predicted_grade": 3,
+      "original_confidence": 0.88408,
+      "enhanced_confidence": 0.90201,
+      "original_referable_prob": 0.9964,
+      "enhanced_referable_prob": 0.9997,
+      "delta_referable_prob": 0.0033,
+      "original_referable": true,
+      "enhanced_referable": true,
+      "decision_shifted": false,
+      "composite_score_improvement": 4.45
+    }
+  ],
+  "engineering_conclusion": {
+    "outperforms": "INCONCLUSIVE",
+    "rationale": "Comparison is limited by dataset contamination on the public APTOS release (46 cross-split duplicate hash groups) and small size of the local real-image integration set (9 images). On the 9 integration samples, 5-class accuracy was identical (33.33%), while referable accuracy shifted from 44.44% to 33.33% due to border-image CLAHE contrast boosting. Clinical superiority cannot be claimed without a certified, uncontaminated prospective external benchmark."
+  }
+}

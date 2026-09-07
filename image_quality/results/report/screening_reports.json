@@ -1,0 +1,506 @@
+{
+  "dataset_directory": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images",
+  "total_images_evaluated": 9,
+  "classification_counts": {
+    "GOOD": 4,
+    "BORDERLINE": 5,
+    "UNGRADEABLE": 0
+  },
+  "reports": [
+    {
+      "image_identifier": "confirmed_grade4_proliferative.jpg",
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/confirmed_grade4_proliferative.jpg",
+      "quality_status": "GOOD",
+      "composite_score": 86.42,
+      "initial_quality_status": "GOOD",
+      "initial_composite_score": 86.42,
+      "component_scores": {
+        "focus_score": 88.87,
+        "illumination_score": 74.39,
+        "fov_score": 93.38,
+        "centering_score": 98.76
+      },
+      "sub_decisions": {
+        "focus_decision": "Sharp",
+        "illumination_decision": "Well Illuminated",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered"
+      },
+      "triggered_quality_gates": [],
+      "diagnostic_reasons": [
+        "All quality dimensions meet or exceed acceptance criteria (Composite score: 86.42)."
+      ],
+      "enhancement": {
+        "attempted": false,
+        "accepted": null,
+        "method": null,
+        "before_composite_score": null,
+        "after_composite_score": null,
+        "delta_composite": null,
+        "enhanced_image_path": null,
+        "rejection_reason": null
+      },
+      "recommended_action": "Proceed to DR classification.",
+      "operator_message": "Image quality acceptable for downstream analysis (Composite score: 86.4/100). All quality dimensions meet or exceed acceptance criteria.",
+      "recapture_feedback": null,
+      "clinical_safety_disclaimer": "Image quality assessment provides technical screening and optical verification only; it does not constitute an independent medical diagnosis. Diagnostic certainty requires clinical evaluation by a qualified eye care professional.",
+      "diagnostics": {
+        "focus_raw_metric": 1093.4328,
+        "illumination_mean_brightness": 142.42,
+        "retinal_coverage_pct": 73.34,
+        "radial_center_offset": 0.005,
+        "optic_disc_confidence": 0.78,
+        "optic_disc_detected": true
+      },
+      "dr_grade": "Grade 4 (Proliferative DR)"
+    },
+    {
+      "image_identifier": "aptos_eval_6959267_grade3.png",
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_eval_6959267_grade3.png",
+      "quality_status": "GOOD",
+      "composite_score": 81.9,
+      "initial_quality_status": "GOOD",
+      "initial_composite_score": 81.9,
+      "component_scores": {
+        "focus_score": 79.83,
+        "illumination_score": 68.75,
+        "fov_score": 100.0,
+        "centering_score": 93.45
+      },
+      "sub_decisions": {
+        "focus_decision": "Sharp",
+        "illumination_decision": "Well Illuminated",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered"
+      },
+      "triggered_quality_gates": [],
+      "diagnostic_reasons": [
+        "All quality dimensions meet or exceed acceptance criteria (Composite score: 81.90)."
+      ],
+      "enhancement": {
+        "attempted": false,
+        "accepted": null,
+        "method": null,
+        "before_composite_score": null,
+        "after_composite_score": null,
+        "delta_composite": null,
+        "enhanced_image_path": null,
+        "rejection_reason": null
+      },
+      "recommended_action": "Proceed to DR classification.",
+      "operator_message": "Image quality acceptable for downstream analysis (Composite score: 81.9/100). All quality dimensions meet or exceed acceptance criteria.",
+      "recapture_feedback": null,
+      "clinical_safety_disclaimer": "Image quality assessment provides technical screening and optical verification only; it does not constitute an independent medical diagnosis. Diagnostic certainty requires clinical evaluation by a qualified eye care professional.",
+      "diagnostics": {
+        "focus_raw_metric": 487.2981,
+        "illumination_mean_brightness": 144.06,
+        "retinal_coverage_pct": 85.61,
+        "radial_center_offset": 0.0262,
+        "optic_disc_confidence": 0.71,
+        "optic_disc_detected": true
+      },
+      "dr_grade": "Grade 3 (Severe DR)"
+    },
+    {
+      "image_identifier": "cell13_r0_c1_grade1.png",
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c1_grade1.png",
+      "quality_status": "BORDERLINE",
+      "composite_score": 75.99,
+      "initial_quality_status": "BORDERLINE",
+      "initial_composite_score": 68.8,
+      "component_scores": {
+        "focus_score": 31.15,
+        "illumination_score": 87.99,
+        "fov_score": 100.0,
+        "centering_score": 99.4
+      },
+      "sub_decisions": {
+        "focus_decision": "Borderline",
+        "illumination_decision": "Well Illuminated",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered"
+      },
+      "triggered_quality_gates": [
+        {
+          "gate": "suboptimal_focus",
+          "dimension": "focus",
+          "value": 31.15,
+          "threshold": 50.0,
+          "reason": "Sub-optimal focus (score 31.15 < 50.0)."
+        },
+        {
+          "gate": "composite_below_good",
+          "dimension": "composite",
+          "value": 68.8,
+          "threshold": 70.0,
+          "reason": "Composite quality score (68.80) below standard threshold (70.0)."
+        }
+      ],
+      "diagnostic_reasons": [
+        "Sub-optimal focus (score 31.15 < 50.0).",
+        "Composite quality score (68.80) below standard threshold (70.0)."
+      ],
+      "enhancement": {
+        "attempted": true,
+        "accepted": true,
+        "method": "clahe",
+        "before_composite_score": 68.8,
+        "after_composite_score": 75.99,
+        "delta_composite": 7.19,
+        "enhanced_image_path": "/Users/dakshsrivastava/Desktop/DR /image_quality/results/report/enhanced_outputs/cell13_r0_c1_grade1_clahe.png",
+        "rejection_reason": null
+      },
+      "recommended_action": "Enhanced image may proceed to downstream analysis.",
+      "operator_message": "Image quality was initially borderline due to suboptimal_focus, composite_below_good. Automated enhancement (CLAHE) was accepted (Score: 68.8 \u2192 76.0). Enhanced image may proceed to downstream analysis.",
+      "recapture_feedback": null,
+      "clinical_safety_disclaimer": "Image quality assessment provides technical screening and optical verification only; it does not constitute an independent medical diagnosis. Diagnostic certainty requires clinical evaluation by a qualified eye care professional.",
+      "diagnostics": {
+        "focus_raw_metric": 40.1236,
+        "illumination_mean_brightness": 106.75,
+        "retinal_coverage_pct": 79.37,
+        "radial_center_offset": 0.0024,
+        "optic_disc_confidence": 0.88,
+        "optic_disc_detected": true
+      },
+      "dr_grade": "Grade 1 (Mild DR)"
+    },
+    {
+      "image_identifier": "cell13_r1_c0_grade2_dup.png",
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c0_grade2_dup.png",
+      "quality_status": "GOOD",
+      "composite_score": 75.42,
+      "initial_quality_status": "GOOD",
+      "initial_composite_score": 75.42,
+      "component_scores": {
+        "focus_score": 57.21,
+        "illumination_score": 75.84,
+        "fov_score": 100.0,
+        "centering_score": 97.85
+      },
+      "sub_decisions": {
+        "focus_decision": "Sharp",
+        "illumination_decision": "Well Illuminated",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered"
+      },
+      "triggered_quality_gates": [],
+      "diagnostic_reasons": [
+        "All quality dimensions meet or exceed acceptance criteria (Composite score: 75.42)."
+      ],
+      "enhancement": {
+        "attempted": false,
+        "accepted": null,
+        "method": null,
+        "before_composite_score": null,
+        "after_composite_score": null,
+        "delta_composite": null,
+        "enhanced_image_path": null,
+        "rejection_reason": null
+      },
+      "recommended_action": "Proceed to DR classification.",
+      "operator_message": "Image quality acceptable for downstream analysis (Composite score: 75.4/100). All quality dimensions meet or exceed acceptance criteria.",
+      "recapture_feedback": null,
+      "clinical_safety_disclaimer": "Image quality assessment provides technical screening and optical verification only; it does not constitute an independent medical diagnosis. Diagnostic certainty requires clinical evaluation by a qualified eye care professional.",
+      "diagnostics": {
+        "focus_raw_metric": 139.7341,
+        "illumination_mean_brightness": 105.08,
+        "retinal_coverage_pct": 80.58,
+        "radial_center_offset": 0.0086,
+        "optic_disc_confidence": 0.84,
+        "optic_disc_detected": true
+      },
+      "dr_grade": "Grade 2 (Moderate DR)"
+    },
+    {
+      "image_identifier": "cell13_r1_c1_grade3.png",
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c1_grade3.png",
+      "quality_status": "BORDERLINE",
+      "composite_score": 74.45,
+      "initial_quality_status": "BORDERLINE",
+      "initial_composite_score": 70.0,
+      "component_scores": {
+        "focus_score": 59.37,
+        "illumination_score": 55.02,
+        "fov_score": 100.0,
+        "centering_score": 97.46
+      },
+      "sub_decisions": {
+        "focus_decision": "Sharp",
+        "illumination_decision": "Borderline Illumination",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered"
+      },
+      "triggered_quality_gates": [
+        {
+          "gate": "suboptimal_illumination",
+          "dimension": "illumination",
+          "value": 55.02,
+          "threshold": 65.0,
+          "reason": "Sub-optimal illumination (score 55.02 < 65.0)."
+        }
+      ],
+      "diagnostic_reasons": [
+        "Sub-optimal illumination (score 55.02 < 65.0)."
+      ],
+      "enhancement": {
+        "attempted": true,
+        "accepted": true,
+        "method": "clahe",
+        "before_composite_score": 70.0,
+        "after_composite_score": 74.45,
+        "delta_composite": 4.45,
+        "enhanced_image_path": "/Users/dakshsrivastava/Desktop/DR /image_quality/results/report/enhanced_outputs/cell13_r1_c1_grade3_clahe.png",
+        "rejection_reason": null
+      },
+      "recommended_action": "Enhanced image may proceed to downstream analysis.",
+      "operator_message": "Image quality was initially borderline due to suboptimal_illumination. Automated enhancement (CLAHE) was accepted (Score: 70.0 \u2192 74.5). Enhanced image may proceed to downstream analysis.",
+      "recapture_feedback": null,
+      "clinical_safety_disclaimer": "Image quality assessment provides technical screening and optical verification only; it does not constitute an independent medical diagnosis. Diagnostic certainty requires clinical evaluation by a qualified eye care professional.",
+      "diagnostics": {
+        "focus_raw_metric": 154.7581,
+        "illumination_mean_brightness": 70.32,
+        "retinal_coverage_pct": 89.88,
+        "radial_center_offset": 0.0102,
+        "optic_disc_confidence": 0.68,
+        "optic_disc_detected": true
+      },
+      "dr_grade": "Grade 3 (Severe DR)"
+    },
+    {
+      "image_identifier": "cell13_r1_c2_grade4.png",
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c2_grade4.png",
+      "quality_status": "GOOD",
+      "composite_score": 74.14,
+      "initial_quality_status": "GOOD",
+      "initial_composite_score": 74.14,
+      "component_scores": {
+        "focus_score": 61.69,
+        "illumination_score": 77.58,
+        "fov_score": 92.62,
+        "centering_score": 76.69
+      },
+      "sub_decisions": {
+        "focus_decision": "Sharp",
+        "illumination_decision": "Well Illuminated",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Borderline Centering"
+      },
+      "triggered_quality_gates": [],
+      "diagnostic_reasons": [
+        "All quality dimensions meet or exceed acceptance criteria (Composite score: 74.14)."
+      ],
+      "enhancement": {
+        "attempted": false,
+        "accepted": null,
+        "method": null,
+        "before_composite_score": null,
+        "after_composite_score": null,
+        "delta_composite": null,
+        "enhanced_image_path": null,
+        "rejection_reason": null
+      },
+      "recommended_action": "Proceed to DR classification.",
+      "operator_message": "Image quality acceptable for downstream analysis (Composite score: 74.1/100). All quality dimensions meet or exceed acceptance criteria.",
+      "recapture_feedback": null,
+      "clinical_safety_disclaimer": "Image quality assessment provides technical screening and optical verification only; it does not constitute an independent medical diagnosis. Diagnostic certainty requires clinical evaluation by a qualified eye care professional.",
+      "diagnostics": {
+        "focus_raw_metric": 173.0962,
+        "illumination_mean_brightness": 119.94,
+        "retinal_coverage_pct": 72.74,
+        "radial_center_offset": 0.0933,
+        "optic_disc_confidence": 0.89,
+        "optic_disc_detected": true
+      },
+      "dr_grade": "Grade 4 (Proliferative DR)"
+    },
+    {
+      "image_identifier": "cell13_r0_c0_grade0.png",
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c0_grade0.png",
+      "quality_status": "BORDERLINE",
+      "composite_score": 71.12,
+      "initial_quality_status": "BORDERLINE",
+      "initial_composite_score": 62.48,
+      "component_scores": {
+        "focus_score": 25.13,
+        "illumination_score": 75.55,
+        "fov_score": 100.0,
+        "centering_score": 97.62
+      },
+      "sub_decisions": {
+        "focus_decision": "Borderline",
+        "illumination_decision": "Well Illuminated",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered"
+      },
+      "triggered_quality_gates": [
+        {
+          "gate": "suboptimal_focus",
+          "dimension": "focus",
+          "value": 25.13,
+          "threshold": 50.0,
+          "reason": "Sub-optimal focus (score 25.13 < 50.0)."
+        },
+        {
+          "gate": "composite_below_good",
+          "dimension": "composite",
+          "value": 62.48,
+          "threshold": 70.0,
+          "reason": "Composite quality score (62.48) below standard threshold (70.0)."
+        }
+      ],
+      "diagnostic_reasons": [
+        "Sub-optimal focus (score 25.13 < 50.0).",
+        "Composite quality score (62.48) below standard threshold (70.0)."
+      ],
+      "enhancement": {
+        "attempted": true,
+        "accepted": true,
+        "method": "clahe",
+        "before_composite_score": 62.48,
+        "after_composite_score": 71.12,
+        "delta_composite": 8.64,
+        "enhanced_image_path": "/Users/dakshsrivastava/Desktop/DR /image_quality/results/report/enhanced_outputs/cell13_r0_c0_grade0_clahe.png",
+        "rejection_reason": null
+      },
+      "recommended_action": "Enhanced image may proceed to downstream analysis.",
+      "operator_message": "Image quality was initially borderline due to suboptimal_focus, composite_below_good. Automated enhancement (CLAHE) was accepted (Score: 62.5 \u2192 71.1). Enhanced image may proceed to downstream analysis.",
+      "recapture_feedback": null,
+      "clinical_safety_disclaimer": "Image quality assessment provides technical screening and optical verification only; it does not constitute an independent medical diagnosis. Diagnostic certainty requires clinical evaluation by a qualified eye care professional.",
+      "diagnostics": {
+        "focus_raw_metric": 28.4526,
+        "illumination_mean_brightness": 78.27,
+        "retinal_coverage_pct": 89.41,
+        "radial_center_offset": 0.0095,
+        "optic_disc_confidence": 0.68,
+        "optic_disc_detected": true
+      },
+      "dr_grade": "Grade 0 (No DR)"
+    },
+    {
+      "image_identifier": "cell13_r0_c2_grade2.png",
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c2_grade2.png",
+      "quality_status": "BORDERLINE",
+      "composite_score": 69.6,
+      "initial_quality_status": "BORDERLINE",
+      "initial_composite_score": 59.97,
+      "component_scores": {
+        "focus_score": 22.57,
+        "illumination_score": 70.2,
+        "fov_score": 100.0,
+        "centering_score": 98.78
+      },
+      "sub_decisions": {
+        "focus_decision": "Blurry",
+        "illumination_decision": "Well Illuminated",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered"
+      },
+      "triggered_quality_gates": [
+        {
+          "gate": "suboptimal_focus",
+          "dimension": "focus",
+          "value": 22.57,
+          "threshold": 50.0,
+          "reason": "Sub-optimal focus (score 22.57 < 50.0)."
+        },
+        {
+          "gate": "composite_below_good",
+          "dimension": "composite",
+          "value": 59.97,
+          "threshold": 70.0,
+          "reason": "Composite quality score (59.97) below standard threshold (70.0)."
+        }
+      ],
+      "diagnostic_reasons": [
+        "Sub-optimal focus (score 22.57 < 50.0).",
+        "Composite quality score (59.97) below standard threshold (70.0)."
+      ],
+      "enhancement": {
+        "attempted": true,
+        "accepted": true,
+        "method": "clahe",
+        "before_composite_score": 59.97,
+        "after_composite_score": 69.6,
+        "delta_composite": 9.63,
+        "enhanced_image_path": "/Users/dakshsrivastava/Desktop/DR /image_quality/results/report/enhanced_outputs/cell13_r0_c2_grade2_clahe.png",
+        "rejection_reason": null
+      },
+      "recommended_action": "Enhanced image may proceed to downstream analysis.",
+      "operator_message": "Image quality was initially borderline due to suboptimal_focus, composite_below_good. Automated enhancement (CLAHE) was accepted (Score: 60.0 \u2192 69.6). Enhanced image may proceed to downstream analysis.",
+      "recapture_feedback": null,
+      "clinical_safety_disclaimer": "Image quality assessment provides technical screening and optical verification only; it does not constitute an independent medical diagnosis. Diagnostic certainty requires clinical evaluation by a qualified eye care professional.",
+      "diagnostics": {
+        "focus_raw_metric": 24.1941,
+        "illumination_mean_brightness": 85.84,
+        "retinal_coverage_pct": 78.92,
+        "radial_center_offset": 0.0049,
+        "optic_disc_confidence": 0.74,
+        "optic_disc_detected": true
+      },
+      "dr_grade": "Grade 2 (Moderate DR)"
+    },
+    {
+      "image_identifier": "aptos_train_sample_c10.png",
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_train_sample_c10.png",
+      "quality_status": "BORDERLINE",
+      "composite_score": 69.03,
+      "initial_quality_status": "BORDERLINE",
+      "initial_composite_score": 63.25,
+      "component_scores": {
+        "focus_score": 21.63,
+        "illumination_score": 83.16,
+        "fov_score": 100.0,
+        "centering_score": 96.54
+      },
+      "sub_decisions": {
+        "focus_decision": "Blurry",
+        "illumination_decision": "Well Illuminated",
+        "fov_decision": "Adequate FOV",
+        "centering_decision": "Well Centered"
+      },
+      "triggered_quality_gates": [
+        {
+          "gate": "suboptimal_focus",
+          "dimension": "focus",
+          "value": 21.63,
+          "threshold": 50.0,
+          "reason": "Sub-optimal focus (score 21.63 < 50.0)."
+        },
+        {
+          "gate": "composite_below_good",
+          "dimension": "composite",
+          "value": 63.25,
+          "threshold": 70.0,
+          "reason": "Composite quality score (63.25) below standard threshold (70.0)."
+        }
+      ],
+      "diagnostic_reasons": [
+        "Sub-optimal focus (score 21.63 < 50.0).",
+        "Composite quality score (63.25) below standard threshold (70.0)."
+      ],
+      "enhancement": {
+        "attempted": true,
+        "accepted": true,
+        "method": "clahe",
+        "before_composite_score": 63.25,
+        "after_composite_score": 69.03,
+        "delta_composite": 5.78,
+        "enhanced_image_path": "/Users/dakshsrivastava/Desktop/DR /image_quality/results/report/enhanced_outputs/aptos_train_sample_c10_clahe.png",
+        "rejection_reason": null
+      },
+      "recommended_action": "Enhanced image may proceed to downstream analysis.",
+      "operator_message": "Image quality was initially borderline due to suboptimal_focus, composite_below_good. Automated enhancement (CLAHE) was accepted (Score: 63.2 \u2192 69.0). Enhanced image may proceed to downstream analysis.",
+      "recapture_feedback": null,
+      "clinical_safety_disclaimer": "Image quality assessment provides technical screening and optical verification only; it does not constitute an independent medical diagnosis. Diagnostic certainty requires clinical evaluation by a qualified eye care professional.",
+      "diagnostics": {
+        "focus_raw_metric": 22.7205,
+        "illumination_mean_brightness": 91.76,
+        "retinal_coverage_pct": 88.72,
+        "radial_center_offset": 0.0138,
+        "optic_disc_confidence": 0.71,
+        "optic_disc_detected": true
+      },
+      "dr_grade": "Grade 0 (APTOS Train Sample)"
+    }
+  ]
+}

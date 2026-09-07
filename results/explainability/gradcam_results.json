@@ -1,0 +1,534 @@
+{
+  "milestone": "Milestone 11 - Step 2: Grad-CAM Computation & Warping",
+  "model_name": "APTOS_DR_EfficientNetB3_V2",
+  "target_layer": "efficientnetb3.top_conv",
+  "native_resolution": [
+    12,
+    12
+  ],
+  "classifier_space_resolution": [
+    384,
+    384
+  ],
+  "interpolation_method": "cv2.INTER_CUBIC",
+  "determinism_tolerance": 1e-05,
+  "total_images_evaluated": 9,
+  "all_images_passed": true,
+  "overall_status": "PASS",
+  "per_image_results": [
+    {
+      "image_filename": "aptos_eval_6959267_grade3.png",
+      "original_dimensions": [
+        527,
+        620
+      ],
+      "crop_box": {
+        "x": 0,
+        "y": 3,
+        "w": 620,
+        "h": 524
+      },
+      "model_input_dimensions": [
+        1,
+        384,
+        384,
+        3
+      ],
+      "predicted_class": 3,
+      "predicted_class_name": "Severe DR",
+      "predicted_probabilities": [
+        1.1e-05,
+        0.00708,
+        0.172195,
+        0.617225,
+        0.203489
+      ],
+      "target_class": 3,
+      "target_class_name": "Severe DR",
+      "target_score": 0.617225,
+      "layer_name": "top_conv",
+      "native_heatmap_shape": [
+        12,
+        12
+      ],
+      "resized_heatmap_shape": [
+        384,
+        384
+      ],
+      "warped_heatmap_shape": [
+        527,
+        620
+      ],
+      "heatmap_statistics": {
+        "native_min": 0.0,
+        "native_max": 1.0,
+        "native_mean": 0.214279,
+        "native_nonzero_fraction": 0.7778,
+        "warped_mean": 0.238273,
+        "warped_max": 1.0
+      },
+      "determinism_delta": 0.0,
+      "explicit_mode_delta": 0.0,
+      "probability_sum": 1.0,
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/gradcam/aptos_eval_6959267_grade3_gradcam.png"
+    },
+    {
+      "image_filename": "aptos_train_sample_c10.png",
+      "original_dimensions": [
+        462,
+        462
+      ],
+      "crop_box": {
+        "x": 0,
+        "y": 0,
+        "w": 462,
+        "h": 462
+      },
+      "model_input_dimensions": [
+        1,
+        384,
+        384,
+        3
+      ],
+      "predicted_class": 2,
+      "predicted_class_name": "Moderate DR",
+      "predicted_probabilities": [
+        4.4e-05,
+        0.073131,
+        0.922224,
+        0.00105,
+        0.003551
+      ],
+      "target_class": 2,
+      "target_class_name": "Moderate DR",
+      "target_score": 0.922224,
+      "layer_name": "top_conv",
+      "native_heatmap_shape": [
+        12,
+        12
+      ],
+      "resized_heatmap_shape": [
+        384,
+        384
+      ],
+      "warped_heatmap_shape": [
+        462,
+        462
+      ],
+      "heatmap_statistics": {
+        "native_min": 0.0,
+        "native_max": 1.0,
+        "native_mean": 0.212408,
+        "native_nonzero_fraction": 0.6181,
+        "warped_mean": 0.233028,
+        "warped_max": 0.999984
+      },
+      "determinism_delta": 0.0,
+      "explicit_mode_delta": 0.0,
+      "probability_sum": 1.0,
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/gradcam/aptos_train_sample_c10_gradcam.png"
+    },
+    {
+      "image_filename": "cell13_r0_c0_grade0.png",
+      "original_dimensions": [
+        462,
+        462
+      ],
+      "crop_box": {
+        "x": 0,
+        "y": 0,
+        "w": 462,
+        "h": 462
+      },
+      "model_input_dimensions": [
+        1,
+        384,
+        384,
+        3
+      ],
+      "predicted_class": 1,
+      "predicted_class_name": "Mild DR",
+      "predicted_probabilities": [
+        0.002274,
+        0.837416,
+        0.159922,
+        1e-05,
+        0.000377
+      ],
+      "target_class": 1,
+      "target_class_name": "Mild DR",
+      "target_score": 0.837416,
+      "layer_name": "top_conv",
+      "native_heatmap_shape": [
+        12,
+        12
+      ],
+      "resized_heatmap_shape": [
+        384,
+        384
+      ],
+      "warped_heatmap_shape": [
+        462,
+        462
+      ],
+      "heatmap_statistics": {
+        "native_min": 0.0,
+        "native_max": 1.0,
+        "native_mean": 0.311361,
+        "native_nonzero_fraction": 0.8542,
+        "warped_mean": 0.343534,
+        "warped_max": 1.0
+      },
+      "determinism_delta": 0.0,
+      "explicit_mode_delta": 0.0,
+      "probability_sum": 0.999999,
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/gradcam/cell13_r0_c0_grade0_gradcam.png"
+    },
+    {
+      "image_filename": "cell13_r0_c1_grade1.png",
+      "original_dimensions": [
+        462,
+        462
+      ],
+      "crop_box": {
+        "x": 0,
+        "y": 0,
+        "w": 462,
+        "h": 462
+      },
+      "model_input_dimensions": [
+        1,
+        384,
+        384,
+        3
+      ],
+      "predicted_class": 0,
+      "predicted_class_name": "No DR",
+      "predicted_probabilities": [
+        0.999989,
+        1.1e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_class": 0,
+      "target_class_name": "No DR",
+      "target_score": 0.999989,
+      "layer_name": "top_conv",
+      "native_heatmap_shape": [
+        12,
+        12
+      ],
+      "resized_heatmap_shape": [
+        384,
+        384
+      ],
+      "warped_heatmap_shape": [
+        462,
+        462
+      ],
+      "heatmap_statistics": {
+        "native_min": 0.0,
+        "native_max": 1.0,
+        "native_mean": 0.215759,
+        "native_nonzero_fraction": 0.7361,
+        "warped_mean": 0.245794,
+        "warped_max": 1.0
+      },
+      "determinism_delta": 0.0,
+      "explicit_mode_delta": 0.0,
+      "probability_sum": 1.0,
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/gradcam/cell13_r0_c1_grade1_gradcam.png"
+    },
+    {
+      "image_filename": "cell13_r0_c2_grade2.png",
+      "original_dimensions": [
+        462,
+        462
+      ],
+      "crop_box": {
+        "x": 0,
+        "y": 0,
+        "w": 462,
+        "h": 462
+      },
+      "model_input_dimensions": [
+        1,
+        384,
+        384,
+        3
+      ],
+      "predicted_class": 0,
+      "predicted_class_name": "No DR",
+      "predicted_probabilities": [
+        0.99992,
+        7.7e-05,
+        3e-06,
+        1e-06,
+        0.0
+      ],
+      "target_class": 0,
+      "target_class_name": "No DR",
+      "target_score": 0.99992,
+      "layer_name": "top_conv",
+      "native_heatmap_shape": [
+        12,
+        12
+      ],
+      "resized_heatmap_shape": [
+        384,
+        384
+      ],
+      "warped_heatmap_shape": [
+        462,
+        462
+      ],
+      "heatmap_statistics": {
+        "native_min": 0.0,
+        "native_max": 1.0,
+        "native_mean": 0.27864,
+        "native_nonzero_fraction": 0.7153,
+        "warped_mean": 0.320025,
+        "warped_max": 1.0
+      },
+      "determinism_delta": 0.0,
+      "explicit_mode_delta": 0.0,
+      "probability_sum": 1.000001,
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/gradcam/cell13_r0_c2_grade2_gradcam.png"
+    },
+    {
+      "image_filename": "cell13_r1_c0_grade2_dup.png",
+      "original_dimensions": [
+        462,
+        462
+      ],
+      "crop_box": {
+        "x": 0,
+        "y": 0,
+        "w": 462,
+        "h": 462
+      },
+      "model_input_dimensions": [
+        1,
+        384,
+        384,
+        3
+      ],
+      "predicted_class": 0,
+      "predicted_class_name": "No DR",
+      "predicted_probabilities": [
+        0.999922,
+        7.8e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_class": 0,
+      "target_class_name": "No DR",
+      "target_score": 0.999922,
+      "layer_name": "top_conv",
+      "native_heatmap_shape": [
+        12,
+        12
+      ],
+      "resized_heatmap_shape": [
+        384,
+        384
+      ],
+      "warped_heatmap_shape": [
+        462,
+        462
+      ],
+      "heatmap_statistics": {
+        "native_min": 0.0,
+        "native_max": 1.0,
+        "native_mean": 0.231185,
+        "native_nonzero_fraction": 0.6389,
+        "warped_mean": 0.279021,
+        "warped_max": 1.0
+      },
+      "determinism_delta": 0.0,
+      "explicit_mode_delta": 0.0,
+      "probability_sum": 1.0,
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/gradcam/cell13_r1_c0_grade2_dup_gradcam.png"
+    },
+    {
+      "image_filename": "cell13_r1_c1_grade3.png",
+      "original_dimensions": [
+        462,
+        462
+      ],
+      "crop_box": {
+        "x": 0,
+        "y": 0,
+        "w": 462,
+        "h": 462
+      },
+      "model_input_dimensions": [
+        1,
+        384,
+        384,
+        3
+      ],
+      "predicted_class": 3,
+      "predicted_class_name": "Severe DR",
+      "predicted_probabilities": [
+        0.0,
+        0.002639,
+        0.384461,
+        0.587052,
+        0.025849
+      ],
+      "target_class": 3,
+      "target_class_name": "Severe DR",
+      "target_score": 0.587052,
+      "layer_name": "top_conv",
+      "native_heatmap_shape": [
+        12,
+        12
+      ],
+      "resized_heatmap_shape": [
+        384,
+        384
+      ],
+      "warped_heatmap_shape": [
+        462,
+        462
+      ],
+      "heatmap_statistics": {
+        "native_min": 0.0,
+        "native_max": 1.0,
+        "native_mean": 0.353663,
+        "native_nonzero_fraction": 0.7569,
+        "warped_mean": 0.367511,
+        "warped_max": 1.0
+      },
+      "determinism_delta": 0.0,
+      "explicit_mode_delta": 0.0,
+      "probability_sum": 1.000001,
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/gradcam/cell13_r1_c1_grade3_gradcam.png"
+    },
+    {
+      "image_filename": "cell13_r1_c2_grade4.png",
+      "original_dimensions": [
+        462,
+        462
+      ],
+      "crop_box": {
+        "x": 0,
+        "y": 0,
+        "w": 462,
+        "h": 462
+      },
+      "model_input_dimensions": [
+        1,
+        384,
+        384,
+        3
+      ],
+      "predicted_class": 0,
+      "predicted_class_name": "No DR",
+      "predicted_probabilities": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_class": 0,
+      "target_class_name": "No DR",
+      "target_score": 1.0,
+      "layer_name": "top_conv",
+      "native_heatmap_shape": [
+        12,
+        12
+      ],
+      "resized_heatmap_shape": [
+        384,
+        384
+      ],
+      "warped_heatmap_shape": [
+        462,
+        462
+      ],
+      "heatmap_statistics": {
+        "native_min": 0.0,
+        "native_max": 1.0,
+        "native_mean": 0.271042,
+        "native_nonzero_fraction": 0.7222,
+        "warped_mean": 0.317412,
+        "warped_max": 1.0
+      },
+      "determinism_delta": 0.0,
+      "explicit_mode_delta": 0.0,
+      "probability_sum": 1.0,
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/gradcam/cell13_r1_c2_grade4_gradcam.png"
+    },
+    {
+      "image_filename": "confirmed_grade4_proliferative.jpg",
+      "original_dimensions": [
+        203,
+        300
+      ],
+      "crop_box": {
+        "x": 0,
+        "y": 0,
+        "w": 300,
+        "h": 203
+      },
+      "model_input_dimensions": [
+        1,
+        384,
+        384,
+        3
+      ],
+      "predicted_class": 4,
+      "predicted_class_name": "Proliferative DR",
+      "predicted_probabilities": [
+        0.000115,
+        0.000758,
+        0.046666,
+        0.26753,
+        0.684931
+      ],
+      "target_class": 4,
+      "target_class_name": "Proliferative DR",
+      "target_score": 0.684931,
+      "layer_name": "top_conv",
+      "native_heatmap_shape": [
+        12,
+        12
+      ],
+      "resized_heatmap_shape": [
+        384,
+        384
+      ],
+      "warped_heatmap_shape": [
+        203,
+        300
+      ],
+      "heatmap_statistics": {
+        "native_min": 0.0,
+        "native_max": 1.0,
+        "native_mean": 0.274084,
+        "native_nonzero_fraction": 0.7986,
+        "warped_mean": 0.273708,
+        "warped_max": 1.0
+      },
+      "determinism_delta": 0.0,
+      "explicit_mode_delta": 0.0,
+      "probability_sum": 1.0,
+      "validation_status": "PASS",
+      "visual_card_path": "results/explainability/gradcam/confirmed_grade4_proliferative_gradcam.png"
+    }
+  ],
+  "disclaimer": "Grad-CAM provides mathematical feature attribution indicating regions influencing the neural network's classification. It does NOT identify, segment, or prove the physical presence of clinical lesions and does NOT constitute medical diagnosis."
+}

@@ -1,0 +1,10 @@
+filename,true_grade,true_referable,mode_a_pred_grade,mode_a_confidence,mode_a_p_referable,mode_a_is_referable,mode_b_iqa_status,mode_b_enh_applied,mode_b_pred_grade,mode_b_confidence,mode_b_p_referable,mode_b_is_referable,threshold
+aptos_eval_6959267_grade3.png,3,True,3,0.62696,0.9877,True,GOOD,,3,0.62696,0.9877,True,0.33
+aptos_train_sample_c10.png,0,False,2,0.54654,0.5905,True,BORDERLINE,True,2,0.51554,0.6654,True,0.33
+cell13_r0_c0_grade0.png,0,False,1,0.67014,0.323,False,BORDERLINE,True,1,0.45861,0.5105,True,0.33
+cell13_r0_c1_grade1.png,1,False,0,0.94301,0.0002,False,BORDERLINE,True,0,0.99696,0.0001,False,0.33
+cell13_r0_c2_grade2.png,2,True,0,0.99985,0.0,False,BORDERLINE,True,0,0.99941,0.0,False,0.33
+cell13_r1_c0_grade2_dup.png,2,True,0,0.99625,0.0,False,GOOD,,0,0.99625,0.0,False,0.33
+cell13_r1_c1_grade3.png,3,True,3,0.88408,0.9964,True,BORDERLINE,True,3,0.90201,0.9997,True,0.33
+cell13_r1_c2_grade4.png,4,True,0,0.99988,0.0,False,GOOD,,0,0.99988,0.0,False,0.33
+confirmed_grade4_proliferative.jpg,4,True,4,0.92072,1.0,True,GOOD,,4,0.92072,1.0,True,0.33

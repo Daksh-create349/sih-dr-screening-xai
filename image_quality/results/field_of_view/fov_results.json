@@ -1,0 +1,591 @@
+{
+  "dataset_directory": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images",
+  "total_images_evaluated": 9,
+  "score_statistics": {
+    "min_fov_score": 92.62,
+    "max_fov_score": 100.0,
+    "median_fov_score": 100.0,
+    "min_coverage_pct": 72.74,
+    "max_coverage_pct": 89.88,
+    "median_coverage_pct": 80.58,
+    "min_centering_score": 76.69,
+    "max_centering_score": 99.4,
+    "median_centering_score": 97.62,
+    "min_radial_offset": 0.0024,
+    "max_radial_offset": 0.0933
+  },
+  "decision_counts": {
+    "fov": {
+      "Adequate FOV": 9,
+      "Borderline FOV": 0,
+      "Poor FOV": 0
+    },
+    "centering": {
+      "Well Centered": 8,
+      "Borderline Centering": 1,
+      "Poor Centering": 0
+    },
+    "optic_disc": {
+      "reliable_detections": 9,
+      "unreliable_or_none": 0
+    }
+  },
+  "thresholds_used": {
+    "poor_fov_threshold": 50.0,
+    "adequate_fov_threshold": 75.0,
+    "well_centered_max_offset": 0.08,
+    "poor_centered_min_offset": 0.2,
+    "status": "engineering_heuristic_baseline_not_clinically_validated"
+  },
+  "results": [
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c2_grade4.png",
+      "image_dimensions": [
+        384,
+        384
+      ],
+      "retinal_foreground_area": 107265,
+      "coverage_pct": 72.74,
+      "bounding_box": [
+        0,
+        0,
+        384,
+        384
+      ],
+      "aspect_ratio": 1.0,
+      "retinal_center": [
+        209.82,
+        190.3
+      ],
+      "image_center": [
+        192.0,
+        192.0
+      ],
+      "normalized_horizontal_offset": 0.0928,
+      "normalized_vertical_offset": 0.0089,
+      "radial_center_offset": 0.0933,
+      "fov_score": 92.62,
+      "centering_score": 76.69,
+      "optic_disc": {
+        "detected": true,
+        "center": [
+          133.9,
+          192.6
+        ],
+        "radius": 28,
+        "confidence": 0.89,
+        "is_reliable": true,
+        "method": "interior_morphology_candidate_scoring",
+        "notes": "Optic disc candidate localized within expected physiological dimensions."
+      },
+      "fov_decision": "Adequate FOV",
+      "centering_decision": "Borderline Centering",
+      "diagnostics": {
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "total_pixels": 147456,
+        "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+      },
+      "thresholds": {
+        "poor_fov_threshold": 50.0,
+        "adequate_fov_threshold": 75.0,
+        "well_centered_max_offset": 0.08,
+        "poor_centered_min_offset": 0.2,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 4 (Proliferative DR)",
+      "filename": "cell13_r1_c2_grade4.png"
+    },
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/confirmed_grade4_proliferative.jpg",
+      "image_dimensions": [
+        384,
+        384
+      ],
+      "retinal_foreground_area": 108141,
+      "coverage_pct": 73.34,
+      "bounding_box": [
+        0,
+        0,
+        384,
+        384
+      ],
+      "aspect_ratio": 1.0,
+      "retinal_center": [
+        192.72,
+        191.37
+      ],
+      "image_center": [
+        192.0,
+        192.0
+      ],
+      "normalized_horizontal_offset": 0.0037,
+      "normalized_vertical_offset": 0.0033,
+      "radial_center_offset": 0.005,
+      "fov_score": 93.38,
+      "centering_score": 98.76,
+      "optic_disc": {
+        "detected": true,
+        "center": [
+          262.3,
+          176.2
+        ],
+        "radius": 26,
+        "confidence": 0.78,
+        "is_reliable": true,
+        "method": "interior_morphology_candidate_scoring",
+        "notes": "Optic disc candidate localized within expected physiological dimensions."
+      },
+      "fov_decision": "Adequate FOV",
+      "centering_decision": "Well Centered",
+      "diagnostics": {
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "total_pixels": 147456,
+        "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+      },
+      "thresholds": {
+        "poor_fov_threshold": 50.0,
+        "adequate_fov_threshold": 75.0,
+        "well_centered_max_offset": 0.08,
+        "poor_centered_min_offset": 0.2,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 4 (Proliferative DR)",
+      "filename": "confirmed_grade4_proliferative.jpg"
+    },
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_eval_6959267_grade3.png",
+      "image_dimensions": [
+        384,
+        384
+      ],
+      "retinal_foreground_area": 126239,
+      "coverage_pct": 85.61,
+      "bounding_box": [
+        5,
+        0,
+        376,
+        378
+      ],
+      "aspect_ratio": 0.995,
+      "retinal_center": [
+        196.77,
+        190.42
+      ],
+      "image_center": [
+        192.0,
+        192.0
+      ],
+      "normalized_horizontal_offset": 0.0249,
+      "normalized_vertical_offset": 0.0082,
+      "radial_center_offset": 0.0262,
+      "fov_score": 100.0,
+      "centering_score": 93.45,
+      "optic_disc": {
+        "detected": true,
+        "center": [
+          119.5,
+          197.5
+        ],
+        "radius": 14,
+        "confidence": 0.71,
+        "is_reliable": true,
+        "method": "interior_morphology_candidate_scoring",
+        "notes": "Optic disc candidate localized within expected physiological dimensions."
+      },
+      "fov_decision": "Adequate FOV",
+      "centering_decision": "Well Centered",
+      "diagnostics": {
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "total_pixels": 147456,
+        "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+      },
+      "thresholds": {
+        "poor_fov_threshold": 50.0,
+        "adequate_fov_threshold": 75.0,
+        "well_centered_max_offset": 0.08,
+        "poor_centered_min_offset": 0.2,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 3 (Severe DR)",
+      "filename": "aptos_eval_6959267_grade3.png"
+    },
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/aptos_train_sample_c10.png",
+      "image_dimensions": [
+        384,
+        384
+      ],
+      "retinal_foreground_area": 130827,
+      "coverage_pct": 88.72,
+      "bounding_box": [
+        0,
+        0,
+        384,
+        384
+      ],
+      "aspect_ratio": 1.0,
+      "retinal_center": [
+        191.65,
+        189.37
+      ],
+      "image_center": [
+        192.0,
+        192.0
+      ],
+      "normalized_horizontal_offset": 0.0018,
+      "normalized_vertical_offset": 0.0137,
+      "radial_center_offset": 0.0138,
+      "fov_score": 100.0,
+      "centering_score": 96.54,
+      "optic_disc": {
+        "detected": true,
+        "center": [
+          333.8,
+          179.5
+        ],
+        "radius": 32,
+        "confidence": 0.71,
+        "is_reliable": true,
+        "method": "interior_morphology_candidate_scoring",
+        "notes": "Optic disc candidate localized within expected physiological dimensions."
+      },
+      "fov_decision": "Adequate FOV",
+      "centering_decision": "Well Centered",
+      "diagnostics": {
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "total_pixels": 147456,
+        "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+      },
+      "thresholds": {
+        "poor_fov_threshold": 50.0,
+        "adequate_fov_threshold": 75.0,
+        "well_centered_max_offset": 0.08,
+        "poor_centered_min_offset": 0.2,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 0 (APTOS Train Sample)",
+      "filename": "aptos_train_sample_c10.png"
+    },
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c1_grade3.png",
+      "image_dimensions": [
+        384,
+        384
+      ],
+      "retinal_foreground_area": 132531,
+      "coverage_pct": 89.88,
+      "bounding_box": [
+        0,
+        0,
+        384,
+        384
+      ],
+      "aspect_ratio": 1.0,
+      "retinal_center": [
+        191.87,
+        190.05
+      ],
+      "image_center": [
+        192.0,
+        192.0
+      ],
+      "normalized_horizontal_offset": 0.0007,
+      "normalized_vertical_offset": 0.0102,
+      "radial_center_offset": 0.0102,
+      "fov_score": 100.0,
+      "centering_score": 97.46,
+      "optic_disc": {
+        "detected": true,
+        "center": [
+          49.3,
+          126.4
+        ],
+        "radius": 25,
+        "confidence": 0.68,
+        "is_reliable": true,
+        "method": "interior_morphology_candidate_scoring",
+        "notes": "Optic disc candidate localized within expected physiological dimensions."
+      },
+      "fov_decision": "Adequate FOV",
+      "centering_decision": "Well Centered",
+      "diagnostics": {
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "total_pixels": 147456,
+        "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+      },
+      "thresholds": {
+        "poor_fov_threshold": 50.0,
+        "adequate_fov_threshold": 75.0,
+        "well_centered_max_offset": 0.08,
+        "poor_centered_min_offset": 0.2,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 3 (Severe DR)",
+      "filename": "cell13_r1_c1_grade3.png"
+    },
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c0_grade0.png",
+      "image_dimensions": [
+        384,
+        384
+      ],
+      "retinal_foreground_area": 131840,
+      "coverage_pct": 89.41,
+      "bounding_box": [
+        0,
+        0,
+        384,
+        384
+      ],
+      "aspect_ratio": 1.0,
+      "retinal_center": [
+        191.84,
+        190.18
+      ],
+      "image_center": [
+        192.0,
+        192.0
+      ],
+      "normalized_horizontal_offset": 0.0008,
+      "normalized_vertical_offset": 0.0095,
+      "radial_center_offset": 0.0095,
+      "fov_score": 100.0,
+      "centering_score": 97.62,
+      "optic_disc": {
+        "detected": true,
+        "center": [
+          310.5,
+          185.4
+        ],
+        "radius": 30,
+        "confidence": 0.68,
+        "is_reliable": true,
+        "method": "interior_morphology_candidate_scoring",
+        "notes": "Optic disc candidate localized within expected physiological dimensions."
+      },
+      "fov_decision": "Adequate FOV",
+      "centering_decision": "Well Centered",
+      "diagnostics": {
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "total_pixels": 147456,
+        "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+      },
+      "thresholds": {
+        "poor_fov_threshold": 50.0,
+        "adequate_fov_threshold": 75.0,
+        "well_centered_max_offset": 0.08,
+        "poor_centered_min_offset": 0.2,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 0 (No DR)",
+      "filename": "cell13_r0_c0_grade0.png"
+    },
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r1_c0_grade2_dup.png",
+      "image_dimensions": [
+        384,
+        384
+      ],
+      "retinal_foreground_area": 118818,
+      "coverage_pct": 80.58,
+      "bounding_box": [
+        0,
+        0,
+        384,
+        384
+      ],
+      "aspect_ratio": 1.0,
+      "retinal_center": [
+        192.39,
+        190.39
+      ],
+      "image_center": [
+        192.0,
+        192.0
+      ],
+      "normalized_horizontal_offset": 0.002,
+      "normalized_vertical_offset": 0.0084,
+      "radial_center_offset": 0.0086,
+      "fov_score": 100.0,
+      "centering_score": 97.85,
+      "optic_disc": {
+        "detected": true,
+        "center": [
+          304.5,
+          146.9
+        ],
+        "radius": 29,
+        "confidence": 0.84,
+        "is_reliable": true,
+        "method": "interior_morphology_candidate_scoring",
+        "notes": "Optic disc candidate localized within expected physiological dimensions."
+      },
+      "fov_decision": "Adequate FOV",
+      "centering_decision": "Well Centered",
+      "diagnostics": {
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "total_pixels": 147456,
+        "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+      },
+      "thresholds": {
+        "poor_fov_threshold": 50.0,
+        "adequate_fov_threshold": 75.0,
+        "well_centered_max_offset": 0.08,
+        "poor_centered_min_offset": 0.2,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 2 (Moderate DR)",
+      "filename": "cell13_r1_c0_grade2_dup.png"
+    },
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c2_grade2.png",
+      "image_dimensions": [
+        384,
+        384
+      ],
+      "retinal_foreground_area": 116368,
+      "coverage_pct": 78.92,
+      "bounding_box": [
+        0,
+        0,
+        384,
+        384
+      ],
+      "aspect_ratio": 1.0,
+      "retinal_center": [
+        191.76,
+        191.09
+      ],
+      "image_center": [
+        192.0,
+        192.0
+      ],
+      "normalized_horizontal_offset": 0.0012,
+      "normalized_vertical_offset": 0.0047,
+      "radial_center_offset": 0.0049,
+      "fov_score": 100.0,
+      "centering_score": 98.78,
+      "optic_disc": {
+        "detected": true,
+        "center": [
+          289.9,
+          275.9
+        ],
+        "radius": 21,
+        "confidence": 0.74,
+        "is_reliable": true,
+        "method": "interior_morphology_candidate_scoring",
+        "notes": "Optic disc candidate localized within expected physiological dimensions."
+      },
+      "fov_decision": "Adequate FOV",
+      "centering_decision": "Well Centered",
+      "diagnostics": {
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "total_pixels": 147456,
+        "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+      },
+      "thresholds": {
+        "poor_fov_threshold": 50.0,
+        "adequate_fov_threshold": 75.0,
+        "well_centered_max_offset": 0.08,
+        "poor_centered_min_offset": 0.2,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 2 (Moderate DR)",
+      "filename": "cell13_r0_c2_grade2.png"
+    },
+    {
+      "image_path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images/cell13_r0_c1_grade1.png",
+      "image_dimensions": [
+        384,
+        384
+      ],
+      "retinal_foreground_area": 117029,
+      "coverage_pct": 79.37,
+      "bounding_box": [
+        0,
+        0,
+        384,
+        384
+      ],
+      "aspect_ratio": 1.0,
+      "retinal_center": [
+        192.45,
+        191.9
+      ],
+      "image_center": [
+        192.0,
+        192.0
+      ],
+      "normalized_horizontal_offset": 0.0024,
+      "normalized_vertical_offset": 0.0005,
+      "radial_center_offset": 0.0024,
+      "fov_score": 100.0,
+      "centering_score": 99.4,
+      "optic_disc": {
+        "detected": true,
+        "center": [
+          72.9,
+          122.9
+        ],
+        "radius": 29,
+        "confidence": 0.88,
+        "is_reliable": true,
+        "method": "interior_morphology_candidate_scoring",
+        "notes": "Optic disc candidate localized within expected physiological dimensions."
+      },
+      "fov_decision": "Adequate FOV",
+      "centering_decision": "Well Centered",
+      "diagnostics": {
+        "resolution_evaluated": [
+          384,
+          384
+        ],
+        "total_pixels": 147456,
+        "centering_vs_disc_distinction": "Retinal center measures camera field framing. Optic disc candidate measures anatomical landmark."
+      },
+      "thresholds": {
+        "poor_fov_threshold": 50.0,
+        "adequate_fov_threshold": 75.0,
+        "well_centered_max_offset": 0.08,
+        "poor_centered_min_offset": 0.2,
+        "status": "engineering_baseline_not_clinically_validated",
+        "clinical_validation": false
+      },
+      "dr_grade": "Grade 1 (Mild DR)",
+      "filename": "cell13_r0_c1_grade1.png"
+    }
+  ]
+}

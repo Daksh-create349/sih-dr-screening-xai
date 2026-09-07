@@ -1,0 +1,252 @@
+{
+  "manifest_version": "1.0.0",
+  "dataset_name": "Indian Diabetic Retinopathy Image Dataset (IDRiD)",
+  "availability_status": "NOT_AVAILABLE_IN_CURRENT_ENVIRONMENT",
+  "available_locally": false,
+  "availability_details": {
+    "available": false,
+    "status": "NOT_AVAILABLE_IN_CURRENT_ENVIRONMENT",
+    "root_path": null,
+    "image_count": 0,
+    "mask_count": 0,
+    "csv_count": 0,
+    "provenance": {
+      "dataset_name": "Indian Diabetic Retinopathy Image Dataset (IDRiD)",
+      "official_url": "https://ieee-dataport.org/open-access/indian-diabetic-retinopathy-image-dataset-idrid",
+      "challenge_url": "https://idrid.grand-challenge.org/",
+      "camera": "Kowa VX-10alpha digital fundus camera",
+      "field_of_view_deg": 50,
+      "native_resolution": [
+        4288,
+        2848,
+        3
+      ],
+      "file_format": "JPG (Images), TIF (Lesion/Structure Masks), CSV (Coordinates & Grades)",
+      "parts": {
+        "Part_A_Segmentation": {
+          "title": "A. Segmentation",
+          "archive_name": "A. Segmentation.zip",
+          "archive_size_bytes": 584318976,
+          "archive_size_mb": 557.25,
+          "subsets": {
+            "train_images": 54,
+            "test_images": 27,
+            "total_images": 81
+          },
+          "annotation_classes": [
+            "1. Microaneurysms",
+            "2. Haemorrhages",
+            "3. Hard Exudates",
+            "4. Soft Exudates",
+            "5. Optic Disc"
+          ],
+          "mask_format": "Binary TIF (0=Background, 255=Lesion/Structure)"
+        },
+        "Part_B_Disease_Grading": {
+          "title": "B. Disease Grading",
+          "archive_name": "B. Disease Grading.zip",
+          "archive_size_bytes": 212415283,
+          "archive_size_mb": 202.57,
+          "subsets": {
+            "train_images": 413,
+            "test_images": 103,
+            "total_images": 516
+          },
+          "labels": [
+            "Retinopathy Grade (0-4)",
+            "Diabetic Macular Edema Risk Grade (0-2)"
+          ]
+        },
+        "Part_C_Localization": {
+          "title": "C. Localization",
+          "archive_name": "C. Localization.zip",
+          "archive_size_bytes": 212520140,
+          "archive_size_mb": 202.67,
+          "subsets": {
+            "train_images": 413,
+            "test_images": 103,
+            "total_images": 516
+          },
+          "landmarks": [
+            "Optic Disc Center (X, Y in pixels)",
+            "Fovea Center (X, Y in pixels)"
+          ]
+        }
+      }
+    },
+    "reason": "IDRiD dataset is not available locally. Official IEEE DataPort distribution (https://ieee-dataport.org/open-access/indian-diabetic-retinopathy-image-dataset-idrid) requires authenticated user credentials to download files ('LOGIN TO ACCESS DATASET FILES'). Automated unauthenticated retrieval is blocked by the portal. Furthermore, Part A Segmentation (557.25 MB) exceeds the workspace hard download limit of 500 MB.",
+    "guidance": "To evaluate on real IDRiD ground-truth masks: manually download Part A, B, or C from IEEE DataPort with an authenticated account, and extract to 'data/idrid/'."
+  },
+  "provenance": {
+    "dataset_name": "Indian Diabetic Retinopathy Image Dataset (IDRiD)",
+    "official_url": "https://ieee-dataport.org/open-access/indian-diabetic-retinopathy-image-dataset-idrid",
+    "challenge_url": "https://idrid.grand-challenge.org/",
+    "camera": "Kowa VX-10alpha digital fundus camera",
+    "field_of_view_deg": 50,
+    "native_resolution": [
+      4288,
+      2848,
+      3
+    ],
+    "file_format": "JPG (Images), TIF (Lesion/Structure Masks), CSV (Coordinates & Grades)",
+    "parts": {
+      "Part_A_Segmentation": {
+        "title": "A. Segmentation",
+        "archive_name": "A. Segmentation.zip",
+        "archive_size_bytes": 584318976,
+        "archive_size_mb": 557.25,
+        "subsets": {
+          "train_images": 54,
+          "test_images": 27,
+          "total_images": 81
+        },
+        "annotation_classes": [
+          "1. Microaneurysms",
+          "2. Haemorrhages",
+          "3. Hard Exudates",
+          "4. Soft Exudates",
+          "5. Optic Disc"
+        ],
+        "mask_format": "Binary TIF (0=Background, 255=Lesion/Structure)"
+      },
+      "Part_B_Disease_Grading": {
+        "title": "B. Disease Grading",
+        "archive_name": "B. Disease Grading.zip",
+        "archive_size_bytes": 212415283,
+        "archive_size_mb": 202.57,
+        "subsets": {
+          "train_images": 413,
+          "test_images": 103,
+          "total_images": 516
+        },
+        "labels": [
+          "Retinopathy Grade (0-4)",
+          "Diabetic Macular Edema Risk Grade (0-2)"
+        ]
+      },
+      "Part_C_Localization": {
+        "title": "C. Localization",
+        "archive_name": "C. Localization.zip",
+        "archive_size_bytes": 212520140,
+        "archive_size_mb": 202.67,
+        "subsets": {
+          "train_images": 413,
+          "test_images": 103,
+          "total_images": 516
+        },
+        "landmarks": [
+          "Optic Disc Center (X, Y in pixels)",
+          "Fovea Center (X, Y in pixels)"
+        ]
+      }
+    }
+  },
+  "annotation_taxonomy": {
+    "OPTIC_DISC": {
+      "category": "OPTIC_DISC",
+      "idrid_status": "AVAILABLE",
+      "representation": [
+        "PointLandmark (Part C center X, Y)",
+        "SegmentationMask (Part A OD mask)"
+      ],
+      "annotation_source": "IDRiD Part A (81 masks) & Part C (516 coordinates)",
+      "unit": "pixels (native 4288x2848)"
+    },
+    "FOVEA": {
+      "category": "FOVEA",
+      "idrid_status": "AVAILABLE",
+      "representation": [
+        "PointLandmark (Part C fovea center X, Y)"
+      ],
+      "annotation_source": "IDRiD Part C (516 coordinates)",
+      "unit": "pixels (native 4288x2848)"
+    },
+    "VESSEL": {
+      "category": "VESSEL",
+      "idrid_status": "NOT_AVAILABLE_IN_IDRID",
+      "representation": [
+        "SegmentationMask"
+      ],
+      "annotation_source": "Not annotated in IDRiD; external benchmarks (DRIVE, STARE, CHASE_DB1) required",
+      "unit": "binary mask"
+    },
+    "MICROANEURYSM": {
+      "category": "MICROANEURYSM",
+      "idrid_status": "AVAILABLE",
+      "representation": [
+        "SegmentationMask (Part A binary TIF)"
+      ],
+      "annotation_source": "IDRiD Part A (81 images: 54 train, 27 test)",
+      "unit": "binary pixel mask (native 4288x2848)"
+    },
+    "EXUDATE": {
+      "category": "EXUDATE",
+      "idrid_status": "AVAILABLE",
+      "representation": [
+        "SegmentationMask (Hard Exudates TIF + Soft Exudates TIF)"
+      ],
+      "annotation_source": "IDRiD Part A (81 images: 54 train, 27 test)",
+      "unit": "binary pixel mask (native 4288x2848)"
+    },
+    "HEMORRHAGE": {
+      "category": "HEMORRHAGE",
+      "idrid_status": "AVAILABLE",
+      "representation": [
+        "SegmentationMask (Haemorrhages TIF)"
+      ],
+      "annotation_source": "IDRiD Part A (81 images: 54 train, 27 test)",
+      "unit": "binary pixel mask (native 4288x2848)"
+    },
+    "NEOVASCULARIZATION": {
+      "category": "NEOVASCULARIZATION",
+      "idrid_status": "NOT_AVAILABLE_IN_IDRID",
+      "representation": [
+        "SegmentationMask / BoundingBox"
+      ],
+      "annotation_source": "Not annotated in IDRiD; specialized Proliferative DR cohort (e.g. DDR) required",
+      "unit": "unsupported in current dataset"
+    }
+  },
+  "microaneurysm_resolution_analysis": {
+    "native_resolution": [
+      4288,
+      2848,
+      3
+    ],
+    "field_of_view_deg": 50.0,
+    "approx_retinal_diameter_mm": 15.0,
+    "microns_per_native_pixel": 3.5,
+    "physiological_microaneurysm_size_microns": [
+      10.0,
+      100.0
+    ],
+    "microaneurysm_native_pixel_span": [
+      3,
+      29
+    ],
+    "annotation_format": "Discrete binary pixel grid (.tif), 0 or 255",
+    "sub_pixel_ground_truth_present": false,
+    "downsampled_resolution": [
+      384,
+      384,
+      3
+    ],
+    "microns_per_downsampled_pixel": 39.06,
+    "downsampling_implication": "Downsampling native fundus images from 4288x2848 to 384x384 (11.2x reduction) causes 1 pixel to represent ~39 microns. Microaneurysms under 39 microns physically collapse into sub-pixel dimensions (< 1 pixel). A standard 384x384 convolutional network cannot detect sub-pixel lesions without severe aliasing. Genuine microaneurysm localization requires native-resolution patch extraction (e.g. 512x512 patches at full 3.5 um/pixel resolution), NOT downsampled whole-image inference.",
+    "sub_pixel_claim_verdict": "The phrase 'sub-pixel microaneurysm detection' cannot be claimed on 384x384 models. The IDRiD ground truth itself is pixel-quantized (integer grid), not continuous sub-pixel splines. Any future microaneurysm model must be evaluated on full-resolution patch crops and evaluated against discrete pixel masks."
+  },
+  "neovascularization_status": {
+    "status": "NOT_AVAILABLE_IN_IDRID",
+    "recommendation": "Do not train or claim neovascularization detector until specialized NV dataset is acquired."
+  },
+  "vessel_segmentation_status": {
+    "status": "NOT_AVAILABLE_IN_IDRID",
+    "recommendation": "Use DRIVE or CHASE_DB1 benchmark for retinal vessel segmentation."
+  },
+  "engineering_invariants": {
+    "classifier_v2_frozen": true,
+    "no_synthetic_data": true,
+    "no_fabricated_annotations": true,
+    "training_stage": "AUDIT_ONLY_NO_TRAINING"
+  }
+}

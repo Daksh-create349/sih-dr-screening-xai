@@ -1,0 +1,15 @@
+{
+  "python.defaultInterpreterPath": "/opt/anaconda3/bin/python",
+  "python.analysis.typeCheckingMode": "off",
+  "python.analysis.extraPaths": [
+    "/opt/anaconda3/lib/python3.13/site-packages",
+    "."
+  ],
+  "python.autoComplete.extraPaths": [
+    "/opt/anaconda3/lib/python3.13/site-packages",
+    "."
+  ],
+  "files.associations": {
+    "*.m": "matlab"
+  }
+}

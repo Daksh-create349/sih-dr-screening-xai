@@ -1,0 +1,24 @@
+{
+  "audit_version": "1.0.0",
+  "real_images_subset": {
+    "status": "AUDITED",
+    "path": "/Users/dakshsrivastava/Desktop/DR /data/real_retinal_images",
+    "total_files": 9,
+    "unique_hashes": 9,
+    "duplicate_hash_groups": 0,
+    "duplicates": {},
+    "leakage_detected": false
+  },
+  "idrid_dataset": {
+    "status": "DIRECTORY_NOT_FOUND",
+    "path": "/Users/dakshsrivastava/Desktop/DR /data/idrid",
+    "total_files": 0,
+    "duplicate_hash_groups": 0
+  },
+  "known_aptos_split_leakage": {
+    "warning": "DATASET_SPLIT_CONTAMINATION_DETECTED",
+    "cross_split_duplicate_groups": 46,
+    "same_label_duplicates": 40,
+    "conflicting_label_duplicates": 6
+  }
+}
