@@ -11,16 +11,18 @@
 [![Clinical Integrity](https://img.shields.io/badge/Integrity-Zero%20Synthetic%20Data-b91c1c.svg?style=flat-square)](#epistemic-integrity-principles)
 
 <p align="center">
-  <strong>An autonomous, multi-modal medical tele-screening system combining hardware-efficient edge inference, dual macroscopic/microscopic explainability, automated optical quality safety interlocks, 6 deep retinal lesion biomarkers, and a discrete-event capacity model verified for 100,000+ rural screenings annually.</strong>
+  <strong>An autonomous, multi-modal medical tele-screening system combining hardware-efficient edge inference, dual macroscopic and microscopic explainability, automated optical quality safety interlocks, 6 deep retinal lesion biomarkers, and a discrete-event capacity model verified for 100,000+ rural screenings annually.</strong>
 </p>
 
-[System Architecture](#system-architecture) •
+[Workstation Interface](#clinical-pacs-workstation-interface) •
 [MathWorks Simulink Model](#mathworks-simulink-8-subsystem-model) •
-[Clinical Evidence Engine](#6-system-deep-biomarker-engine) •
-[IQA Safety Protocol](#optical-image-quality-assessment-iqa-pipeline) •
-[Verification & Benchmarks](#comprehensive-clinical--technical-benchmarks) •
+[Deep Biomarkers & Vascular Engine](#6-system-deep-biomarker--vascular-engine) •
+[Clinical Screening Case Series](#clinical-screening-case-series-grades-0--4) •
+[Discrete-Event Capacity Simulation](#discrete-event-system-simulation--capacity-verification) •
+[IQA Safety Pipeline](#optical-image-quality-assessment-iqa-pipeline) •
+[Hardware Benchmarks](#comprehensive-clinical--technical-benchmarks) •
 [Deployment Guide](#deployment--quick-start-guide) •
-[Team](#engineering--clinical-team)
+[Engineering Team](#engineering--clinical-team)
 
 </div>
 
@@ -37,6 +39,24 @@ Diabetic Retinopathy (DR) represents the primary driver of preventable working-a
 4. **6-System Retinal Biomarker Engine**: Automated localization and segmentation of Optic Disc, Hard Exudates, Hemorrhages, Soft Exudates, Retinal Vasculature, and Microaneurysms.
 5. **Certified MathWorks Simulink Discrete-Event Architecture**: An 8-subsystem discrete-event model (`DR_screening_workflow.slx`) proving stable throughput and capacity for **100,000 screenings per year**.
 6. **Zero-Latency Clinical PDF Reporting**: In-browser vector PDF compilation complete with hospital header, color-coded IQA stamp, probability distributions, lesion overlays, and legal doctor sign-off blocks.
+
+---
+
+## Clinical PACS Workstation Interface
+
+The RETINASCAN-AI web diagnostic workstation provides frontline community healthcare workers and remote consulting ophthalmologists with an intuitive, zero-latency clinical interface designed to institutional standards.
+
+<div align="center">
+  <img src="docs/assets/workstation_ui_dashboard.png" alt="RETINASCAN-AI Workstation Live Screening Console" width="100%" style="border-radius: 8px; border: 1px solid #334155; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);" />
+  <p><em>Figure 1: Frontline Clinical Screening Console — Multi-panel inspection interface featuring upstream 4-metric IQA quality validation, 5-class ICDR probability distribution, referable risk scoring, and interactive diagnostic modality switching.</em></p>
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="docs/assets/workstation_ui_evidence.png" alt="RETINASCAN-AI 6-System Deep Biomarker Evidence Panel" width="100%" style="border-radius: 8px; border: 1px solid #334155; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);" />
+  <p><em>Figure 2: Subsystem 6 Evidence Panel — Quantitative lesion extraction displaying Optic Disc anchor coordinates, Hard Exudate surface area, CSME foveal clearance, Retinal Hemorrhage count, Soft Exudate foci, Vascular Tree density, and pinpoint Microaneurysms.</em></p>
+</div>
 
 ---
 
@@ -101,13 +121,13 @@ flowchart TD
 
 ## MathWorks Simulink 8-Subsystem Model
 
-The workstation's operational pipeline is formally specified, compiled, and verified in MathWorks Simulink:
+The workstation operational pipeline is formally specified, compiled, and verified in MathWorks Simulink:
 - **Model File**: [`simulink/models/DR_screening_workflow.slx`](file:///Users/dakshsrivastava/Desktop/DR%20/simulink/models/DR_screening_workflow.slx) (Tracked via Git LFS)
-- **Environment**: MATLAB Online / R2024b Simulink Canvas
+- **Verification Environment**: MATLAB Online / R2024b Simulink Canvas
 
 <div align="center">
-  <img src="docs/assets/simulink_model_screenshot.png" alt="MathWorks Simulink DR Screening Architecture" width="95%" style="border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-  <p><em>Figure 1: MathWorks Simulink verified block diagram showing the 8 certified subsystems, dual quality routing pathways, and strict classifier bypass interlock for ungradeable captures.</em></p>
+  <img src="docs/assets/simulink_model_screenshot.png" alt="MathWorks Simulink DR Screening Architecture" width="100%" style="border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
+  <p><em>Figure 3: MathWorks Simulink verified block diagram showing the 8 certified subsystems, dual quality routing pathways, and strict classifier bypass interlock for ungradeable captures.</em></p>
 </div>
 
 ### Subsystem Signal Routing Invariants:
@@ -138,56 +158,159 @@ The workstation's operational pipeline is formally specified, compiled, and veri
    [SS-8: Clinical Review Queue] ◄────────────────────────────────────────┘
 ```
 
-### Mathematical Capacity & Throughput Verification (M/M/1 Model):
-The discrete-event workload simulation proves that a single RETINASCAN-AI rural screening node comfortably exceeds the required **100,000 screenings per year**:
+---
+
+## 6-System Deep Biomarker & Vascular Engine
+
+The lesion detection engine consists of **4 dedicated PyTorch U-Net architectures** (ResNet34 encoders) trained on certified benchmark datasets, coupled with **state-of-the-art classical computer vision filters** for vascular morphology and microaneurysm detection.
+
+### Multi-Modal Clinical Inference Modalities
+
+<div align="center">
+  <img src="docs/assets/clinical_modalities_quad_panel.png" alt="Clinical Modalities Quad Panel" width="100%" style="border-radius: 8px; border: 1px solid #334155; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);" />
+  <p><em>Figure 4: Multi-Modal Clinical Inference Quad-Panel — (A) 45° Color Retinal Fundus Ingestion, (B) Multiscale Frangi Hessian Retinal Angiogram, (C) 6-System Deep Lesion & Landmark Contour Overlay, and (D) Grad-CAM Feature Attribution Heatmap.</em></p>
+</div>
+
+<br/>
+
+### High-Resolution Modality Comparison
+
+<div align="center">
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/assets/retinal_angiogram_vessels.png" width="95%" style="border-radius: 6px; border: 1px solid #475569;" /><br/>
+      <strong>Retinal Microvasculature &amp; Arcade Branches</strong><br/>
+      <sub>Multiscale Frangi Hessian vessel enhancement filter (&sigma; &isin; [1.0, 2.0]) isolating vessel caliber, arteriolar bifurcations, and neovascularization.</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/assets/clinical_lesion_overlay.png" width="95%" style="border-radius: 6px; border: 1px solid #475569;" /><br/>
+      <strong>6-System Integrated Pathological Overlay</strong><br/>
+      <sub>Cyan: Optic Disc &bull; Gold: Hard Exudates &bull; Crimson: Hemorrhages &bull; Lavender: Cotton Wool Spots &bull; Orange: Pinpoint Microaneurysms.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/assets/gradcam_feature_attribution.png" width="95%" style="border-radius: 6px; border: 1px solid #475569;" /><br/>
+      <strong>Convolutional Feature Attribution (Grad-CAM)</strong><br/>
+      <sub>Gradients back-propagated to the <code>top_conv</code> layer of EfficientNetB3, highlighting macroscopic diagnostic attention across a 9-sector grid.</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/assets/clahe_contrast_enhanced.png" width="95%" style="border-radius: 6px; border: 1px solid #475569;" /><br/>
+      <strong>Adaptive CLAHE Contrast Enhancement</strong><br/>
+      <sub>Dynamic range normalization applied to Borderline IQA captures before secondary optical quality verification.</sub>
+    </td>
+  </tr>
+</table>
+</div>
+
+<br/>
+
+### Detailed Clinical System Breakdown
+
+| System | Target Anatomy / Lesion | Architectural Method | Validation Performance | Clinical Relevance in DR Staging |
+| :--- | :--- | :--- | :--- | :--- |
+| **System 1** | **Optic Disc Landmark** | U-Net with ResNet34 encoder; mixed BCE + Dice Loss; 10,409 training patches | **Val Dice: 0.9859**<br>IoU: 0.9721 | Primary anatomical coordinate anchor. Geometrically calculates the location of the Macula / Foveal Avascular Zone (FAZ). |
+| **System 2** | **Hard Exudates (Lipid Deposits)** | U-Net ResNet34 with weighted loss for sparse pixel representation | **Val Dice: 0.7580**<br>IoU: 0.6955 | Intraretinal lipid deposits from microvascular leakage. Directly drives automated Clinically Significant Macular Edema (CSME) risk grading. |
+| **System 3** | **Retinal Hemorrhages** | U-Net ResNet34 trained on IDRiD Part A hemorrhage ground-truth | **Val Dice: 0.7482**<br>IoU: 0.6870 | Dot, blot, and flame hemorrhage quantification under the international ICDR "4-2-1" clinical rule for Severe NPDR diagnosis. |
+| **System 4** | **Soft Exudates (Cotton Wool Spots)** | U-Net ResNet34 trained on IDRiD Part A cotton wool annotations | **Val Dice: 0.7595**<br>IoU: 0.6975 | Fluffy white patches signifying precapillary arteriolar occlusion and localized retinal nerve fiber layer ischemia. |
+| **System 5** | **Retinal Vasculature Tree** | Multiscale Frangi Hessian vessel enhancement filter ($\sigma \in [1.0, 2.0]$) | **Vessel Density & Arcade Map** | Maps overall vascular caliber and arcade geometry; essential for detecting neovascularization of the disc (NVD/NVE) in PDR. |
+| **System 6** | **Retinal Microaneurysms (MAs)** | Inverted green-channel CLAHE + Elliptical Top-Hat morphology + Frangi vessel suppression | **Pinpoint Foci (2–45 px)** | The earliest clinically observable sign of Diabetic Retinopathy. Detects focal capillary wall outpouchings before major hemorrhages occur. |
+
+---
+
+## Clinical Screening Case Series (Grades 0 – 4)
+
+Below are end-to-end clinical screening cards generated by RETINASCAN-AI across real patient fundus images, demonstrating the pipeline response across every ICDR severity level.
+
+### Grade 0: Normal Retina (No Diabetic Retinopathy)
+<div align="center">
+  <img src="docs/assets/e2e_grade0_normal.png" alt="Clinical Screening Card - Grade 0 Normal" width="95%" style="border-radius: 8px; border: 1px solid #334155;" />
+  <p><em>Figure 5: Grade 0 (No DR) — Clean retinal background, normal optic disc morphology, absence of microvascular leakage. Non-referable: Routine annual rescreening recommended.</em></p>
+</div>
+
+<br/>
+
+### Grade 1: Mild Non-Proliferative Diabetic Retinopathy (NPDR)
+<div align="center">
+  <img src="docs/assets/e2e_grade1_mild.png" alt="Clinical Screening Card - Grade 1 Mild NPDR" width="95%" style="border-radius: 8px; border: 1px solid #334155;" />
+  <p><em>Figure 6: Grade 1 (Mild NPDR) — Isolated microaneurysms detected without hard exudate clusters or hemorrhages. Non-referable: 6–12 month follow-up screening scheduled.</em></p>
+</div>
+
+<br/>
+
+### Grade 2: Moderate Non-Proliferative Diabetic Retinopathy (NPDR)
+<div align="center">
+  <img src="docs/assets/e2e_grade2_moderate.png" alt="Clinical Screening Card - Grade 2 Moderate NPDR" width="95%" style="border-radius: 8px; border: 1px solid #334155;" />
+  <p><em>Figure 7: Grade 2 (Moderate NPDR) — Multiple microaneurysms, lipid hard exudates, and localized blot hemorrhages. Referable status triggered with CSME proximity evaluation.</em></p>
+</div>
+
+<br/>
+
+### Grade 3: Severe Non-Proliferative Diabetic Retinopathy (NPDR)
+<div align="center">
+  <img src="docs/assets/e2e_grade3_severe.png" alt="Clinical Screening Card - Grade 3 Severe NPDR" width="95%" style="border-radius: 8px; border: 1px solid #334155;" />
+  <p><em>Figure 8: Grade 3 (Severe NPDR) — Extensive intraretinal hemorrhages spanning 4 quadrants (ICDR 4-2-1 rule), cotton wool spots, and vascular beading. Urgent ophthalmology triage.</em></p>
+</div>
+
+<br/>
+
+### Grade 4: Proliferative Diabetic Retinopathy (PDR)
+<div align="center">
+  <img src="docs/assets/e2e_grade4_pdr.png" alt="Clinical Screening Card - Grade 4 Proliferative DR" width="95%" style="border-radius: 8px; border: 1px solid #334155;" />
+  <p><em>Figure 9: Grade 4 (PDR) — Neovascularization, severe vascular disruption, and high risk of vitreous hemorrhage or retinal detachment. Immediate same-week tertiary center referral.</em></p>
+</div>
+
+---
+
+## Discrete-Event System Simulation & Capacity Verification
+
+To verify that RETINASCAN-AI satisfies the rural healthcare scalability requirements of **Smart India Hackathon Problem Statement 26038**, a comprehensive SimEvents-equivalent discrete-event queuing simulation was conducted across **100,000 screening events**.
+
+### Target Volume vs. Simulated Peak Capacity
 
 $$\lambda = \frac{100,000 \text{ screenings}}{250 \text{ clinic days} \times 8 \text{ hours/day} \times 3600 \text{ s/hr}} \approx 0.0139 \text{ patients/second} \quad (\approx 1 \text{ patient every } 72\text{s})$$
 
 - **Measured Pipeline Service Time**: $T_s = 1.22 \text{ seconds}$ ($\mu = \frac{1}{T_s} \approx 0.82 \text{ patients/second}$).
 - **System Utilization ($\rho$)**:
-  $$\rho = \frac{\lambda}{\mu} = \frac{0.0139}{0.82} \approx 0.017 \quad (1.7\% \text{ system load})$$
+  $$\rho = \frac{\lambda}{\mu} = \frac{0.0139}{0.82} \approx 0.017 \quad (1.7\% \text{ steady-state load})$$
 - **Theoretical Peak Capacity**:
   $$\text{Capacity}_{\text{max}} = 250 \times 8 \times 3600 \times 0.82 \approx \mathbf{5,904,000 \text{ screenings/year}}$$
-*Result: The architecture supports **over 58× the annual target volume** without queuing delays.*
 
----
-
-## 6-System Deep Biomarker Engine
-
-The lesion detection engine consists of **5 dedicated U-Net architectures** (ResNet34 backbones) trained on certified benchmark datasets, combined with **state-of-the-art classical computer vision filters**:
-
-```
-                                 RETINASCAN-AI BIOMARKER SUITE
-  ┌─────────────────────────────────────────────────────────────────────────────────────────┐
-  │                                                                                         │
-  │   [OPTIC DISC]           [HARD EXUDATES]        [HEMORRHAGES]          [SOFT EXUDATES]  │
-  │   U-Net ResNet34         U-Net ResNet34         U-Net ResNet34         U-Net ResNet34   │
-  │   Val Dice: 0.9859       Val Dice: 0.7580       Val Dice: 0.7482       Val Dice: 0.7595 │
-  │   Anchors Fovea          CSME Proximity Risk    4-2-1 Rule Foci        Nerve Fiber CWS  │
-  │                                                                                         │
-  │   [RETINAL VESSELS]                             [MICROANEURYSMS]                        │
-  │   Multiscale Frangi Hessian                     Morphological Top-Hat + Vessel Sup.     │
-  │   Vascular Tree Density & Branches              Pinpoint Foci (2–45 px) Detection       │
-  │                                                                                         │
-  └─────────────────────────────────────────────────────────────────────────────────────────┘
-```
-
-### Detailed System Breakdown:
-
-| System | Target Anatomy / Lesion | Architectural Method | Validation Performance | Clinical Relevance in DR Staging |
-| :--- | :--- | :--- | :--- | :--- |
-| **System 1** | **Optic Disc Landmark** | U-Net with ResNet34 encoder; mixed BCE + Dice Loss; 10,409 training patches | **Val Dice: 0.9859**<br>IoU: 0.9721 | Serves as the primary coordinate anchor. Used to geometrically infer the location of the Macula / Foveal Avascular Zone (FAZ). |
-| **System 2** | **Hard Exudates (Lipid Deposits)** | U-Net ResNet34 with weighted loss for sparse pixel representation | **Val Dice: 0.7580**<br>IoU: 0.6955 | Lipid leakage resulting from broken blood-retina barrier. Directly drives automated Clinically Significant Macular Edema (CSME) risk assessment. |
-| **System 3** | **Retinal Hemorrhages** | U-Net ResNet34 trained on IDRiD Part A hemorrhage annotations | **Val Dice: 0.7482**<br>IoU: 0.6870 | Intraretinal dot, blot, and flame hemorrhage quantification under the ICDR "4-2-1" rule for Severe NPDR diagnosis. |
-| **System 4** | **Soft Exudates (Cotton Wool Spots)** | U-Net ResNet34 trained on IDRiD Part A cotton wool ground-truth | **Val Dice: 0.7595**<br>IoU: 0.6975 | Fluffy white lesions signifying acute precapillary arteriolar occlusion and localized retinal nerve fiber layer ischemia. |
-| **System 5** | **Retinal Vasculature Tree** | Multiscale Frangi Hessian vessel enhancement filter ($\sigma \in [1.0, 2.0]$) | **High-Density Vascular Tree** | Maps overall vascular density, vessel caliber, and arcade branch topology; critical for surveillance of neovascularization (PDR). |
-| **System 6** | **Retinal Microaneurysms (MAs)** | Inverted green-channel CLAHE + Elliptical Top-Hat morphology + Frangi vessel suppression | **Pinpoint Detection (2–45 px)** | The earliest visible pathological hallmark of Diabetic Retinopathy. Localizes focal capillary wall outpouchings. |
+<div align="center">
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/assets/sim_target_vs_capacity.png" width="95%" style="border-radius: 6px; border: 1px solid #475569;" /><br/>
+      <strong>Annual Target vs. Measured System Capacity</strong><br/>
+      <sub>Demonstrating a 58&times; throughput margin over the mandated 100,000 annual screening baseline.</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/assets/sim_queue_length.png" width="95%" style="border-radius: 6px; border: 1px solid #475569;" /><br/>
+      <strong>Queue Length Dynamics (100,000 Screenings)</strong><br/>
+      <sub>Steady-state queue length remaining near zero throughout operational shifts without memory accumulation.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/assets/sim_runtime_distribution.png" width="95%" style="border-radius: 6px; border: 1px solid #475569;" /><br/>
+      <strong>Subsystem Latency Breakdown</strong><br/>
+      <sub>Individual runtime distribution for IQA (120ms), CLAHE (65ms), EfficientNetB3 (380ms), and U-Net Suite (650ms).</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/assets/sim_reviewer_utilization.png" width="95%" style="border-radius: 6px; border: 1px solid #475569;" /><br/>
+      <strong>Specialist Tele-Reviewer Utilization</strong><br/>
+      <sub>Remote ophthalmologist review queue load under varying referable prevalence rates in rural populations.</sub>
+    </td>
+  </tr>
+</table>
+</div>
 
 ---
 
 ## Optical Image Quality Assessment (IQA) Pipeline
 
-To prevent misdiagnosis caused by motion blur, poor lighting, or optical misalignment, RETINASCAN-AI enforces an **Autonomous 4-Metric Quality Gatekeeper**:
+To eliminate misdiagnosis caused by motion blur, poor lighting, or optical misalignment, RETINASCAN-AI enforces an **Autonomous 4-Metric Quality Gatekeeper**:
 
 ```mermaid
 graph LR
@@ -200,19 +323,19 @@ graph LR
     
     M1 & M2 & M3 & M4 --> COMP["Weighted Composite Score (0–100)"]
     
-    COMP --> G1["Score >= 65: GOOD (Proceed)"]
-    COMP --> G2["45 <= Score < 65: BORDERLINE (Enhance & Recheck)"]
-    COMP --> G3["Score < 45: UNGRADEABLE (Strict Safety Bypass)"]
+    COMP --> G1["Score >= 65: GOOD (Proceed to Inference)"]
+    COMP --> G2["45 <= Score < 65: BORDERLINE (Enhance with CLAHE & Recheck)"]
+    COMP --> G3["Score < 45: UNGRADEABLE (Strict Safety Interlock Bypass)"]
 ```
 
 ### Quantitative Gating Parameters:
-1. **Focus Metric ($F$)**: Computed via the variance of the modified Laplacian operator applied to high-frequency image textures:
+1. **Focus Metric ($F$)**: Evaluates high-frequency texture sharpness using modified Laplacian operator variance:
    $$\text{Focus Score} = \min\left(100, \frac{\text{Var}(\nabla^2 I_{\text{green}})}{\tau_{\text{focus}}} \times 100\right)$$
-2. **Illumination Metric ($L$)**: Analyzes global dynamic range, histogram clipping (underexposure / saturation), and Shannon entropy across color channels.
-3. **Field of View ($FOV$)**: Circular aperture segmentation ensuring at least $85\%$ valid retinal foreground without border occlusion.
-4. **Centering Metric ($C$)**: Evaluates spatial positioning of the retinal disc relative to the frame center.
+2. **Illumination Metric ($L$)**: Measures histogram dynamic range, underexposure / saturation percentages, and Shannon entropy across color channels.
+3. **Field of View ($FOV$)**: Circular aperture segmentation ensuring at least $85\%$ valid retinal foreground without eyelid or camera rim occlusion.
+4. **Centering Metric ($C$)**: Evaluates spatial positioning of the optic disc relative to standard fundus imaging geometry.
 
-When an image is deemed `UNGRADEABLE`, the deep classifier is **100% bypassed**, outputting actionable recapture guidance to the frontline ASHA operator.
+When an image is determined to be `UNGRADEABLE`, neural inference is **100% bypassed**, returning actionable recapture instructions to the frontline operator.
 
 ---
 
@@ -248,7 +371,7 @@ False Negative Rate      10.22%                           0.73% (< 1 in 135 pati
 ## Deployment & Quick Start Guide
 
 ### System Prerequisites
-- **Python**: 3.10 to 3.13 (Anaconda environment recommended)
+- **Python**: 3.10 to 3.12 (Anaconda environment recommended)
 - **Node.js**: 18.x or 20.x and npm
 - **Git LFS**: Installed for managing deep learning weight files
 - **Optional**: MATLAB Online / Desktop (R2024b) for Simulink `.slx` inspection
