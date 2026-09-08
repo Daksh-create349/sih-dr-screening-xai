@@ -96,16 +96,24 @@ export default function ScreeningPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-[#fbfbf9] text-stone-900">
-      {/* Product Global Header with Navigation Tabs */}
-      <Header
-        isBackendHealthy={isBackendHealthy}
-        onPrint={handlePrint}
-        canPrint={screeningState === "RESULT" && screeningResult !== null}
-        activeTab={activeTab}
-        onTabChange={setActiveTab}
-      />
+      {/* Product Global Header with Navigation Tabs (Shown in Workstation, Cohort, Benchmark views) */}
+      {activeTab !== "landing" && (
+        <Header
+          isBackendHealthy={isBackendHealthy}
+          onPrint={handlePrint}
+          canPrint={screeningState === "RESULT" && screeningResult !== null}
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
+        />
+      )}
 
-      <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-6 sm:px-6 lg:px-8">
+      <main
+        className={
+          activeTab === "landing"
+            ? "w-full flex-1"
+            : "mx-auto w-full max-w-7xl flex-1 px-4 py-6 sm:px-6 lg:px-8"
+        }
+      >
         {activeTab === "landing" && (
           <ProductLandingPage
             onLaunchWorkstation={handleLaunchWorkstation}
@@ -214,19 +222,21 @@ export default function ScreeningPage() {
         />
       )}
 
-      <footer className="border-t border-stone-200/80 bg-white py-4 text-center text-xs text-stone-500 no-print">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <span className="font-semibold text-slate-800">
-            RetinaGuard AI Workstation
-          </span>
-          <span className="text-[11px] text-stone-400">
-            Explainable AI Retinal Screening &bull; MathWorks HealthTech PS 26038
-          </span>
-          <span className="font-mono text-[11px] text-stone-400">
-            Triple IDRiD U-Net ResNet34
-          </span>
-        </div>
-      </footer>
+      {activeTab !== "landing" && (
+        <footer className="border-t border-stone-200/80 bg-white py-4 text-center text-xs text-stone-500 no-print">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <span className="font-semibold text-slate-800">
+              RetinaScan AI Workstation
+            </span>
+            <span className="text-[11px] text-stone-400">
+              Explainable AI Retinal Screening &bull; MathWorks HealthTech PS 26038
+            </span>
+            <span className="font-mono text-[11px] text-stone-400">
+              Triple IDRiD U-Net ResNet34
+            </span>
+          </div>
+        </footer>
+      )}
     </div>
   );
 }

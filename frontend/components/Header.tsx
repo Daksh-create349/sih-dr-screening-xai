@@ -24,8 +24,8 @@ export interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({
-  systemVersion = "v2.1 PACS",
-  isBackendHealthy = true,
+  systemVersion: _systemVersion,
+  isBackendHealthy: _isBackendHealthy,
   onPrint,
   canPrint = false,
   activeTab = "workstation",
@@ -40,37 +40,32 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => onTabChange && onTabChange("landing")}
           className="flex items-center space-x-3 text-left focus:outline-hidden"
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-950 text-emerald-400 shadow-xs">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-black text-white shadow-xs">
             <Eye className="h-5 w-5 stroke-[2.2]" aria-hidden="true" />
           </div>
           <div>
-            <div className="flex items-center space-x-2">
-              <span className="text-base font-extrabold tracking-tight text-slate-950">
-                RetinaGuard<span className="text-emerald-700">AI</span>
-              </span>
-              <span className="rounded-md border border-stone-200 bg-stone-100/80 px-1.5 py-0.2 font-mono text-[10px] font-semibold text-stone-600">
-                {systemVersion}
-              </span>
-            </div>
-            <p className="text-[11px] font-medium text-stone-500 hidden sm:block">
-              Clinical Retinal Diagnostic & Lesion Workstation
+            <span className="text-base font-extrabold tracking-tight text-black">
+              RetinaScan<span className="text-neutral-500 font-bold">AI</span>
+            </span>
+            <p className="text-[11px] font-medium text-neutral-500 hidden sm:block">
+              Diabetic Retinopathy Screening
             </p>
           </div>
         </button>
 
         {/* Center: Main Product Navigation Tabs */}
         {onTabChange && (
-          <nav className="flex items-center space-x-1 rounded-xl border border-stone-200 bg-stone-100/80 p-1 text-xs font-medium">
+          <nav className="flex items-center space-x-1 rounded-xl border border-neutral-200 bg-neutral-100 p-1 text-xs font-medium">
             <button
               type="button"
               onClick={() => onTabChange("landing")}
               className={`flex items-center space-x-1.5 rounded-lg px-3 py-1.5 transition ${
                 activeTab === "landing"
-                  ? "bg-white font-bold text-slate-900 shadow-2xs"
-                  : "text-stone-600 hover:text-stone-900"
+                  ? "bg-black font-bold text-white shadow-xs"
+                  : "text-neutral-600 hover:text-black"
               }`}
             >
-              <Home className="h-3.5 w-3.5 text-stone-700" />
+              <Home className={`h-3.5 w-3.5 ${activeTab === "landing" ? "text-white" : "text-neutral-500"}`} />
               <span>Overview</span>
             </button>
             <button
@@ -78,11 +73,11 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => onTabChange("workstation")}
               className={`flex items-center space-x-1.5 rounded-lg px-3 py-1.5 transition ${
                 activeTab === "workstation"
-                  ? "bg-white font-bold text-slate-900 shadow-2xs"
-                  : "text-stone-600 hover:text-stone-900"
+                  ? "bg-black font-bold text-white shadow-xs"
+                  : "text-neutral-600 hover:text-black"
               }`}
             >
-              <Activity className="h-3.5 w-3.5 text-emerald-700" />
+              <Activity className={`h-3.5 w-3.5 ${activeTab === "workstation" ? "text-white" : "text-neutral-500"}`} />
               <span>Workstation</span>
             </button>
             <button
@@ -90,11 +85,11 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => onTabChange("cohort")}
               className={`flex items-center space-x-1.5 rounded-lg px-3 py-1.5 transition ${
                 activeTab === "cohort"
-                  ? "bg-white font-bold text-slate-900 shadow-2xs"
-                  : "text-stone-600 hover:text-stone-900"
+                  ? "bg-black font-bold text-white shadow-xs"
+                  : "text-neutral-600 hover:text-black"
               }`}
             >
-              <FolderKanban className="h-3.5 w-3.5 text-sky-700" />
+              <FolderKanban className={`h-3.5 w-3.5 ${activeTab === "cohort" ? "text-white" : "text-neutral-500"}`} />
               <span>Patient Cohort</span>
             </button>
             <button
@@ -102,11 +97,11 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => onTabChange("benchmarks")}
               className={`flex items-center space-x-1.5 rounded-lg px-3 py-1.5 transition ${
                 activeTab === "benchmarks"
-                  ? "bg-white font-bold text-slate-900 shadow-2xs"
-                  : "text-stone-600 hover:text-stone-900"
+                  ? "bg-black font-bold text-white shadow-xs"
+                  : "text-neutral-600 hover:text-black"
               }`}
             >
-              <BarChart3 className="h-3.5 w-3.5 text-amber-700" />
+              <BarChart3 className={`h-3.5 w-3.5 ${activeTab === "benchmarks" ? "text-white" : "text-neutral-500"}`} />
               <span>Validation & Models</span>
             </button>
           </nav>
@@ -125,21 +120,6 @@ export const Header: React.FC<HeaderProps> = ({
               <span className="hidden sm:inline">Export Report</span>
             </button>
           )}
-
-          <div
-            className="flex items-center space-x-1.5 rounded-full border border-stone-200 bg-stone-50 px-2.5 py-1 text-xs text-stone-600"
-            role="status"
-            aria-label="System status"
-          >
-            <span
-              className={`h-2 w-2 rounded-full ${
-                isBackendHealthy ? "bg-emerald-600" : "bg-amber-500"
-              }`}
-            />
-            <span className="font-mono text-[10px] font-bold uppercase text-stone-700">
-              {isBackendHealthy ? "Engine 8000 Ready" : "Connecting"}
-            </span>
-          </div>
         </div>
       </div>
     </header>
