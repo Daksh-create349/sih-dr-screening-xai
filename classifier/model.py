@@ -71,7 +71,10 @@ def load_classifier_model(
         return _CACHED_MODEL
 
     resolved_path = resolve_model_path(model_path)
-    model = keras.models.load_model(str(resolved_path), compile=compile)
+    try:
+        model = keras.models.load_model(str(resolved_path), compile=compile, safe_mode=False)
+    except TypeError:
+        model = keras.models.load_model(str(resolved_path), compile=compile)
 
     # Validate model architecture
     expected_input_shape = (None, 384, 384, 3)
