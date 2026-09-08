@@ -1,5 +1,10 @@
 """Hugging Face Spaces entry point mounting FastAPI screening engine with Gradio."""
 
+try:
+    import spaces
+except ImportError:
+    spaces = None
+
 import os
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 import sys
@@ -10,15 +15,15 @@ WORKSPACE_ROOT = Path(__file__).resolve().parent
 if str(WORKSPACE_ROOT) not in sys.path:
     sys.path.insert(0, str(WORKSPACE_ROOT))
 
-# ZeroGPU decorator satisfaction for Hugging Face Spaces
-try:
-    import spaces
+# ZeroGPU decorator satisfaction
+if spaces is not None:
     @spaces.GPU(duration=60)
-    def zero_gpu_screening_task():
+    def zero_gpu_pipeline():
         """Satisfy ZeroGPU startup check for dynamic GPU cluster allocation."""
         return "ZeroGPU Engine Active"
-except Exception:
-    zero_gpu_screening_task = None
+else:
+    def zero_gpu_pipeline():
+        return "CPU Engine Active"
 
 import gradio as gr
 from api.main import app as fastapi_app
@@ -35,10 +40,9 @@ with gr.Blocks(title="RetinaScan AI - Tele-Screening Backend Engine") as demo:
         "- 🧬 **Lesion Segmentation:** IDRiD Triple U-Net ResNet34\n"
         "- 💻 **PACS Frontend Workstation:** Live on Vercel"
     )
-    if zero_gpu_screening_task is not None:
-        gpu_trigger = gr.Button("ZeroGPU Keepalive", visible=False)
-        gpu_out = gr.Textbox(visible=False)
-        gpu_trigger.click(fn=zero_gpu_screening_task, inputs=[], outputs=[gpu_out])
+    gpu_trigger = gr.Button("Initialize Hardware Engine", visible=False)
+    gpu_out = gr.Textbox(visible=False)
+    gpu_trigger.click(fn=zero_gpu_pipeline, inputs=[], outputs=[gpu_out])
 
 # Mount Gradio onto the existing FastAPI application
 app = gr.mount_gradio_app(fastapi_app, demo, path="/")
