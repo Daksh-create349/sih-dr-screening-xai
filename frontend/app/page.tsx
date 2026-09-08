@@ -11,6 +11,7 @@ import { SafetyNotice } from "@/components/SafetyNotice";
 import { CohortLibraryView } from "@/components/CohortLibraryView";
 import { BenchmarkView } from "@/components/BenchmarkView";
 import { PrintableSummary } from "@/components/PrintableSummary";
+import { ClinicalReportModal } from "@/components/ClinicalReportModal";
 import {
   ScreeningResponse,
   ScreeningState,
@@ -28,6 +29,7 @@ export default function ScreeningPage() {
     useState<ScreeningResponse | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isBackendHealthy, setIsBackendHealthy] = useState<boolean>(true);
+  const [isReportModalOpen, setIsReportModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
     // Check backend health on initial load
@@ -89,7 +91,7 @@ export default function ScreeningPage() {
   };
 
   const handlePrint = () => {
-    window.print();
+    setIsReportModalOpen(true);
   };
 
   return (
@@ -190,7 +192,27 @@ export default function ScreeningPage() {
       </main>
 
       {/* Printable Clinical Report (Hidden on screen, active on @media print) */}
-      {screeningResult && <PrintableSummary result={screeningResult} />}
+      {screeningResult && (
+        <PrintableSummary
+          result={screeningResult}
+          patientId="#RUR-2026-084"
+          doctorName="Dr. [Physician Name]"
+          institution="SIH National Telemedicine DR Screening Network"
+        />
+      )}
+
+      {/* Clinical PDF Report Modal with Direct Vector Download & Print Preview */}
+      {isReportModalOpen && screeningResult && (
+        <ClinicalReportModal
+          isOpen={isReportModalOpen}
+          onClose={() => setIsReportModalOpen(false)}
+          screeningResult={screeningResult}
+          studyFilename={selectedImage?.filename || "retina_scan.png"}
+          patientId="#RUR-2026-084"
+          doctorName="Dr. [Physician Name]"
+          institution="SIH National Telemedicine DR Screening Network"
+        />
+      )}
 
       <footer className="border-t border-stone-200/80 bg-white py-4 text-center text-xs text-stone-500 no-print">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">

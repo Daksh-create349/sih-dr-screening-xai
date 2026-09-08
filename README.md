@@ -1,3 +1,13 @@
+---
+title: RetinaScan AI DR Screening API
+emoji: 👁️
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # RETINASCAN-AI: Clinical-Grade Explainable Tele-Screening Workstation for Diabetic Retinopathy in Rural India
 
 <div align="center">

@@ -121,34 +121,73 @@
   }
 }
 
-/* Print Media Styles for Clinical Summary Report (Task 38) */
+/* Print Media Styles for Clinical Summary Report */
 @media print {
-  body {
-    background-color: #ffffff !important;
-    color: #111827 !important;
-    font-size: 11pt;
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm 10mm 10mm;
   }
 
+  html,
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10pt;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* CRITICAL: Hide interactive web UI so browser never tries to print 
+     the 2-column workstation layout or cause accidental card splits */
   header,
   footer,
+  main,
+  nav,
+  button,
+  input,
+  select,
   .no-print,
-  button {
+  .fixed,
+  [role="dialog"],
+  [aria-modal="true"] {
     display: none !important;
   }
 
+  /* Exclusively render our dedicated, structured 2-page print dossier */
   .print-only {
     display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Ensure strict clean page break between Page 1 and Page 2 */
+  .print-page-break {
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  /* Prevent card components from ever slicing across page edges */
+  .print-card-avoid {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 
   .shadow-xs,
   .shadow-sm,
-  .shadow-2xs {
+  .shadow-2xs,
+  .shadow-md,
+  .shadow-lg,
+  .shadow-xl {
     box-shadow: none !important;
   }
 
-  .border-stone-200,
-  .border-stone-200\/90 {
-    border-color: #d1d5db !important;
+  img {
+    max-width: 100% !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 }
 

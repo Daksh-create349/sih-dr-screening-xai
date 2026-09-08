@@ -14,6 +14,7 @@ import {
   ShieldCheck,
   AlertCircle,
   CheckCircle2,
+  Printer,
 } from "lucide-react";
 import { ScreeningResponse } from "@/types/screening";
 import { getAssetUrl, getEvidenceOverlayUrl } from "@/lib/api";
@@ -418,7 +419,7 @@ export const ClinicalReportModal: React.FC<ClinicalReportModalProps> = ({
                                    "bg-rose-100 text-rose-800 border-rose-300";
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 no-print">
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose} />
 
@@ -538,15 +539,26 @@ export const ClinicalReportModal: React.FC<ClinicalReportModalProps> = ({
           </div>
           <div className="flex items-center space-x-2">
             <button type="button" onClick={onClose}
-              className="rounded-lg border border-stone-200 bg-white px-4 py-2 text-xs font-medium text-stone-700 hover:bg-stone-50 transition">
-              Cancel
+              className="rounded-lg border border-stone-200 bg-white px-3.5 py-2 text-xs font-medium text-stone-700 hover:bg-stone-50 transition">
+              Close
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                onClose();
+                setTimeout(() => window.print(), 150);
+              }}
+              className="inline-flex items-center space-x-1.5 rounded-xl border border-stone-300 bg-white px-3.5 py-2.5 text-xs font-semibold text-stone-800 shadow-2xs hover:bg-stone-50 transition"
+            >
+              <Printer className="h-3.5 w-3.5 text-stone-600" />
+              <span>Print Preview / System PDF</span>
             </button>
             <button type="button" onClick={handleGenerate} disabled={isGenerating}
-              className="inline-flex items-center space-x-2 rounded-xl bg-slate-950 px-5 py-2.5 text-xs font-bold text-white shadow-sm transition hover:bg-slate-800 disabled:opacity-60">
+              className="inline-flex items-center space-x-2 rounded-xl bg-slate-950 px-4 py-2.5 text-xs font-bold text-white shadow-sm transition hover:bg-slate-800 disabled:opacity-60">
               {isGenerating ? (
                 <><Loader2 className="h-3.5 w-3.5 animate-spin text-emerald-400" /><span>Building PDF…</span></>
               ) : (
-                <><Download className="h-3.5 w-3.5 text-emerald-400" /><span>Download Clinical Report</span></>
+                <><Download className="h-3.5 w-3.5 text-emerald-400" /><span>Download Clinical PDF</span></>
               )}
             </button>
           </div>
