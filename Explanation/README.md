@@ -26,6 +26,7 @@ In under **2.5 seconds**, our AI system:
 | [04_DR_CLASSIFIER_MODEL.md](./04_DR_CLASSIFIER_MODEL.md) | **5-Class Severity Classification** | EfficientNetB3/ResNet architecture, ICDR 5-tier grading, 0.33 calibrated referable threshold for >90% sensitivity. |
 | [05_LESION_SEGMENTATION_MODELS.md](./05_LESION_SEGMENTATION_MODELS.md) | **IDRiD Pixel Lesion Models & CSME** | UNet/DeepLab PyTorch models for Optic Disc (0.985 Dice), Exudates, Hemorrhages, and macular distance math. |
 | [06_EXPLAINABLE_AI_GRADCAM.md](./06_EXPLAINABLE_AI_GRADCAM.md) | **Explainable AI (Grad-CAM + Anatomy)** | Why heatmaps alone fail, anatomical landmark correlation with macula/disc, earning clinician trust. |
+| [07_PRESENTATION_FLOW_DIAGRAM.md](./07_PRESENTATION_FLOW_DIAGRAM.md) | **7-Minute Presentation Flow & Pitch Guide** | Minute-by-minute team choreography, live demo clicks, speaker scripts, and judge defense protocols. |
 
 ---
 
