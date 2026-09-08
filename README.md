@@ -18,9 +18,9 @@
 [MathWorks Simulink Model](#mathworks-simulink-8-subsystem-model) •
 [Deep Biomarkers & Vascular Engine](#6-system-deep-biomarker--vascular-engine) •
 [Clinical Screening Case Series](#clinical-screening-case-series-grades-0--4) •
-[Discrete-Event Capacity Simulation](#discrete-event-system-simulation--capacity-verification) •
+[Capacity Simulation](#discrete-event-system-simulation--capacity-verification) •
 [IQA Safety Pipeline](#optical-image-quality-assessment-iqa-pipeline) •
-[Hardware Benchmarks](#comprehensive-clinical--technical-benchmarks) •
+[Acquisition & Pitch Guide](docs/CLINICAL_ACQUISITION_AND_SYSTEM_GUIDE.md) •
 [Deployment Guide](#deployment--quick-start-guide) •
 [Engineering Team](#engineering--clinical-team)
 
