@@ -230,9 +230,9 @@ export const ProductLandingPage: React.FC<ProductLandingPageProps> = ({
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] text-white">
-              Diabetic Retinopathy Screening for the{" "}
+              Real-Time Clinical Decision Support for{" "}
               <span className="text-emerald-400">
-                Next Billion
+                Diabetic Retinopathy
               </span>
             </h1>
 
