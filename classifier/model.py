@@ -22,6 +22,17 @@ except ImportError:
     except ImportError:
         keras = None
 
+# Compatibility patch for Keras model deserialization across versions
+if keras is not None:
+    try:
+        _orig_dense_init = keras.layers.Dense.__init__
+        def _patched_dense_init(self, *args, **kwargs):
+            kwargs.pop("quantization_config", None)
+            return _orig_dense_init(self, *args, **kwargs)
+        keras.layers.Dense.__init__ = _patched_dense_init
+    except Exception:
+        pass
+
 DEFAULT_MODEL_PATH: Path = (
     Path(__file__).resolve().parent.parent / "model" / "MODEL_V2_80pct_backup.keras"
 )
